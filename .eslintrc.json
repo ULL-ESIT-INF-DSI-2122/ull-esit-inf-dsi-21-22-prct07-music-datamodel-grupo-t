@@ -21,7 +21,12 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "require-jsdoc":"off",
-        "valid-jsdoc":"off"
+      "quotes": "off",
+      "eol-last": "off",
+      "require-jsdoc": "off",
+      "valid-jsdoc": "off",
+      "prefer-const": "off",
+      "no-unused-vars": "off",
+      "max-len": "off"
     }
 }

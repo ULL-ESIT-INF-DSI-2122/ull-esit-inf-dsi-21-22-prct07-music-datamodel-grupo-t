@@ -1,6 +1,6 @@
 {
     "entryPoints": [
-        "./src/genero.ts"
+        "./src/genre.ts"
     ],
     "out": "./docs"
 }

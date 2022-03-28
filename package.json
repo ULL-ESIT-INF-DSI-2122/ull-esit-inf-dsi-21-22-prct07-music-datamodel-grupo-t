@@ -25,13 +25,5 @@
     "ts-node": "^10.7.0",
     "tsc-watch": "^4.6.0",
     "typedoc": "^0.22.13"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct04-arrays-tuples-enums-alu0101203980"
-  },
-  "bugs": {
-    "url": "https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct04-arrays-tuples-enums-alu0101203980"
-  },
-  "homepage": "https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct04-arrays-tuples-enums-alu0101203980"
+  }
 }
