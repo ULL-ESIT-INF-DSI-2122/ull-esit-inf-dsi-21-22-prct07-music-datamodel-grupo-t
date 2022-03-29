@@ -1,7 +1,11 @@
+import {Genre} from './genre'
 
+/*
+ * Clase Song que representa las canciones 
+ */
 export class Song {
   constructor(private name: string, private author: string, 
-    private duration: number, private genre: string, 
+    private duration: number, private genre: Genre, 
     private isSingle: boolean, private views: number) {}
 
   public getName() {
@@ -40,7 +44,7 @@ export class Song {
     this.duration = newDuration;
   }
 
-  public setGenre(newGenre: string) {
+  public setGenre(newGenre: Genre) {
     this.genre = newGenre;
   }
 
