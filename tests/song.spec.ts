@@ -1,6 +1,6 @@
 import 'mocha';
 import { expect } from 'chai';
-import {Song} from '../src/song'
+import { Song } from '../src/song'
 import { Genre } from '../src/genre';
 
 const pop = new Genre('Pop', [], [], []);
