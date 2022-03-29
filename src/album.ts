@@ -43,7 +43,7 @@ class Album implements Iterable<Song> {
   }
 
   public getSong(name: string) {
-    return [...this.songs.values()].find((song) => 
+    return [...this].find((song) => 
       song.getName() === name);
   }
 
