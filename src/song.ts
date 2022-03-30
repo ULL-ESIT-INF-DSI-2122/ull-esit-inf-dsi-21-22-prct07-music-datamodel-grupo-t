@@ -1,11 +1,20 @@
 import {Genre} from './genre'
 
+/**
+ * Mostraremos la duración mediante un tipo personalizado con dos claves
+ * con valores numéricos: minutos y segundos
+ */
+export type Duration = {
+  minutes: number,
+  seconds: number
+}
+
 /*
  * Clase Song que representa las canciones 
  */
 export class Song {
   constructor(private name: string, private author: string, 
-    private duration: number, private genres: Genre[], 
+    private duration: Duration, private genres: Genre[], 
     private isSingle: boolean, private views: number) {}
 
   public getName() {
@@ -40,7 +49,7 @@ export class Song {
     this.author = newAuthor;
   }
 
-  public setDuration(newDuration: number) {
+  public setDuration(newDuration: Duration) {
     this.duration = newDuration;
   }
 

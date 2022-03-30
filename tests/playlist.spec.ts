@@ -8,8 +8,8 @@ import {Song} from '../src/song';
 describe('PlayList class function tests', () => {
   let pop = new Genre("Pop", [], [], []);
   let reggae = new Genre("Reggae", [], [], []);
-  let redemtion = new Song("Redemption Song", "Bob Marley", 1.20, [reggae], false, 1239128);
-  let judge = new Song("Judge Not", "Bob Marley", 1.20, [reggae], false, 1239128);
+  let redemtion = new Song("Redemption Song", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
+  let judge = new Song("Judge Not", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
   let playlist = new PlayList("Reggae Chill", [redemtion, judge], 140, [reggae]);
   
   it('It creates a new instance of an object with class PlayList', () => {
@@ -43,7 +43,7 @@ describe('PlayList class function tests', () => {
   });
 
   it('There is a method to add a song', () => {
-    let hello = new Song("Hello", "", 120, [], true, 120);
+    let hello = new Song("Hello", "", {minutes: 1, seconds: 34}, [], true, 120);
     playlist.addSong(hello);
     expect(playlist.getSongs()).to.be.eql([redemtion, judge, hello]);
   });

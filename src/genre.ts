@@ -1,3 +1,8 @@
+import {Album} from './album';
+import {Artist} from './artist';
+import { Group } from './group';
+import {Song} from './song';
+
 export type GenreName = 
   "Rap" | "Pop" | "K-Pop" | "Rock" | "Electro" | "Classic" | "Country" |
   "Heavy" | "Jazz" | "Salsa" | "Flamenco" | "Folk" | "Country" | "Blues" |
@@ -5,8 +10,8 @@ export type GenreName =
 
 
 export class Genre {
-  constructor(private name: GenreName, private artists: string[], 
-    private albums: string[], private songs: string[]) {}
+  constructor(private name: GenreName, private artists: (Artist | Group)[] , 
+    private albums: Album[], private songs: Song[]) {}
 
   public getName() {
       return this.name;
@@ -24,17 +29,17 @@ export class Genre {
       return this.songs;
   }
 
-  public getArtist(artist: string) {
+  public getArtist(artist: Artist | Group) {
       const index: number = this.artists.indexOf(artist);
       return this.artists[index];
   }
 
-  public getAlbum(album: string) {
+  public getAlbum(album: Album) {
       const index: number = this.albums.indexOf(album);
       return this.albums[index];
   }
 
-  public getSong(song: string) {
+  public getSong(song: Song) {
       const index: number = this.songs.indexOf(song);
       return this.songs[index];
   }
@@ -43,43 +48,42 @@ export class Genre {
       this.name = name;
   }
 
-  // // Implementar cuando tengamos clase artistas
-  // public setArtistas(artistas: string[]) {
-  //     this.bilblioArtistas = artistas;
-  // }
+  public setArtists(artistas: (Artist | Group)[]) {
+      this.artists = artistas;
+  }
 
-  // public setAlbumes(albumes: string[]) {
-  //     this.biblioAlbumes = albumes;
-  // }
+  public setAlbums(albumes: Album[]) {
+      this.albums = albumes;
+  }
 
-  // public setCanciones(canciones: string[]) {
-  //     this.biblioCanciones = canciones;
-  // }
+  public setSongs(canciones: Song[]) {
+      this.songs = canciones;
+  }
 
-  // public addArtista(artista: string) {
-  //     this.bilblioArtistas.push(artista);
-  // }
+  public addArtists(artista: (Artist | Group)) {
+      this.artists.push(artista);
+  }
 
-  // public addAlbum(album: string) {
-  //     this.biblioAlbumes.push(album);
-  // }
+  public addAlbum(album: Album) {
+      this.albums.push(album);
+  }
 
-  // public addCancion(cancion: string) {
-  //     this.biblioCanciones.push(cancion);
-  // }
+  public addSongs(cancion: Song) {
+      this.songs.push(cancion);
+  }
 
-  // public deleteArtista(artista: string) {
-  //     const indice: number = this.bilblioArtistas.indexOf(artista);
-  //     this.bilblioArtistas.splice(indice, 1);
-  // }
+  public deleteArtists(artista: (Artist | Group)) {
+      const indice: number = this.artists.indexOf(artista);
+      this.artists.splice(indice, 1);
+  }
 
-  // public deleteAlbum(album: string) {
-  //     const indice: number = this.biblioAlbumes.indexOf(album);
-  //     this.biblioAlbumes.splice(indice, 1);
-  // }
+  public deleteAlbum(album: Album) {
+      const indice: number = this.albums.indexOf(album);
+      this.albums.splice(indice, 1);
+  }
 
-  // public deleteCancion(cancion: string) {
-  //     const indice: number = this.biblioCanciones.indexOf(cancion);
-  //     this.biblioCanciones.splice(indice, 1);
-  // }
+  public deleteSong(cancion: Song) {
+      const indice: number = this.songs.indexOf(cancion);
+      this.songs.splice(indice, 1);
+  }
 }

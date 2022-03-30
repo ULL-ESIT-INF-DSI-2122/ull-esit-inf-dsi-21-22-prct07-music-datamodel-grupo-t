@@ -8,7 +8,7 @@ import {Group} from '../src/group';
 
 
 describe('Artist class function tests', () => {
-  let song = new Song("Song", "Paul", 120, [], false, 12);
+  let song = new Song("Song", "Paul", {minutes: 1, seconds: 34}, [], false, 12);
   let album = new Album("", "Paul", 2000, [], [song]);
   let pop = new Genre("Pop", [], [], []);
   let imagine = new Group("", [], 0, [], [], 120);

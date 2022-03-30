@@ -7,8 +7,8 @@ import {Song} from '../src/song';
 
 describe('Album class function tests', () => {
   let reggae = new Genre("Reggae", [], [], []);
-  let redemtion = new Song("Redemption Song", "Bob Marley", 1.20, [reggae], false, 1239128);
-  let judge = new Song("Judge Not", "Bob Marley", 1.20, [reggae], false, 1239128);
+  let redemtion = new Song("Redemption Song", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
+  let judge = new Song("Judge Not", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
   let album = new Album("Songs of Freedom", "Bob Marley", 1961, [reggae], [redemtion, judge]);
   
   it('It creates a new instance of an object with class Combat', () => {
@@ -56,7 +56,7 @@ describe('Album class function tests', () => {
   });
 
   it('There is a method to add a song', () => {
-    let cancion = new Song("Prueba", "Bob Marley", 120, [reggae], false, 123);
+    let cancion = new Song("Prueba", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 123);
     album.addSong(cancion);
     expect(album.getNumberOfSongs()).to.be.equal(3);
     expect(album.getSong("Prueba")).to.be.equal(cancion);
