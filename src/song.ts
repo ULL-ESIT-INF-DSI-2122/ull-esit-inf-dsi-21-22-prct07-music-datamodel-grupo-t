@@ -5,7 +5,7 @@ import {Genre} from './genre'
  */
 export class Song {
   constructor(private name: string, private author: string, 
-    private duration: number, private genre: Genre, 
+    private duration: number, private genres: Genre[], 
     private isSingle: boolean, private views: number) {}
 
   public getName() {
@@ -20,8 +20,8 @@ export class Song {
     return this.duration;
   }
 
-  public getGenre() {
-    return this.genre;
+  public getGenres() {
+    return this.genres;
   }
 
   public getIsSingle() {
@@ -44,8 +44,8 @@ export class Song {
     this.duration = newDuration;
   }
 
-  public setGenre(newGenre: Genre) {
-    this.genre = newGenre;
+  public setGenres(newGenres: Genre[]) {
+    this.genres = newGenres;
   }
 
   public setIsSingle(newBool: boolean) {

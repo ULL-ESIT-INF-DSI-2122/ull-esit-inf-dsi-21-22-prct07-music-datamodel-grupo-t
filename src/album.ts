@@ -1,11 +1,11 @@
-import {Genre, GenreName} from './genre'
+import {Genre} from './genre'
 import {Song} from './song'
 
 export class Album implements Iterable<Song> {
   private songs: Set<Song>;
 
   constructor(private name: string, private artist: string,
-    private year: number, private genre: Genre, songs: Song[]) {
+    private year: number, private genres: Genre[], songs: Song[]) {
       this.songs = new Set(songs);
   }
 
@@ -21,8 +21,8 @@ export class Album implements Iterable<Song> {
     return this.year;
   }
 
-  public getGenre(): Genre {
-    return this.genre;
+  public getGenres(): Genre[] {
+    return this.genres;
   }
 
   public setName(name: string): void {
@@ -37,8 +37,8 @@ export class Album implements Iterable<Song> {
     this.year = year;
   }
 
-  public setGenre(genre: Genre): void {
-    this.genre = genre;
+  public setGenre(genre: Genre[]): void {
+    this.genres = genre;
   }
 
   [Symbol.iterator](): Iterator<Song> {

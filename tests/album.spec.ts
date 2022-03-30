@@ -1,15 +1,15 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Genre, GenreName} from '../src/genre'
+import {Genre} from '../src/genre'
 import {Album} from '../src/album'
 import {Song} from '../src/song';
 
 
 describe('Album class function tests', () => {
   let reggae = new Genre("Reggae", [], [], []);
-  let redemtion = new Song("Redemption Song", "Bob Marley", 1.20, reggae, false, 1239128);
-  let judge = new Song("Judge Not", "Bob Marley", 1.20, reggae, false, 1239128);
-  let album = new Album("Songs of Freedom", "Bob Marley", 1961, reggae, [redemtion, judge]);
+  let redemtion = new Song("Redemption Song", "Bob Marley", 1.20, [reggae], false, 1239128);
+  let judge = new Song("Judge Not", "Bob Marley", 1.20, [reggae], false, 1239128);
+  let album = new Album("Songs of Freedom", "Bob Marley", 1961, [reggae], [redemtion, judge]);
   
   it('It creates a new instance of an object with class Combat', () => {
     expect(album).to.be.instanceOf(Album);
@@ -28,7 +28,7 @@ describe('Album class function tests', () => {
   });
 
   it('It has an attribute for its genre', () => {
-    expect(album.getGenre()).to.be.equal(reggae);
+    expect(album.getGenres()).to.be.eql([reggae]);
   });
 
   it('There is a method to set the name', () => {
@@ -43,14 +43,12 @@ describe('Album class function tests', () => {
 
   it('There is a method to set the genre', () => {
     let pop = new Genre("Pop", [], [], []);
-    album.setGenre(pop);
-    expect(album.getGenre()).to.be.equal(pop);
+    album.setGenre([reggae, pop]);
+    expect(album.getGenres()).to.be.eql([reggae, pop]);
   });
 
   it('There is a method to get a song', () => {
-    let pop = new Genre("Pop", [], [], []);
-    album.setGenre(pop);
-    expect(album.getSong("Judge Not")).to.be.equal(judge);
+    expect([...album][0]).to.be.eql(redemtion)
   });
 
   it('There is a method to get the number of songs', () => {
@@ -58,7 +56,7 @@ describe('Album class function tests', () => {
   });
 
   it('There is a method to add a song', () => {
-    let cancion = new Song("Prueba", "Bob Marley", 120, reggae, false, 123);
+    let cancion = new Song("Prueba", "Bob Marley", 120, [reggae], false, 123);
     album.addSong(cancion);
     expect(album.getNumberOfSongs()).to.be.equal(3);
     expect(album.getSong("Prueba")).to.be.equal(cancion);
