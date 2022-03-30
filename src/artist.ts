@@ -4,18 +4,18 @@ import {Song} from './song';
 import {Genre} from './genre';
 
 export class Artist {
-  private monthlyListeners: number
+  private monthlyListeners: number;
 
   constructor(private name: string, private groups: Group[], private genres: Genre[],
       private albums: Album[], private publishedSongs: Song[]) {
     let listeners = 0;
     this.groups.forEach((group) => {
       listeners += group.getMonthlyListeners();
-    });
+     });
     // En el caso de que cuenten las reproducciones totales
-    this.publishedSongs.forEach((song) => {
-      listeners += song.getViews();
-    })
+    //this.publishedSongs.forEach((song) => {
+    //  listeners += song.getViews();
+    // //})
     this.monthlyListeners = listeners;
   }
 

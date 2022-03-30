@@ -15,7 +15,7 @@ describe('Album class function tests', () => {
     expect(album).to.be.instanceOf(Album);
   });
 
-  it('It has an attributes for its name', () => {
+  it('It has an attribute for its name', () => {
     expect(album.getName()).to.be.equal("Songs of Freedom");
   });
 

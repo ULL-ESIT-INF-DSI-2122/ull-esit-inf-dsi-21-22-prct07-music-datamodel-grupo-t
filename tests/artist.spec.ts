@@ -40,6 +40,6 @@ describe('Artist class function tests', () => {
   });
 
   it('There is a method to get the monthly listeners', () => {
-    expect(artist.getMonthlyListeners()).to.be.equal(252);
+    expect(artist.getMonthlyListeners()).to.be.equal(240);
   });
 });
