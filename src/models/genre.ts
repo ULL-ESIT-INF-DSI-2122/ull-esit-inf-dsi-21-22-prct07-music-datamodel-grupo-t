@@ -4,9 +4,9 @@ import { Group } from './group';
 import {Song} from './song';
 
 export type GenreName = 
-  "Rap" | "Pop" | "K-Pop" | "Rock" | "Electro" | "Classic" | "Country" |
+  "Rap" | "Pop" | "Trap" | "Rock" | "Electro" | "Classic" | "Country" |
   "Heavy" | "Jazz" | "Salsa" | "Flamenco" | "Folk" | "Country" | "Blues" |
-  "Reggaeton" | "Punk" | "Reggae" | "Soul" | "Gospel" | "Funk" | "Disco" | "Hip Hop"
+  "Reggaeton" | "Punk" | "Reggae" | "Soul" | "Gospel" | "Popular" | "Disco" | "Hip Hop"
 
 
 export class Genre {
