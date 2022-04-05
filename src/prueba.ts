@@ -1,107 +1,183 @@
-/**
- * Pizza delivery prompt example
- * run example by writing `node pizza.js` in your console
- */
- import {Album} from './album';
- import {Genre} from './genre';
- import {Song} from './song';
- import {Artist} from './artist';
- import {Group} from './group';
+import * as inquirer from 'inquirer';
+import {Album} from './models/album';
+import {Genre, GenreName} from './models/genre';
+import {Song} from './models/song';
+import {Artist} from './models/artist';
+import {Group} from './models/group';
 
- let song = new Song("Song", "Paul", {minutes: 1, seconds: 34}, [], false, 12);
- let album = new Album("", "Paul", 2000, [], [song]);
- let pop = new Genre("Pop", [], [], []);
- let artist1 = new Artist("Paul", [], [pop], [album], [song]);
- let artist2 = new Artist("Zero", [], [pop], [album], [song]);
- let imagine = new Group("Imagine", [artist1, artist2], 2000, [pop], [album], 120);
 
-export function commandline() {
-    'use strict';
-    const inquirer = require('inquirer');
-    
-    console.log('Bienvenido a la biblioteca musical');
-    
-    const questions = [
+export function promptUser() {
+  console.clear();
+  console.log('Bienvenido a la biblioteca musical');
+  
+  const questions = [
     {
         type: 'list',
         name: 'election',
-        message: '¿Que desea gestionar (añadir, borrar y/o modificar)?',
-        choices: ['Géneros', 'Canciones', 'Álbums', 'Grupos', 'Artistas'],
+        message: '¿Que desea hacer (añadir, borrar y/o modificar)?',
+        choices: ['Géneros', 'Canciones', 'Álbums', 'Grupos', 'Artistas', 'Salir'],
     },
-    ];
-    
-    inquirer.prompt(questions).then((answers: any) => {
+  ];
+
+  inquirer.prompt(questions).then((answers: any) => {
     switch(answers['election']) {
-        case 'Géneros':
-            console.log("Gestiona Géneros")
-            gestionarGeneros();
-            break;
-        case 'Canciones':
-            console.log("Gestiona temas")
-            break;
-        case 'Álbums':
-            console.log("Gestiona albums")
-            break;
-        case 'Grupos':
-            console.log("Gestiona grupos")
-            break;
-        case 'Artistas':
-            console.log("Gestiona artistas")
-            break;           
+      case 'Géneros':
+        console.log("Gestionar Géneros")
+        manageGenres();
+        break;
+      case 'Canciones':
+        console.log("Gestionar temas")
+        // método para el manejo de canciones
+        break;
+      case 'Álbums':
+        console.log("Gestionar albums")
+        // método para el manejo de álbumes
+        break;
+      case 'Grupos':
+        console.log("Gestionar grupos")
+        // método para el manejo de grupos
+        break;
+      case 'Artistas':
+        console.log("Gestionar artistas")
+        // método para el manejo de artistas
+        break;   
+      case 'Salir':
+        console.log('Saliendo del programa...')
+        break;
     }
+  });
+}
+
+export function manageGenres() {
+  console.clear()    
+  console.log('Gestor de géneros');
+  
+  const questionsGenre = [
+    {
+      type: 'list',
+      name: 'option',
+      message: '¿Que desea hacer (añadir, borrar o modificar un género)?',
+      choices: ['Añadir', 'Modificar', 'Borrar', 'Atrás']
+    }
+  ];
+
+  inquirer.prompt(questionsGenre).then((answers: any) => {
+    switch(answers['option']) {
+      case 'Añadir':
+        addNewGenre();
+        break;
+      
+      case 'Modificar':
+        // const genreList = [
+        //   {
+        //       type: 'list',
+        //       name: 'electionGenre',
+        //       message: '¿Qué género desea modificar?',
+        //       choices: ['Añadir', 'Modificar', 'Borrar'],
+        //   },
+        // ];
+        // Opciones para modificar el género
+        // modifyGenre();
+        break;
+
+      case 'Eliminar':
+        // deleteGenre();
+        break;
+      
+      case 'Atrás':
+        break;
+    }
+  });
+}
+
+
+function addNewGenre(): void {
+  console.clear();
+  console.log('Añadir un nuevo género');
+    const addGenreQuestions = [
+      {
+        type: 'list',
+        name: 'electionGenre',
+        message: '¿Qué género desea añadir?',
+        choices: [
+          'Rap','Pop','Pop','Rock','Electro','Classic','Country','Heavy','Jazz',
+          'Salsa','Flamenco','Folk','Country','Blues','Reggaeton','Punk','Reggae',
+          'Soul','Gospel','Funk','Disco','Hip Hop'],
+      },
+      {
+        type: 'confirm',
+        name: 'modifyGenre',
+        message: '¿Desea añadir canciones, artistas o álbumes al género?',
+        default: false,
+      }
+    ];
+
+    inquirer.prompt(addGenreQuestions).then((answers: any) => {
+      // Añadir género
+      const genre = new Genre(answers['electionGenre'], [], [], []);
+      console.log(`Género ${genre.getName()} añadido con éxito`);
+      if (answers['modifyGenre']) {
+        modifyGenre(genre);
+      }
     });
 }
 
-export function gestionarGeneros() {
-    'use strict';
-    const inquirer = require('inquirer');
-    
-    console.log('Bienvenido al gestor de generos');
-    
-    const questionsGenre = [
+
+function modifyGenre(genre: Genre): void {
+  const modifyGenreQuestions = [
     {
-        type: 'list',
-        name: 'electionGenre',
-        message: '¿Que desea hacer (añadir, borrar o modificar una canción)?',
-        choices: ['Añadir', 'Modificar', 'Borrar'],
-    },
-    ];
-    inquirer.prompt(questionsGenre).then((answers: any) => {
-        switch(answers['electionGenre']) {
-            case 'Añadir':
-                const questionsGenreName = [
-                    {
-                        type: 'list',
-                        name: 'electionGenreName',
-                        message: 'Elija el Género',
-                        choices: ['Rap','Pop','Pop','Rock','Electro','Classic','Country','Heavy','Jazz',
-                        'Salsa','Flamenco','Folk','Country','Blues','Reggaeton','Punk','Reggae','Soul','Gospel','Funk','Disco','Hip Hop'],
-                    },
-                    {
-                        type: 'input',
-                        name: 'electionGenreArtist',
-                        message: 'Añada un artista del género',
-                    },
-                    {
-                        type: 'input',
-                        name: 'electionGenreAlbum',
-                        message: 'Añada un album del género',
-                    },
-                    {
-                        type: 'input',
-                        name: 'electionGenreCancion',
-                        message: 'Añada una canción del género',
-                    },
-                    ];
-                    inquirer.prompt(questionsGenreName).then((answers: any) => {
-                        const genre = new Genre(answers['electionGenreName'], [answers['electionGenreArtist']], [answers['electionGenreAlbum']], [answers['electionGenreCancion']]);
-                        console.log(`El género es ${genre.getName()}`)
-                        console.log(`El artista es ${genre.getArtistCollection()}`)
-                        console.log(`El album es ${genre.getAlbumCollection()}`)
-                        console.log(`El cancion es ${genre.getSongCollection()}`)
-                    });
-                break;
-        }
-    });
+      type: 'list',
+      name: 'election',
+      message: '¿Qué desea hacer?',
+      choices: [
+        'Añadir Canciones', 'Borrar Canciones',
+        'Añadir Grupos', 'Borrar Grupos',
+        'Añadir Artistas', 'Borrar Artistas',
+        'Añadir Álbumes', 'Borrar Álbumes'
+        ],
+    }
+  ];
+
+  inquirer.prompt(modifyGenreQuestions).then((answers: any) => {
+    switch(answers['modifyGenreQuestions']) {
+      case 'Añadir Canciones':
+        const addSongToGenre = [{
+          type: 'input',
+          name: 'songName',
+          message: 'Añada una canción al género: ',
+        }];
+
+        inquirer.prompt(addSongToGenre).then((answers: any) => {
+          const newSong = new Song(answers['songName'], '', {minutes: 0, seconds: 0}, [], false, 0);
+          genre.addSong(newSong);
+          console.log(`Se ha añadido la canción ${newSong.getName()} al género ${genre.getName()}`)
+        });
+        break;
+
+      case 'Borrar Canciones':
+        break;
+
+      case 'Añadir Grupos':
+        break;
+
+      case 'Borrar Grupos':
+        break;
+      
+      case 'Añadir Artistas':
+        break;
+
+      case 'Borrar Artistas':
+        break;
+
+      case 'Añadir Álbumes':
+        break;
+
+      case 'Borrar Álbumes':
+        break;
+    }
+  });
 }
-commandline()
+
+promptUser()
+
+

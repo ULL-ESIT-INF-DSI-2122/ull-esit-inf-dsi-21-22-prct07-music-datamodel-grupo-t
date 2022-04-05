@@ -13,9 +13,9 @@ export type Duration = {
  * Clase Song que representa las canciones 
  */
 export class Song {
-  constructor(private name: string, private author: string, 
-    private duration: Duration, private genres: Genre[], 
-    private isSingle: boolean, private views: number) {}
+  constructor(private name: string, private author: string = '', 
+    private duration: Duration = {minutes: 0, seconds: 0}, private genres: Genre[] = [], 
+    private isSingle: boolean = true, private views: number = 0) {}
 
   public getName() {
     return this.name;
@@ -25,7 +25,7 @@ export class Song {
     return this.author;
   }
 
-  public getDuration() {
+  public getDuration(): Duration {
     return this.duration;
   }
 

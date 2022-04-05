@@ -1,10 +1,10 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Genre} from '../src/genre'
-import {Album} from '../src/album'
-import {Song} from '../src/song';
-import {Artist} from '../src/artist';
-import {Group} from '../src/group';
+import {Genre} from '../src/models/genre'
+import {Album} from '../src/models/album'
+import {Song} from '../src/models/song';
+import {Artist} from '../src/models/artist';
+import {Group} from '../src/models/group';
 
 
 describe('Artist class function tests', () => {

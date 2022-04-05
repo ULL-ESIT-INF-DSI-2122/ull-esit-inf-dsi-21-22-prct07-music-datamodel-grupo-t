@@ -1,8 +1,8 @@
 import 'mocha';
 import {expect} from 'chai';
-import {PlayList} from '../src/playlist'
-import {Genre} from '../src/genre'
-import {Song} from '../src/song';
+import {PlayList} from '../src/models/playlist'
+import {Genre} from '../src/models/genre'
+import {Song} from '../src/models/song';
 
 
 describe('PlayList class function tests', () => {
@@ -10,7 +10,7 @@ describe('PlayList class function tests', () => {
   let reggae = new Genre("Reggae", [], [], []);
   let redemtion = new Song("Redemption Song", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
   let judge = new Song("Judge Not", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
-  let playlist = new PlayList("Reggae Chill", [redemtion, judge], 140, [reggae]);
+  let playlist = new PlayList("Reggae Chill", [redemtion, judge], {minutes: 2, seconds: 1}, [reggae]);
   
   it('It creates a new instance of an object with class PlayList', () => {
     expect(playlist).to.be.instanceOf(PlayList);
@@ -25,7 +25,7 @@ describe('PlayList class function tests', () => {
   });
 
   it('It has an attribute for its duration', () => {
-    expect(playlist.getDuration()).to.be.equal(140);
+    expect(playlist.getDuration()).to.be.eql({minutes: 2, seconds: 1});
   });
 
   it('It has an attribute for its genre', () => {

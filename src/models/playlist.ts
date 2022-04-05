@@ -1,9 +1,10 @@
-import {Song} from './song';
+import {Song, Duration} from './song';
 import {Genre} from './genre';
 
 export class PlayList {
-  constructor(private name: string, private songs: Song[],
-      private duration: number, private genres: Genre[]) {
+  constructor(private name: string, private songs: Song[] = [],
+      private duration: Duration = {minutes: 0, seconds: 0},
+      private genres: Genre[] = []) {
   }
 
   public getName(): string {
@@ -14,7 +15,7 @@ export class PlayList {
     return this.songs;
   }
 
-  public getDuration(): number {
+  public getDuration(): Duration {
     return this.duration;
   }
 

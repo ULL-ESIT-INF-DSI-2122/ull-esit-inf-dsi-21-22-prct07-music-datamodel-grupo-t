@@ -1,10 +1,10 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Genre} from '../src/genre'
-import {Album} from '../src/album'
-import {Song} from '../src/song';
-import {Artist} from '../src/artist';
-import {Group} from '../src/group';
+import {Genre} from '../src/models/genre'
+import {Album} from '../src/models/album'
+import {Song} from '../src/models/song';
+import {Artist} from '../src/models/artist';
+import {Group} from '../src/models/group';
 
 let song = new Song("Song", "Paul", {minutes: 1, seconds: 34}, [], false, 12);
 let album = new Album("", "Paul", 2000, [], [song]);
@@ -39,7 +39,7 @@ describe('Pruebas de la clase Genre', () => {
   it('Añade datos correctamente', () => {
     expect(genre.addArtists(artist)).to.be.undefined;
     expect(genre.addAlbum(album)).to.be.undefined;
-    expect(genre.addSongs(song)).to.be.undefined;
+    expect(genre.addSong(song)).to.be.undefined;
   });
 
   it('Elimina datos correctamente', () => {

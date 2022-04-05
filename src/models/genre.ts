@@ -10,8 +10,8 @@ export type GenreName =
 
 
 export class Genre {
-  constructor(private name: GenreName, private artists: (Artist | Group)[] , 
-    private albums: Album[], private songs: Song[]) {}
+  constructor(private name: GenreName, private artists: (Artist | Group)[] = [], 
+    private albums: Album[] = [], private songs: Song[] = []) {}
 
   public getName() {
       return this.name;
@@ -68,7 +68,7 @@ export class Genre {
       this.albums.push(album);
   }
 
-  public addSongs(cancion: Song) {
+  public addSong(cancion: Song) {
       this.songs.push(cancion);
   }
 

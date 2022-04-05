@@ -1,8 +1,8 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Genre} from '../src/genre'
-import {Album} from '../src/album'
-import {Song} from '../src/song';
+import {Genre} from '../src/models/genre'
+import {Album} from '../src/models/album'
+import {Song} from '../src/models/song';
 
 
 describe('Album class function tests', () => {

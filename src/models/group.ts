@@ -3,8 +3,8 @@ import {Artist} from './artist';
 import {Genre} from './genre';
 
 export class Group {
-  constructor(private name: string, private artists: Artist[], private yearOfCreation: number,
-      private relatedGenres: Genre[], private albums: Album[], private monthlyListeners: number) {
+  constructor(private name: string, private artists: Artist[] = [], private yearOfCreation: number = 0,
+      private relatedGenres: Genre[] = [], private albums: Album[] = [], private monthlyListeners: number = 0) {
   }
 
   public getName(): string {

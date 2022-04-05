@@ -6,8 +6,8 @@ import {Genre} from './genre';
 export class Artist {
   private monthlyListeners: number;
 
-  constructor(private name: string, private groups: Group[], private genres: Genre[],
-      private albums: Album[], private publishedSongs: Song[]) {
+  constructor(private name: string, private groups: Group[] = [], private genres: Genre[] = [],
+      private albums: Album[] = [], private publishedSongs: Song[] = []) {
     let listeners = 0;
     this.groups.forEach((group) => {
       listeners += group.getMonthlyListeners();

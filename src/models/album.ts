@@ -4,8 +4,8 @@ import {Song} from './song'
 export class Album implements Iterable<Song> {
   private songs: Set<Song>;
 
-  constructor(private name: string, private artist: string,
-    private year: number, private genres: Genre[], songs: Song[]) {
+  constructor(private name: string, private artist: string = '',
+    private year: number = 0, private genres: Genre[] = [], songs: Song[] = []) {
       this.songs = new Set(songs);
   }
 
