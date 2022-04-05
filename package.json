@@ -6,7 +6,7 @@
     "test": "mocha",
     "start": "tsc-watch --onSuccess \"node dist/data.js\"",
     "doc": "typedoc",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output"
+    "coverage": "nyc npm test && nyc report --reporter=lcov"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,6 @@
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "chai": "^4.3.6",
-    "coveralls": "^3.1.1",
     "eslint": "^8.10.0",
     "eslint-plugin-react": "^7.29.2",
     "mocha": "^9.2.1",
