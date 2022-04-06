@@ -1,6 +1,11 @@
 {
     "entryPoints": [
-        ""
+        "./src/models/album.ts",
+        "./src/models/artist.ts",
+        "./src/models/genre.ts",
+        "./src/models/group.ts",
+        "./src/models/playlist.ts",
+        "./src/models/song.ts"
     ],
     "out": "./docs"
 }

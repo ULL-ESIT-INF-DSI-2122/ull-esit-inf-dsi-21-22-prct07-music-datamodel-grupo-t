@@ -1,44 +1,86 @@
 import {Song, Duration} from './song';
 import {Genre} from './genre';
 
+/**
+ * Playlist class
+ */
 export class PlayList {
+  /**
+   * Constructor
+   * @param name of the playlist
+   * @param songs of the playlist
+   * @param duration of the playlist
+   * @param genres of the songs of the playlist
+   */
   constructor(private name: string, private songs: Song[] = [],
       private duration: Duration = {minutes: 0, seconds: 0},
       private genres: Genre[] = []) {
   }
 
+  /**
+   * @returns the name of the playlist
+   */
   public getName(): string {
     return this.name;
   }
 
+  /**
+   * @returns the set of songs of the playlist
+   */
   public getSongs(): Song[] {
     return this.songs;
   }
 
+  /**
+   * @returns the duration of the playlist
+   */
   public getDuration(): Duration {
     return this.duration;
   }
 
+  /**
+   * @returns the genres that belong to the playlist
+   */
   public getGenres(): Genre[] {
     return this.genres;
   }
 
+  /**
+   * Changes de name of the playlist
+   * @param name that will be updated
+   */
   public setName(name: string): void {
     this.name = name;
   }
 
+  /**
+   * Changes de genres of the playlist
+   * @param genres that will be updated
+   */
   public setGenres(genres: Genre[]): void {
     this.genres = genres;
   }
 
+  /**
+   * Adds a song to the playlist
+   * @param song that will be added
+   */
   public addSong(song: Song): void {
     this.songs.push(song);
   }
 
+  /**
+   * Adds a genre to the playlist
+   * @param genre that will be added
+   */
   public addGenre(genre: Genre): void {
     this.genres.push(genre);
   }
 
+  /**
+   * Removes a song from the playlist
+   * @param songName that will be removed
+   */
   public removeSong(songName: string): void {
     this.songs.forEach((song, index) => {
       if (song.getName() === songName) {
@@ -47,6 +89,10 @@ export class PlayList {
     });
   }
 
+  /**
+   * Removes a genre from the playlist
+   * @param newGenre that will be removed
+   */
   public removeGenre(newGenre: Genre): void {
     this.genres.forEach((genre, index) => {
       if (genre === newGenre) {
@@ -55,6 +101,9 @@ export class PlayList {
     });
   }
 
+  /**
+   * @returns the number of songs of the playlist
+   */
   public getNumberOfSongs(): number {
     return this.songs.length;
   }

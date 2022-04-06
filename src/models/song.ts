@@ -1,8 +1,8 @@
 import {Genre} from './genre'
 
 /**
- * Mostraremos la duración mediante un tipo personalizado con dos claves
- * con valores numéricos: minutos y segundos
+ * Type that shows the duration of a song in the 'minute:second'
+ * format
  */
 export type Duration = {
   minutes: number,
@@ -10,58 +10,109 @@ export type Duration = {
 }
 
 /*
- * Clase Song que representa las canciones 
+ * Song class that represents all the songs 
  */
 export class Song {
+  /**
+   * Constructor
+   * @param name of the song 
+   * @param author of the song
+   * @param duration of the song
+   * @param genres of the song
+   * @param isSingle boolean that shows if the songs is a single
+   * @param views of the song
+   */
   constructor(private name: string, private author: string = '', 
     private duration: Duration = {minutes: 0, seconds: 0}, private genres: Genre[] = [], 
     private isSingle: boolean = true, private views: number = 0) {}
 
+  /**
+   * @returns the name of the song
+   */
   public getName() {
     return this.name;
   }
 
+  /**
+   * @returns the author of the song
+   */
   public getAuthor() {
     return this.author;
   }
 
+  /**
+   * @returns the duration of the song
+   */
   public getDuration(): Duration {
     return this.duration;
   }
 
+  /**
+   * @returns the genre of the song
+   */
   public getGenres() {
     return this.genres;
   }
 
+  /**
+   * @returns if the song is a single
+   */
   public getIsSingle() {
     return this.isSingle;
   }
 
+  /**
+   * @returns the views of the song
+   */
   public getViews() {
     return this.views;
   }
 
-  public setName(newName: string) {
-    this.name = newName;
+  /**
+   * Changes de name of the song
+   * @param name that will be updated
+   */
+  public setName(name: string) {
+    this.name = name;
   }
 
-  public setAuthor(newAuthor: string) {
-    this.author = newAuthor;
+  /**
+   * Changes de author of the song
+   * @param author that will be updated
+   */
+  public setAuthor(author: string) {
+    this.author = author;
   }
 
-  public setDuration(newDuration: Duration) {
-    this.duration = newDuration;
+  /**
+   * Changes de duration of the song
+   * @param duration that will be updated
+   */
+  public setDuration(duration: Duration) {
+    this.duration = duration;
   }
 
-  public setGenres(newGenres: Genre[]) {
-    this.genres = newGenres;
+  /**
+   * Changes de genres of the song
+   * @param genres that will be updated
+   */
+  public setGenres(genres: Genre[]) {
+    this.genres = genres;
   }
 
-  public setIsSingle(newBool: boolean) {
-    this.isSingle = newBool;
+  /**
+   * Changes de isSigle of the song
+   * @param isSigle that will be updated
+   */
+  public setIsSingle(isSigle: boolean) {
+    this.isSingle = isSigle;
   }
 
-  public setViews(newViews: number) {
-    this.views = newViews;
+  /**
+   * Changes de views of the song
+   * @param views that will be updated
+   */
+  public setViews(views: number) {
+    this.views = views;
   }
 }
