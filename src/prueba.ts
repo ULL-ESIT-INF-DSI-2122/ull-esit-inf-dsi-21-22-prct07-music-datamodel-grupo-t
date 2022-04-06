@@ -4,7 +4,10 @@ import {Genre, GenreName} from './models/genre';
 import {Song} from './models/song';
 import {Artist} from './models/artist';
 import {Group} from './models/group';
+import {JsonDataMusicCollection} from './jsonDataMusicCollection';
+import {songs, groups, artists, albums, genres, playlists} from './data';
 
+let jsonDataMusicCollection = new JsonDataMusicCollection(genres, artists, albums, groups, songs, playlists);
 
 export function promptUser() {
   console.clear();

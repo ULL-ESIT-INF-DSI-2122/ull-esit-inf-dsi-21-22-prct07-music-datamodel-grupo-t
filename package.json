@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "mocha",
-    "start": "tsc-watch --onSuccess \"node dist/data.js\"",
+    "start": "tsc-watch --onSuccess \"node dist/prueba.js\"",
     "doc": "typedoc",
     "coverage": "nyc npm test && nyc report --reporter=lcov"
   },
