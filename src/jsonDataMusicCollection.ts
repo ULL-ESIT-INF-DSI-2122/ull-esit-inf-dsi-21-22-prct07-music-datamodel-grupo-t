@@ -75,15 +75,15 @@ export class JsonDataMusicCollection extends DataMusicCollection {
     genres.forEach((genre) => {
       let name = genre.getName();
       let artistsNames: string[] = [];
-      genre.getArtists().forEach((artist) => {
+      genre.getArtistCollection().forEach((artist) => {
         artistsNames.push(artist.getName());
       });
       let albumsNames: string[] = [];
-      genre.getAlbums().forEach((album) => {
+      genre.getAlbumCollection().forEach((album) => {
         albumsNames.push(album.getName());
       });
       let songsNames: string[] = [];
-      genre.getSongs().forEach((song) => {
+      genre.getSongCollection().forEach((song) => {
         songsNames.push(song.getName());
       });
 
