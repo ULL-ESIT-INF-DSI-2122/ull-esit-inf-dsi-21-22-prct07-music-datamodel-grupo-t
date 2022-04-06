@@ -30,6 +30,10 @@ export class Artist {
   public getGenres(): Genre[] {
     return this.genres;
   }
+  
+  public getSongs(): Song[] {
+    return this.publishedSongs;
+  }
 
   public getAlbums(): Album[] {
     return this.albums;

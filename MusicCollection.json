@@ -3,1723 +3,149 @@
     {
       "name": "Rap",
       "artists": [
-        {
-          "name": "Natos y Waor",
-          "artists": [
-            {
-              "name": "Natos",
-              "groups": [],
-              "genres": [],
-              "albums": [],
-              "publishedSongs": [],
-              "monthlyListeners": 0
-            },
-            {
-              "name": "Waor",
-              "groups": [],
-              "genres": [],
-              "albums": [],
-              "publishedSongs": [],
-              "monthlyListeners": 0
-            }
-          ],
-          "yearOfCreation": 2011,
-          "relatedGenres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [
-            {
-              "name": "Cicatrices",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            },
-            {
-              "name": "Carretera",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            }
-          ],
-          "monthlyListeners": 1396606
-        }
+        "Natos y Waor"
       ],
       "albums": [
-        {
-          "name": "Cicatrices",
-          "artist": "Natos y Waor",
-          "year": 2018,
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "songs": {}
-        },
-        {
-          "name": "Carretera",
-          "artist": "Natos y Waor",
-          "year": 2016,
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "songs": {}
-        }
+        "Cicatrices",
+        "Carretera"
       ],
       "songs": [
-        {
-          "name": "Cicatrices",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 3,
-            "seconds": 32
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 23423432
-        },
-        {
-          "name": "Carretera",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 4,
-            "seconds": 53
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 456893111
-        },
-        {
-          "name": "Nosotros",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 4,
-            "seconds": 29
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 9329371
-        },
-        {
-          "name": "Piratas",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 3,
-            "seconds": 38
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 3827261
-        },
-        {
-          "name": "Bicho Raro",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 3,
-            "seconds": 23
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 4865627
-        }
+        "Cicatrices",
+        "Carretera",
+        "Nosotros",
+        "Piratas",
+        "Bicho Raro"
       ]
     },
     {
       "name": "Pop",
       "artists": [
-        {
-          "name": "El Canto del Loco",
-          "artists": [
-            {
-              "name": "Dani Martín",
-              "groups": [],
-              "genres": [],
-              "albums": [],
-              "publishedSongs": [],
-              "monthlyListeners": 0
-            }
-          ],
-          "yearOfCreation": 1994,
-          "relatedGenres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [
-            {
-              "name": "Zapatillas",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            },
-            {
-              "name": "Personas",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            }
-          ],
-          "monthlyListeners": 2622773
-        }
+        "El Canto del Loco"
       ],
       "albums": [
-        {
-          "name": "Zapatillas",
-          "artist": "Dani Martín",
-          "year": 1998,
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "songs": {}
-        },
-        {
-          "name": "Personas",
-          "artist": "Dani Martín",
-          "year": 2009,
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "songs": {}
-        }
+        "Zapatillas",
+        "Personas"
       ],
       "songs": [
-        {
-          "name": "Zapatillas",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 4,
-            "seconds": 3
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 25624533
-        },
-        {
-          "name": "Besos",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 3,
-            "seconds": 19
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 85668563
-        },
-        {
-          "name": "Volvera",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 5,
-            "seconds": 58
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 8838432
-        },
-        {
-          "name": "Peter Pan",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 4,
-            "seconds": 36
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 67900256
-        },
-        {
-          "name": "La Madre de Jose",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 4,
-            "seconds": 17
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 43654680
-        }
+        "Zapatillas",
+        "Besos",
+        "Volvera",
+        "Peter Pan",
+        "La Madre de Jose"
       ]
     },
     {
       "name": "Trap",
       "artists": [
-        {
-          "name": "Kidd Keo",
-          "groups": [],
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [],
-          "publishedSongs": [
-            {
-              "name": "Dracukeo",
-              "author": "Kidd Keo",
-              "duration": {
-                "minutes": 2,
-                "seconds": 36
-              },
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 81901392
-            },
-            {
-              "name": "Mama",
-              "author": "Kidd Keo",
-              "duration": {
-                "minutes": 4,
-                "seconds": 25
-              },
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 4201425
-            },
-            {
-              "name": "Lollypop",
-              "author": "Kidd Keo",
-              "duration": {
-                "minutes": 3,
-                "seconds": 17
-              },
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 5738921
-            },
-            {
-              "name": "Serpiente Veneno",
-              "author": "Kidd Keo",
-              "duration": {
-                "minutes": 3,
-                "seconds": 11
-              },
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 7299872
-            },
-            {
-              "name": "One Million",
-              "author": "Kidd Keo",
-              "duration": {
-                "minutes": 2,
-                "seconds": 58
-              },
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 43670110
-            }
-          ],
-          "monthlyListeners": 0
-        }
+        "Kidd Keo"
       ],
       "albums": [],
       "songs": [
-        {
-          "name": "Dracukeo",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 2,
-            "seconds": 36
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 81901392
-        },
-        {
-          "name": "Mama",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 4,
-            "seconds": 25
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 4201425
-        },
-        {
-          "name": "Lollypop",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 3,
-            "seconds": 17
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 5738921
-        },
-        {
-          "name": "Serpiente Veneno",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 3,
-            "seconds": 11
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 7299872
-        },
-        {
-          "name": "One Million",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 2,
-            "seconds": 58
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 43670110
-        }
+        "Dracukeo",
+        "Mama",
+        "Lollypop",
+        "Serpiente Veneno",
+        "One Million"
       ]
     },
     {
       "name": "Electro",
       "artists": [
-        {
-          "name": "Martin Garrix",
-          "groups": [],
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [],
-          "publishedSongs": [
-            {
-              "name": "High on Life",
-              "author": "Martin Garrix",
-              "duration": {
-                "minutes": 3,
-                "seconds": 12
-              },
-              "genres": [
-                {
-                  "name": "Electro",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 431270356
-            },
-            {
-              "name": "Animals",
-              "author": "Martin Garrix",
-              "duration": {
-                "minutes": 4,
-                "seconds": 1
-              },
-              "genres": [
-                {
-                  "name": "Electro",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 64782811
-            },
-            {
-              "name": "Scared to Be Lonely",
-              "author": "Martin Garrix",
-              "duration": {
-                "minutes": 5,
-                "seconds": 7
-              },
-              "genres": [
-                {
-                  "name": "Electro",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 78540184
-            },
-            {
-              "name": "Reboot",
-              "author": "Martin Garrix",
-              "duration": {
-                "minutes": 3,
-                "seconds": 41
-              },
-              "genres": [
-                {
-                  "name": "Electro",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 36829188
-            },
-            {
-              "name": "Limitless",
-              "author": "Martin Garrix",
-              "duration": {
-                "minutes": 3,
-                "seconds": 45
-              },
-              "genres": [
-                {
-                  "name": "Electro",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 39200193
-            }
-          ],
-          "monthlyListeners": 0
-        }
+        "Martin Garrix"
       ],
       "albums": [],
       "songs": [
-        {
-          "name": "Dracukeo",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 2,
-            "seconds": 36
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 81901392
-        },
-        {
-          "name": "Mama",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 4,
-            "seconds": 25
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 4201425
-        },
-        {
-          "name": "Lollypop",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 3,
-            "seconds": 17
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 5738921
-        },
-        {
-          "name": "Serpiente Veneno",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 3,
-            "seconds": 11
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 7299872
-        },
-        {
-          "name": "One Million",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 2,
-            "seconds": 58
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 43670110
-        }
+        "Dracukeo",
+        "Mama",
+        "Lollypop",
+        "Serpiente Veneno",
+        "One Million"
       ]
     },
     {
       "name": "Classic",
       "artists": [
-        {
-          "name": "Mozart",
-          "groups": [],
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [],
-          "publishedSongs": [
-            {
-              "name": "Fantasia in D minor",
-              "author": "Mozart",
-              "duration": {
-                "minutes": 7,
-                "seconds": 52
-              },
-              "genres": [
-                {
-                  "name": "Classic",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 3737821
-            },
-            {
-              "name": "Piano Sonata No 16",
-              "author": "Mozart",
-              "duration": {
-                "minutes": 6,
-                "seconds": 14
-              },
-              "genres": [
-                {
-                  "name": "Classic",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 383765011
-            },
-            {
-              "name": "Symphony No 25",
-              "author": "Mozart",
-              "duration": {
-                "minutes": 8,
-                "seconds": 18
-              },
-              "genres": [
-                {
-                  "name": "Classic",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 9836161
-            },
-            {
-              "name": "Turkish March",
-              "author": "Mozart",
-              "duration": {
-                "minutes": 4,
-                "seconds": 59
-              },
-              "genres": [
-                {
-                  "name": "Classic",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 7198874
-            },
-            {
-              "name": "Piano Concerto No 21",
-              "author": "Mozart",
-              "duration": {
-                "minutes": 10,
-                "seconds": 42
-              },
-              "genres": [
-                {
-                  "name": "Classic",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 5183177
-            }
-          ],
-          "monthlyListeners": 0
-        }
+        "Mozart"
       ],
       "albums": [],
       "songs": [
-        {
-          "name": "High on Life",
-          "author": "Martin Garrix",
-          "duration": {
-            "minutes": 3,
-            "seconds": 12
-          },
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 431270356
-        },
-        {
-          "name": "Animals",
-          "author": "Martin Garrix",
-          "duration": {
-            "minutes": 4,
-            "seconds": 1
-          },
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 64782811
-        },
-        {
-          "name": "Scared to Be Lonely",
-          "author": "Martin Garrix",
-          "duration": {
-            "minutes": 5,
-            "seconds": 7
-          },
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 78540184
-        },
-        {
-          "name": "Reboot",
-          "author": "Martin Garrix",
-          "duration": {
-            "minutes": 3,
-            "seconds": 41
-          },
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 36829188
-        },
-        {
-          "name": "Limitless",
-          "author": "Martin Garrix",
-          "duration": {
-            "minutes": 3,
-            "seconds": 45
-          },
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 39200193
-        }
+        "High on Life",
+        "Animals",
+        "Scared to Be Lonely",
+        "Reboot",
+        "Limitless"
       ]
     },
     {
       "name": "Reggaeton",
       "artists": [
-        {
-          "name": "Nicky Jam",
-          "groups": [],
-          "genres": [
-            {
-              "name": "Reggaeton",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [],
-          "publishedSongs": [
-            {
-              "name": "Travesuras",
-              "author": "Nicky Jam",
-              "duration": {
-                "minutes": 3,
-                "seconds": 17
-              },
-              "genres": [
-                {
-                  "name": "Reggaeton",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 4522113
-            },
-            {
-              "name": "Hasta El Amanecer",
-              "author": "Nicky Jam",
-              "duration": {
-                "minutes": 3,
-                "seconds": 24
-              },
-              "genres": [
-                {
-                  "name": "Reggaeton",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 12446941
-            },
-            {
-              "name": "El Perdón",
-              "author": "Nicky Jam",
-              "duration": {
-                "minutes": 4,
-                "seconds": 28
-              },
-              "genres": [
-                {
-                  "name": "Reggaeton",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 1199631
-            },
-            {
-              "name": "Poblado-Remix",
-              "author": "Nicky Jam",
-              "duration": {
-                "minutes": 4,
-                "seconds": 59
-              },
-              "genres": [
-                {
-                  "name": "Reggaeton",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 67181921
-            },
-            {
-              "name": "Bzrp Session 49",
-              "author": "Nicky Jam",
-              "duration": {
-                "minutes": 3,
-                "seconds": 47
-              },
-              "genres": [
-                {
-                  "name": "Reggaeton",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 7981138
-            }
-          ],
-          "monthlyListeners": 0
-        }
+        "Nicky Jam"
       ],
       "albums": [],
       "songs": [
-        {
-          "name": "Fantasia in D minor",
-          "author": "Mozart",
-          "duration": {
-            "minutes": 7,
-            "seconds": 52
-          },
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 3737821
-        },
-        {
-          "name": "Piano Sonata No 16",
-          "author": "Mozart",
-          "duration": {
-            "minutes": 6,
-            "seconds": 14
-          },
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 383765011
-        },
-        {
-          "name": "Symphony No 25",
-          "author": "Mozart",
-          "duration": {
-            "minutes": 8,
-            "seconds": 18
-          },
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 9836161
-        },
-        {
-          "name": "Turkish March",
-          "author": "Mozart",
-          "duration": {
-            "minutes": 4,
-            "seconds": 59
-          },
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 7198874
-        },
-        {
-          "name": "Piano Concerto No 21",
-          "author": "Mozart",
-          "duration": {
-            "minutes": 10,
-            "seconds": 42
-          },
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 5183177
-        }
+        "Fantasia in D minor",
+        "Piano Sonata No 16",
+        "Symphony No 25",
+        "Turkish March",
+        "Piano Concerto No 21"
       ]
     },
     {
       "name": "Rock",
       "artists": [
-        {
-          "name": "The Offspring",
-          "artists": [],
-          "yearOfCreation": 1984,
-          "relatedGenres": [
-            {
-              "name": "Rock",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [
-            {
-              "name": "Americana",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            }
-          ],
-          "monthlyListeners": 12477538
-        }
+        "The Offspring"
       ],
       "albums": [
-        {
-          "name": "Americana",
-          "artist": "The Offspring",
-          "year": 1995,
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "songs": {}
-        }
+        "Americana"
       ],
       "songs": [
-        {
-          "name": "The Kids Aren't Alright",
-          "author": "The Offspring",
-          "duration": {
-            "minutes": 3,
-            "seconds": 12
-          },
-          "genres": [
-            {
-              "name": "Rock",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 34543578
-        },
-        {
-          "name": "You're Gonna Go Far, Kid",
-          "author": "The Offspring",
-          "duration": {
-            "minutes": 4,
-            "seconds": 51
-          },
-          "genres": [
-            {
-              "name": "Rock",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 9744001
-        },
-        {
-          "name": "Self Esteem",
-          "author": "The Offspring",
-          "duration": {
-            "minutes": 4,
-            "seconds": 31
-          },
-          "genres": [
-            {
-              "name": "Rock",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 54357953
-        },
-        {
-          "name": "Pretty Fly",
-          "author": "The Offspring",
-          "duration": {
-            "minutes": 4,
-            "seconds": 48
-          },
-          "genres": [
-            {
-              "name": "Rock",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 91800532
-        },
-        {
-          "name": "Why Don't You Get a Job",
-          "author": "The Offspring",
-          "duration": {
-            "minutes": 3,
-            "seconds": 36
-          },
-          "genres": [
-            {
-              "name": "Rock",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 34017389
-        }
+        "The Kids Aren't Alright",
+        "You're Gonna Go Far, Kid",
+        "Self Esteem",
+        "Pretty Fly",
+        "Why Don't You Get a Job"
       ]
     },
     {
       "name": "Country",
       "artists": [
-        {
-          "name": "John Denver",
-          "groups": [],
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [],
-          "publishedSongs": [
-            {
-              "name": "Take Me Home, Country Roads",
-              "author": "John Denver",
-              "duration": {
-                "minutes": 4,
-                "seconds": 23
-              },
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 43524675
-            },
-            {
-              "name": "Annie's Song",
-              "author": "John Denver",
-              "duration": {
-                "minutes": 3,
-                "seconds": 45
-              },
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 8813345
-            },
-            {
-              "name": "Rocky Mountain High",
-              "author": "John Denver",
-              "duration": {
-                "minutes": 5,
-                "seconds": 37
-              },
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 43515345
-            },
-            {
-              "name": "Back Home Again",
-              "author": "John Denver",
-              "duration": {
-                "minutes": 3,
-                "seconds": 28
-              },
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 74354313
-            },
-            {
-              "name": "On the Road",
-              "author": "John Denver",
-              "duration": {
-                "minutes": 4,
-                "seconds": 19
-              },
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 31424577
-            }
-          ],
-          "monthlyListeners": 0
-        }
+        "John Denver"
       ],
       "albums": [],
       "songs": [
-        {
-          "name": "Take Me Home, Country Roads",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 4,
-            "seconds": 23
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 43524675
-        },
-        {
-          "name": "Annie's Song",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 3,
-            "seconds": 45
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 8813345
-        },
-        {
-          "name": "Rocky Mountain High",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 5,
-            "seconds": 37
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 43515345
-        },
-        {
-          "name": "Back Home Again",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 3,
-            "seconds": 28
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 74354313
-        },
-        {
-          "name": "On the Road",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 4,
-            "seconds": 19
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 31424577
-        }
+        "Take Me Home, Country Roads",
+        "Annie's Song",
+        "Rocky Mountain High",
+        "Back Home Again",
+        "On the Road"
       ]
     },
     {
       "name": "Popular",
       "artists": [
-        {
-          "name": "Compay Segundo",
-          "artists": [],
-          "yearOfCreation": 1907,
-          "relatedGenres": [
-            {
-              "name": "Popular",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [],
-          "monthlyListeners": 530772
-        }
+        "Compay Segundo"
       ],
       "albums": [],
       "songs": [
-        {
-          "name": "Guajira guantananmera",
-          "author": "Compay Segundo",
-          "duration": {
-            "minutes": 3,
-            "seconds": 45
-          },
-          "genres": [
-            {
-              "name": "Popular",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 9187631
-        },
-        {
-          "name": "Chan chan",
-          "author": "Compay Segundo",
-          "duration": {
-            "minutes": 3,
-            "seconds": 16
-          },
-          "genres": [
-            {
-              "name": "Popular",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 821940
-        },
-        {
-          "name": "Lágrimas negras",
-          "author": "Compay Segundo",
-          "duration": {
-            "minutes": 4,
-            "seconds": 25
-          },
-          "genres": [
-            {
-              "name": "Popular",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 2391764
-        },
-        {
-          "name": "La negra Tomasa",
-          "author": "Compay Segundo",
-          "duration": {
-            "minutes": 3,
-            "seconds": 34
-          },
-          "genres": [
-            {
-              "name": "Popular",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 2800641
-        },
-        {
-          "name": "Hasta siempre",
-          "author": "Compay Segundo",
-          "duration": {
-            "minutes": 4,
-            "seconds": 51
-          },
-          "genres": [
-            {
-              "name": "Popular",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 3198415
-        }
+        "Guajira guantananmera",
+        "Chan chan",
+        "Lágrimas negras",
+        "La negra Tomasa",
+        "Hasta siempre"
       ]
     },
     {
       "name": "Blues",
       "artists": [
-        {
-          "name": "The Blues Brothers",
-          "artists": [],
-          "yearOfCreation": 1978,
-          "relatedGenres": [
-            {
-              "name": "Blues",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [],
-          "monthlyListeners": 1172651
-        }
+        "The Blues Brothers"
       ],
       "albums": [],
       "songs": [
-        {
-          "name": "Everybody Needs Somebody to Love",
-          "author": "The Blues Brothers",
-          "duration": {
-            "minutes": 3,
-            "seconds": 56
-          },
-          "genres": [
-            {
-              "name": "Blues",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 39845210
-        },
-        {
-          "name": "Think",
-          "author": "The Blues Brothers",
-          "duration": {
-            "minutes": 4,
-            "seconds": 53
-          },
-          "genres": [
-            {
-              "name": "Blues",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 4828171
-        },
-        {
-          "name": "Sweet Home Chicago",
-          "author": "The Blues Brothers",
-          "duration": {
-            "minutes": 5,
-            "seconds": 16
-          },
-          "genres": [
-            {
-              "name": "Blues",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 219471
-        },
-        {
-          "name": "Gimme Some Lovin",
-          "author": "The Blues Brothers",
-          "duration": {
-            "minutes": 2,
-            "seconds": 35
-          },
-          "genres": [
-            {
-              "name": "Blues",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 607613
-        },
-        {
-          "name": "Soul Man",
-          "author": "The Blues Brothers",
-          "duration": {
-            "minutes": 3,
-            "seconds": 14
-          },
-          "genres": [
-            {
-              "name": "Blues",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 2816103
-        }
+        "Everybody Needs Somebody to Love",
+        "Think",
+        "Sweet Home Chicago",
+        "Gimme Some Lovin",
+        "Soul Man"
       ]
     }
   ],
@@ -1728,105 +154,15 @@
       "name": "Kidd Keo",
       "groups": [],
       "genres": [
-        {
-          "name": "Trap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Trap"
       ],
       "albums": [],
-      "publishedSongs": [
-        {
-          "name": "Dracukeo",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 2,
-            "seconds": 36
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 81901392
-        },
-        {
-          "name": "Mama",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 4,
-            "seconds": 25
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 4201425
-        },
-        {
-          "name": "Lollypop",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 3,
-            "seconds": 17
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 5738921
-        },
-        {
-          "name": "Serpiente Veneno",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 3,
-            "seconds": 11
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 7299872
-        },
-        {
-          "name": "One Million",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 2,
-            "seconds": 58
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 43670110
-        }
+      "songs": [
+        "Dracukeo",
+        "Mama",
+        "Lollypop",
+        "Serpiente Veneno",
+        "One Million"
       ],
       "monthlyListeners": 0
     },
@@ -1834,105 +170,15 @@
       "name": "Martin Garrix",
       "groups": [],
       "genres": [
-        {
-          "name": "Electro",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Electro"
       ],
       "albums": [],
-      "publishedSongs": [
-        {
-          "name": "High on Life",
-          "author": "Martin Garrix",
-          "duration": {
-            "minutes": 3,
-            "seconds": 12
-          },
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 431270356
-        },
-        {
-          "name": "Animals",
-          "author": "Martin Garrix",
-          "duration": {
-            "minutes": 4,
-            "seconds": 1
-          },
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 64782811
-        },
-        {
-          "name": "Scared to Be Lonely",
-          "author": "Martin Garrix",
-          "duration": {
-            "minutes": 5,
-            "seconds": 7
-          },
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 78540184
-        },
-        {
-          "name": "Reboot",
-          "author": "Martin Garrix",
-          "duration": {
-            "minutes": 3,
-            "seconds": 41
-          },
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 36829188
-        },
-        {
-          "name": "Limitless",
-          "author": "Martin Garrix",
-          "duration": {
-            "minutes": 3,
-            "seconds": 45
-          },
-          "genres": [
-            {
-              "name": "Electro",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 39200193
-        }
+      "songs": [
+        "High on Life",
+        "Animals",
+        "Scared to Be Lonely",
+        "Reboot",
+        "Limitless"
       ],
       "monthlyListeners": 0
     },
@@ -1940,105 +186,15 @@
       "name": "Mozart",
       "groups": [],
       "genres": [
-        {
-          "name": "Classic",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Classic"
       ],
       "albums": [],
-      "publishedSongs": [
-        {
-          "name": "Fantasia in D minor",
-          "author": "Mozart",
-          "duration": {
-            "minutes": 7,
-            "seconds": 52
-          },
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 3737821
-        },
-        {
-          "name": "Piano Sonata No 16",
-          "author": "Mozart",
-          "duration": {
-            "minutes": 6,
-            "seconds": 14
-          },
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 383765011
-        },
-        {
-          "name": "Symphony No 25",
-          "author": "Mozart",
-          "duration": {
-            "minutes": 8,
-            "seconds": 18
-          },
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 9836161
-        },
-        {
-          "name": "Turkish March",
-          "author": "Mozart",
-          "duration": {
-            "minutes": 4,
-            "seconds": 59
-          },
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 7198874
-        },
-        {
-          "name": "Piano Concerto No 21",
-          "author": "Mozart",
-          "duration": {
-            "minutes": 10,
-            "seconds": 42
-          },
-          "genres": [
-            {
-              "name": "Classic",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 5183177
-        }
+      "songs": [
+        "Fantasia in D minor",
+        "Piano Sonata No 16",
+        "Symphony No 25",
+        "Turkish March",
+        "Piano Concerto No 21"
       ],
       "monthlyListeners": 0
     },
@@ -2046,105 +202,15 @@
       "name": "Nicky Jam",
       "groups": [],
       "genres": [
-        {
-          "name": "Reggaeton",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Reggaeton"
       ],
       "albums": [],
-      "publishedSongs": [
-        {
-          "name": "Travesuras",
-          "author": "Nicky Jam",
-          "duration": {
-            "minutes": 3,
-            "seconds": 17
-          },
-          "genres": [
-            {
-              "name": "Reggaeton",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 4522113
-        },
-        {
-          "name": "Hasta El Amanecer",
-          "author": "Nicky Jam",
-          "duration": {
-            "minutes": 3,
-            "seconds": 24
-          },
-          "genres": [
-            {
-              "name": "Reggaeton",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 12446941
-        },
-        {
-          "name": "El Perdón",
-          "author": "Nicky Jam",
-          "duration": {
-            "minutes": 4,
-            "seconds": 28
-          },
-          "genres": [
-            {
-              "name": "Reggaeton",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 1199631
-        },
-        {
-          "name": "Poblado-Remix",
-          "author": "Nicky Jam",
-          "duration": {
-            "minutes": 4,
-            "seconds": 59
-          },
-          "genres": [
-            {
-              "name": "Reggaeton",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 67181921
-        },
-        {
-          "name": "Bzrp Session 49",
-          "author": "Nicky Jam",
-          "duration": {
-            "minutes": 3,
-            "seconds": 47
-          },
-          "genres": [
-            {
-              "name": "Reggaeton",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 7981138
-        }
+      "songs": [
+        "Travesuras",
+        "Hasta El Amanecer",
+        "El Perdón",
+        "Poblado-Remix",
+        "Bzrp Session 49"
       ],
       "monthlyListeners": 0
     },
@@ -2152,559 +218,69 @@
       "name": "John Denver",
       "groups": [],
       "genres": [
-        {
-          "name": "Country",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Country"
       ],
       "albums": [],
-      "publishedSongs": [
-        {
-          "name": "Take Me Home, Country Roads",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 4,
-            "seconds": 23
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 43524675
-        },
-        {
-          "name": "Annie's Song",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 3,
-            "seconds": 45
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 8813345
-        },
-        {
-          "name": "Rocky Mountain High",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 5,
-            "seconds": 37
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 43515345
-        },
-        {
-          "name": "Back Home Again",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 3,
-            "seconds": 28
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 74354313
-        },
-        {
-          "name": "On the Road",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 4,
-            "seconds": 19
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 31424577
-        }
+      "songs": [
+        "Take Me Home, Country Roads",
+        "Annie's Song",
+        "Rocky Mountain High",
+        "Back Home Again",
+        "On the Road"
       ],
       "monthlyListeners": 0
     },
     {
       "name": "Natos",
       "groups": [
-        {
-          "name": "Natos y Waor",
-          "artists": [
-            {
-              "name": "Natos",
-              "groups": [],
-              "genres": [],
-              "albums": [],
-              "publishedSongs": [],
-              "monthlyListeners": 0
-            },
-            {
-              "name": "Waor",
-              "groups": [],
-              "genres": [],
-              "albums": [],
-              "publishedSongs": [],
-              "monthlyListeners": 0
-            }
-          ],
-          "yearOfCreation": 2011,
-          "relatedGenres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [
-            {
-              "name": "Cicatrices",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            },
-            {
-              "name": "Carretera",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            }
-          ],
-          "monthlyListeners": 1396606
-        }
+        "Natos y Waor"
       ],
       "genres": [
-        {
-          "name": "Rap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Rap"
       ],
       "albums": [],
-      "publishedSongs": [
-        {
-          "name": "Cicatrices",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 3,
-            "seconds": 32
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 23423432
-        },
-        {
-          "name": "Carretera",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 4,
-            "seconds": 53
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 456893111
-        },
-        {
-          "name": "Nosotros",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 4,
-            "seconds": 29
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 9329371
-        },
-        {
-          "name": "Piratas",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 3,
-            "seconds": 38
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 3827261
-        },
-        {
-          "name": "Bicho Raro",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 3,
-            "seconds": 23
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 4865627
-        }
+      "songs": [
+        "Cicatrices",
+        "Carretera",
+        "Nosotros",
+        "Piratas",
+        "Bicho Raro"
       ],
       "monthlyListeners": 1396606
     },
     {
       "name": "Waor",
       "groups": [
-        {
-          "name": "Natos y Waor",
-          "artists": [
-            {
-              "name": "Natos",
-              "groups": [],
-              "genres": [],
-              "albums": [],
-              "publishedSongs": [],
-              "monthlyListeners": 0
-            },
-            {
-              "name": "Waor",
-              "groups": [],
-              "genres": [],
-              "albums": [],
-              "publishedSongs": [],
-              "monthlyListeners": 0
-            }
-          ],
-          "yearOfCreation": 2011,
-          "relatedGenres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [
-            {
-              "name": "Cicatrices",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            },
-            {
-              "name": "Carretera",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            }
-          ],
-          "monthlyListeners": 1396606
-        }
+        "Natos y Waor"
       ],
       "genres": [
-        {
-          "name": "Rap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Rap"
       ],
       "albums": [],
-      "publishedSongs": [
-        {
-          "name": "Cicatrices",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 3,
-            "seconds": 32
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 23423432
-        },
-        {
-          "name": "Carretera",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 4,
-            "seconds": 53
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 456893111
-        },
-        {
-          "name": "Nosotros",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 4,
-            "seconds": 29
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 9329371
-        },
-        {
-          "name": "Piratas",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 3,
-            "seconds": 38
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 3827261
-        },
-        {
-          "name": "Bicho Raro",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 3,
-            "seconds": 23
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 4865627
-        }
+      "songs": [
+        "Cicatrices",
+        "Carretera",
+        "Nosotros",
+        "Piratas",
+        "Bicho Raro"
       ],
       "monthlyListeners": 1396606
     },
     {
       "name": "Dani Martín",
       "groups": [
-        {
-          "name": "El Canto del Loco",
-          "artists": [
-            {
-              "name": "Dani Martín",
-              "groups": [],
-              "genres": [],
-              "albums": [],
-              "publishedSongs": [],
-              "monthlyListeners": 0
-            }
-          ],
-          "yearOfCreation": 1994,
-          "relatedGenres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "albums": [
-            {
-              "name": "Zapatillas",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            },
-            {
-              "name": "Personas",
-              "artist": "",
-              "year": 0,
-              "genres": [],
-              "songs": {}
-            }
-          ],
-          "monthlyListeners": 2622773
-        }
+        "El Canto del Loco"
       ],
       "genres": [
-        {
-          "name": "Pop",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Pop"
       ],
       "albums": [],
-      "publishedSongs": [
-        {
-          "name": "Zapatillas",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 4,
-            "seconds": 3
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 25624533
-        },
-        {
-          "name": "Besos",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 3,
-            "seconds": 19
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 85668563
-        },
-        {
-          "name": "Volvera",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 5,
-            "seconds": 58
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 8838432
-        },
-        {
-          "name": "Peter Pan",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 4,
-            "seconds": 36
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 67900256
-        },
-        {
-          "name": "La Madre de Jose",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 4,
-            "seconds": 17
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 43654680
-        }
+      "songs": [
+        "Zapatillas",
+        "Besos",
+        "Volvera",
+        "Peter Pan",
+        "La Madre de Jose"
       ],
       "monthlyListeners": 2622773
     }
@@ -2712,224 +288,141 @@
   "albums": [
     {
       "name": "Fénix",
-      "artist": "Nicky Jam",
+      "artists": "Nicky Jam",
       "year": 2007,
       "genres": [
-        {
-          "name": "Reggaeton",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Reggaeton"
       ],
-      "songs": {}
+      "songs": [
+        "Travesuras",
+        "Hasta El Amanecer",
+        "El Perdón"
+      ]
     },
     {
       "name": "Back Home Again",
-      "artist": "John Denver",
+      "artists": "John Denver",
       "year": 1987,
       "genres": [
-        {
-          "name": "Country",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Country"
       ],
-      "songs": {}
+      "songs": [
+        "Take Me Home, Country Roads",
+        "Back Home Again",
+        "On the Road"
+      ]
     },
     {
       "name": "Cicatrices",
-      "artist": "Natos y Waor",
+      "artists": "Natos y Waor",
       "year": 2018,
       "genres": [
-        {
-          "name": "Rap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Rap"
       ],
-      "songs": {}
+      "songs": [
+        "Cicatrices",
+        "Bicho Raro"
+      ]
     },
     {
       "name": "Carretera",
-      "artist": "Natos y Waor",
+      "artists": "Natos y Waor",
       "year": 2016,
       "genres": [
-        {
-          "name": "Rap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Rap"
       ],
-      "songs": {}
+      "songs": [
+        "Carretera",
+        "Piratas"
+      ]
     },
     {
       "name": "Zapatillas",
-      "artist": "Dani Martín",
+      "artists": "Dani Martín",
       "year": 1998,
       "genres": [
-        {
-          "name": "Pop",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Pop"
       ],
-      "songs": {}
+      "songs": [
+        "Zapatillas",
+        "Besos",
+        "Volvera"
+      ]
     },
     {
       "name": "Personas",
-      "artist": "Dani Martín",
+      "artists": "Dani Martín",
       "year": 2009,
       "genres": [
-        {
-          "name": "Pop",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Pop"
       ],
-      "songs": {}
+      "songs": [
+        "Peter Pan"
+      ]
     },
     {
       "name": "Americana",
-      "artist": "The Offspring",
+      "artists": "The Offspring",
       "year": 1995,
       "genres": [
-        {
-          "name": "Pop",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+        "Pop"
       ],
-      "songs": {}
+      "songs": [
+        "The Kids Aren't Alright",
+        "You're Gonna Go Far, Kid"
+      ]
     }
   ],
   "groups": [
     {
       "name": "Natos y Waor",
       "artists": [
-        {
-          "name": "Natos",
-          "groups": [],
-          "genres": [],
-          "albums": [],
-          "publishedSongs": [],
-          "monthlyListeners": 0
-        },
-        {
-          "name": "Waor",
-          "groups": [],
-          "genres": [],
-          "albums": [],
-          "publishedSongs": [],
-          "monthlyListeners": 0
-        }
+        "Natos",
+        "Waor"
       ],
-      "yearOfCreation": 2011,
-      "relatedGenres": [
-        {
-          "name": "Rap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+      "year": 2011,
+      "genres": [
+        "Rap"
       ],
       "albums": [
-        {
-          "name": "Cicatrices",
-          "artist": "",
-          "year": 0,
-          "genres": [],
-          "songs": {}
-        },
-        {
-          "name": "Carretera",
-          "artist": "",
-          "year": 0,
-          "genres": [],
-          "songs": {}
-        }
+        "Cicatrices",
+        "Carretera"
       ],
       "monthlyListeners": 1396606
     },
     {
       "name": "El Canto del Loco",
       "artists": [
-        {
-          "name": "Dani Martín",
-          "groups": [],
-          "genres": [],
-          "albums": [],
-          "publishedSongs": [],
-          "monthlyListeners": 0
-        }
+        "Dani Martín"
       ],
-      "yearOfCreation": 1994,
-      "relatedGenres": [
-        {
-          "name": "Pop",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+      "year": 1994,
+      "genres": [
+        "Pop"
       ],
       "albums": [
-        {
-          "name": "Zapatillas",
-          "artist": "",
-          "year": 0,
-          "genres": [],
-          "songs": {}
-        },
-        {
-          "name": "Personas",
-          "artist": "",
-          "year": 0,
-          "genres": [],
-          "songs": {}
-        }
+        "Zapatillas",
+        "Personas"
       ],
       "monthlyListeners": 2622773
     },
     {
       "name": "The Offspring",
       "artists": [],
-      "yearOfCreation": 1984,
-      "relatedGenres": [
-        {
-          "name": "Rock",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+      "year": 1984,
+      "genres": [
+        "Rock"
       ],
       "albums": [
-        {
-          "name": "Americana",
-          "artist": "",
-          "year": 0,
-          "genres": [],
-          "songs": {}
-        }
+        "Americana"
       ],
       "monthlyListeners": 12477538
     },
     {
       "name": "Compay Segundo",
       "artists": [],
-      "yearOfCreation": 1907,
-      "relatedGenres": [
-        {
-          "name": "Popular",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+      "year": 1907,
+      "genres": [
+        "Popular"
       ],
       "albums": [],
       "monthlyListeners": 530772
@@ -2937,14 +430,9 @@
     {
       "name": "The Blues Brothers",
       "artists": [],
-      "yearOfCreation": 1978,
-      "relatedGenres": [
-        {
-          "name": "Blues",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
+      "year": 1978,
+      "genres": [
+        "Blues"
       ],
       "albums": [],
       "monthlyListeners": 1172651
@@ -2953,2371 +441,712 @@
   "songs": [
     {
       "name": "Dracukeo",
-      "author": "Kidd Keo",
+      "artist": "Kidd Keo",
       "duration": {
         "minutes": 2,
         "seconds": 36
       },
-      "genres": [
-        {
-          "name": "Trap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 81901392
+      "genres": [
+        "Trap"
+      ],
+      "listeners": 81901392
     },
     {
       "name": "Mama",
-      "author": "Kidd Keo",
+      "artist": "Kidd Keo",
       "duration": {
         "minutes": 4,
         "seconds": 25
       },
-      "genres": [
-        {
-          "name": "Trap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 4201425
+      "genres": [
+        "Trap"
+      ],
+      "listeners": 4201425
     },
     {
       "name": "Lollypop",
-      "author": "Kidd Keo",
+      "artist": "Kidd Keo",
       "duration": {
         "minutes": 3,
         "seconds": 17
       },
-      "genres": [
-        {
-          "name": "Trap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 5738921
+      "genres": [
+        "Trap"
+      ],
+      "listeners": 5738921
     },
     {
       "name": "Serpiente Veneno",
-      "author": "Kidd Keo",
+      "artist": "Kidd Keo",
       "duration": {
         "minutes": 3,
         "seconds": 11
       },
-      "genres": [
-        {
-          "name": "Trap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 7299872
+      "genres": [
+        "Trap"
+      ],
+      "listeners": 7299872
     },
     {
       "name": "One Million",
-      "author": "Kidd Keo",
+      "artist": "Kidd Keo",
       "duration": {
         "minutes": 2,
         "seconds": 58
       },
-      "genres": [
-        {
-          "name": "Trap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 43670110
+      "genres": [
+        "Trap"
+      ],
+      "listeners": 43670110
     },
     {
       "name": "High on Life",
-      "author": "Martin Garrix",
+      "artist": "Martin Garrix",
       "duration": {
         "minutes": 3,
         "seconds": 12
       },
-      "genres": [
-        {
-          "name": "Electro",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 431270356
+      "genres": [
+        "Electro"
+      ],
+      "listeners": 431270356
     },
     {
       "name": "Animals",
-      "author": "Martin Garrix",
+      "artist": "Martin Garrix",
       "duration": {
         "minutes": 4,
         "seconds": 1
       },
-      "genres": [
-        {
-          "name": "Electro",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 64782811
+      "genres": [
+        "Electro"
+      ],
+      "listeners": 64782811
     },
     {
       "name": "Scared to Be Lonely",
-      "author": "Martin Garrix",
+      "artist": "Martin Garrix",
       "duration": {
         "minutes": 5,
         "seconds": 7
       },
-      "genres": [
-        {
-          "name": "Electro",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 78540184
+      "genres": [
+        "Electro"
+      ],
+      "listeners": 78540184
     },
     {
       "name": "Reboot",
-      "author": "Martin Garrix",
+      "artist": "Martin Garrix",
       "duration": {
         "minutes": 3,
         "seconds": 41
       },
-      "genres": [
-        {
-          "name": "Electro",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 36829188
+      "genres": [
+        "Electro"
+      ],
+      "listeners": 36829188
     },
     {
       "name": "Limitless",
-      "author": "Martin Garrix",
+      "artist": "Martin Garrix",
       "duration": {
         "minutes": 3,
         "seconds": 45
       },
-      "genres": [
-        {
-          "name": "Electro",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 39200193
+      "genres": [
+        "Electro"
+      ],
+      "listeners": 39200193
     },
     {
       "name": "Fantasia in D minor",
-      "author": "Mozart",
+      "artist": "Mozart",
       "duration": {
         "minutes": 7,
         "seconds": 52
       },
-      "genres": [
-        {
-          "name": "Classic",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 3737821
+      "genres": [
+        "Classic"
+      ],
+      "listeners": 3737821
     },
     {
       "name": "Piano Sonata No 16",
-      "author": "Mozart",
+      "artist": "Mozart",
       "duration": {
         "minutes": 6,
         "seconds": 14
       },
-      "genres": [
-        {
-          "name": "Classic",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 383765011
+      "genres": [
+        "Classic"
+      ],
+      "listeners": 383765011
     },
     {
       "name": "Symphony No 25",
-      "author": "Mozart",
+      "artist": "Mozart",
       "duration": {
         "minutes": 8,
         "seconds": 18
       },
-      "genres": [
-        {
-          "name": "Classic",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 9836161
+      "genres": [
+        "Classic"
+      ],
+      "listeners": 9836161
     },
     {
       "name": "Turkish March",
-      "author": "Mozart",
+      "artist": "Mozart",
       "duration": {
         "minutes": 4,
         "seconds": 59
       },
-      "genres": [
-        {
-          "name": "Classic",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 7198874
+      "genres": [
+        "Classic"
+      ],
+      "listeners": 7198874
     },
     {
       "name": "Piano Concerto No 21",
-      "author": "Mozart",
+      "artist": "Mozart",
       "duration": {
         "minutes": 10,
         "seconds": 42
       },
-      "genres": [
-        {
-          "name": "Classic",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 5183177
+      "genres": [
+        "Classic"
+      ],
+      "listeners": 5183177
     },
     {
       "name": "Travesuras",
-      "author": "Nicky Jam",
+      "artist": "Nicky Jam",
       "duration": {
         "minutes": 3,
         "seconds": 17
       },
-      "genres": [
-        {
-          "name": "Reggaeton",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 4522113
+      "genres": [
+        "Reggaeton"
+      ],
+      "listeners": 4522113
     },
     {
       "name": "Hasta El Amanecer",
-      "author": "Nicky Jam",
+      "artist": "Nicky Jam",
       "duration": {
         "minutes": 3,
         "seconds": 24
       },
-      "genres": [
-        {
-          "name": "Reggaeton",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 12446941
+      "genres": [
+        "Reggaeton"
+      ],
+      "listeners": 12446941
     },
     {
       "name": "El Perdón",
-      "author": "Nicky Jam",
+      "artist": "Nicky Jam",
       "duration": {
         "minutes": 4,
         "seconds": 28
       },
-      "genres": [
-        {
-          "name": "Reggaeton",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 1199631
+      "genres": [
+        "Reggaeton"
+      ],
+      "listeners": 1199631
     },
     {
       "name": "Poblado-Remix",
-      "author": "Nicky Jam",
+      "artist": "Nicky Jam",
       "duration": {
         "minutes": 4,
         "seconds": 59
       },
-      "genres": [
-        {
-          "name": "Reggaeton",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 67181921
+      "genres": [
+        "Reggaeton"
+      ],
+      "listeners": 67181921
     },
     {
       "name": "Bzrp Session 49",
-      "author": "Nicky Jam",
+      "artist": "Nicky Jam",
       "duration": {
         "minutes": 3,
         "seconds": 47
       },
-      "genres": [
-        {
-          "name": "Reggaeton",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 7981138
+      "genres": [
+        "Reggaeton"
+      ],
+      "listeners": 7981138
     },
     {
       "name": "Take Me Home, Country Roads",
-      "author": "John Denver",
+      "artist": "John Denver",
       "duration": {
         "minutes": 4,
         "seconds": 23
       },
-      "genres": [
-        {
-          "name": "Country",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 43524675
+      "genres": [
+        "Country"
+      ],
+      "listeners": 43524675
     },
     {
       "name": "Annie's Song",
-      "author": "John Denver",
+      "artist": "John Denver",
       "duration": {
         "minutes": 3,
         "seconds": 45
       },
-      "genres": [
-        {
-          "name": "Country",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 8813345
+      "genres": [
+        "Country"
+      ],
+      "listeners": 8813345
     },
     {
       "name": "Rocky Mountain High",
-      "author": "John Denver",
+      "artist": "John Denver",
       "duration": {
         "minutes": 5,
         "seconds": 37
       },
-      "genres": [
-        {
-          "name": "Country",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 43515345
+      "genres": [
+        "Country"
+      ],
+      "listeners": 43515345
     },
     {
       "name": "Back Home Again",
-      "author": "John Denver",
+      "artist": "John Denver",
       "duration": {
         "minutes": 3,
         "seconds": 28
       },
-      "genres": [
-        {
-          "name": "Country",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 74354313
+      "genres": [
+        "Country"
+      ],
+      "listeners": 74354313
     },
     {
       "name": "On the Road",
-      "author": "John Denver",
+      "artist": "John Denver",
       "duration": {
         "minutes": 4,
         "seconds": 19
       },
-      "genres": [
-        {
-          "name": "Country",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 31424577
+      "genres": [
+        "Country"
+      ],
+      "listeners": 31424577
     },
     {
       "name": "Cicatrices",
-      "author": "Natos y Waor",
+      "artist": "Natos y Waor",
       "duration": {
         "minutes": 3,
         "seconds": 32
       },
-      "genres": [
-        {
-          "name": "Rap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 23423432
+      "genres": [
+        "Rap"
+      ],
+      "listeners": 23423432
     },
     {
       "name": "Carretera",
-      "author": "Natos y Waor",
+      "artist": "Natos y Waor",
       "duration": {
         "minutes": 4,
         "seconds": 53
       },
-      "genres": [
-        {
-          "name": "Rap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 456893111
+      "genres": [
+        "Rap"
+      ],
+      "listeners": 456893111
     },
     {
       "name": "Nosotros",
-      "author": "Natos y Waor",
+      "artist": "Natos y Waor",
       "duration": {
         "minutes": 4,
         "seconds": 29
       },
-      "genres": [
-        {
-          "name": "Rap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 9329371
+      "genres": [
+        "Rap"
+      ],
+      "listeners": 9329371
     },
     {
       "name": "Piratas",
-      "author": "Natos y Waor",
+      "artist": "Natos y Waor",
       "duration": {
         "minutes": 3,
         "seconds": 38
       },
-      "genres": [
-        {
-          "name": "Rap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 3827261
+      "genres": [
+        "Rap"
+      ],
+      "listeners": 3827261
     },
     {
       "name": "Bicho Raro",
-      "author": "Natos y Waor",
+      "artist": "Natos y Waor",
       "duration": {
         "minutes": 3,
         "seconds": 23
       },
-      "genres": [
-        {
-          "name": "Rap",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 4865627
+      "genres": [
+        "Rap"
+      ],
+      "listeners": 4865627
     },
     {
       "name": "Zapatillas",
-      "author": "El Canto del Loco",
+      "artist": "El Canto del Loco",
       "duration": {
         "minutes": 4,
         "seconds": 3
       },
-      "genres": [
-        {
-          "name": "Pop",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 25624533
+      "genres": [
+        "Pop"
+      ],
+      "listeners": 25624533
     },
     {
       "name": "Besos",
-      "author": "El Canto del Loco",
+      "artist": "El Canto del Loco",
       "duration": {
         "minutes": 3,
         "seconds": 19
       },
-      "genres": [
-        {
-          "name": "Pop",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 85668563
+      "genres": [
+        "Pop"
+      ],
+      "listeners": 85668563
     },
     {
       "name": "Volvera",
-      "author": "El Canto del Loco",
+      "artist": "El Canto del Loco",
       "duration": {
         "minutes": 5,
         "seconds": 58
       },
-      "genres": [
-        {
-          "name": "Pop",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 8838432
+      "genres": [
+        "Pop"
+      ],
+      "listeners": 8838432
     },
     {
       "name": "Peter Pan",
-      "author": "El Canto del Loco",
+      "artist": "El Canto del Loco",
       "duration": {
         "minutes": 4,
         "seconds": 36
       },
-      "genres": [
-        {
-          "name": "Pop",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 67900256
+      "genres": [
+        "Pop"
+      ],
+      "listeners": 67900256
     },
     {
       "name": "La Madre de Jose",
-      "author": "El Canto del Loco",
+      "artist": "El Canto del Loco",
       "duration": {
         "minutes": 4,
         "seconds": 17
       },
-      "genres": [
-        {
-          "name": "Pop",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 43654680
+      "genres": [
+        "Pop"
+      ],
+      "listeners": 43654680
     },
     {
       "name": "The Kids Aren't Alright",
-      "author": "The Offspring",
+      "artist": "The Offspring",
       "duration": {
         "minutes": 3,
         "seconds": 12
       },
-      "genres": [
-        {
-          "name": "Rock",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 34543578
+      "genres": [
+        "Rock"
+      ],
+      "listeners": 34543578
     },
     {
       "name": "You're Gonna Go Far, Kid",
-      "author": "The Offspring",
+      "artist": "The Offspring",
       "duration": {
         "minutes": 4,
         "seconds": 51
       },
-      "genres": [
-        {
-          "name": "Rock",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": false,
-      "views": 9744001
+      "genres": [
+        "Rock"
+      ],
+      "listeners": 9744001
     },
     {
       "name": "Self Esteem",
-      "author": "The Offspring",
+      "artist": "The Offspring",
       "duration": {
         "minutes": 4,
         "seconds": 31
       },
-      "genres": [
-        {
-          "name": "Rock",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 54357953
+      "genres": [
+        "Rock"
+      ],
+      "listeners": 54357953
     },
     {
       "name": "Pretty Fly",
-      "author": "The Offspring",
+      "artist": "The Offspring",
       "duration": {
         "minutes": 4,
         "seconds": 48
       },
-      "genres": [
-        {
-          "name": "Rock",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 91800532
+      "genres": [
+        "Rock"
+      ],
+      "listeners": 91800532
     },
     {
       "name": "Why Don't You Get a Job",
-      "author": "The Offspring",
+      "artist": "The Offspring",
       "duration": {
         "minutes": 3,
         "seconds": 36
       },
-      "genres": [
-        {
-          "name": "Rock",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 34017389
+      "genres": [
+        "Rock"
+      ],
+      "listeners": 34017389
     },
     {
       "name": "Guajira guantananmera",
-      "author": "Compay Segundo",
+      "artist": "Compay Segundo",
       "duration": {
         "minutes": 3,
         "seconds": 45
       },
-      "genres": [
-        {
-          "name": "Popular",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 9187631
+      "genres": [
+        "Popular"
+      ],
+      "listeners": 9187631
     },
     {
       "name": "Chan chan",
-      "author": "Compay Segundo",
+      "artist": "Compay Segundo",
       "duration": {
         "minutes": 3,
         "seconds": 16
       },
-      "genres": [
-        {
-          "name": "Popular",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 821940
+      "genres": [
+        "Popular"
+      ],
+      "listeners": 821940
     },
     {
       "name": "Lágrimas negras",
-      "author": "Compay Segundo",
+      "artist": "Compay Segundo",
       "duration": {
         "minutes": 4,
         "seconds": 25
       },
-      "genres": [
-        {
-          "name": "Popular",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 2391764
+      "genres": [
+        "Popular"
+      ],
+      "listeners": 2391764
     },
     {
       "name": "La negra Tomasa",
-      "author": "Compay Segundo",
+      "artist": "Compay Segundo",
       "duration": {
         "minutes": 3,
         "seconds": 34
       },
-      "genres": [
-        {
-          "name": "Popular",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 2800641
+      "genres": [
+        "Popular"
+      ],
+      "listeners": 2800641
     },
     {
       "name": "Hasta siempre",
-      "author": "Compay Segundo",
+      "artist": "Compay Segundo",
       "duration": {
         "minutes": 4,
         "seconds": 51
       },
-      "genres": [
-        {
-          "name": "Popular",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 3198415
+      "genres": [
+        "Popular"
+      ],
+      "listeners": 3198415
     },
     {
       "name": "Everybody Needs Somebody to Love",
-      "author": "The Blues Brothers",
+      "artist": "The Blues Brothers",
       "duration": {
         "minutes": 3,
         "seconds": 56
       },
-      "genres": [
-        {
-          "name": "Blues",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 39845210
+      "genres": [
+        "Blues"
+      ],
+      "listeners": 39845210
     },
     {
       "name": "Think",
-      "author": "The Blues Brothers",
+      "artist": "The Blues Brothers",
       "duration": {
         "minutes": 4,
         "seconds": 53
       },
-      "genres": [
-        {
-          "name": "Blues",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 4828171
+      "genres": [
+        "Blues"
+      ],
+      "listeners": 4828171
     },
     {
       "name": "Sweet Home Chicago",
-      "author": "The Blues Brothers",
+      "artist": "The Blues Brothers",
       "duration": {
         "minutes": 5,
         "seconds": 16
       },
-      "genres": [
-        {
-          "name": "Blues",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 219471
+      "genres": [
+        "Blues"
+      ],
+      "listeners": 219471
     },
     {
       "name": "Gimme Some Lovin",
-      "author": "The Blues Brothers",
+      "artist": "The Blues Brothers",
       "duration": {
         "minutes": 2,
         "seconds": 35
       },
-      "genres": [
-        {
-          "name": "Blues",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 607613
+      "genres": [
+        "Blues"
+      ],
+      "listeners": 607613
     },
     {
       "name": "Soul Man",
-      "author": "The Blues Brothers",
+      "artist": "The Blues Brothers",
       "duration": {
         "minutes": 3,
         "seconds": 14
       },
-      "genres": [
-        {
-          "name": "Blues",
-          "artists": [],
-          "albums": [],
-          "songs": []
-        }
-      ],
       "isSingle": true,
-      "views": 2816103
+      "genres": [
+        "Blues"
+      ],
+      "listeners": 2816103
     }
   ],
   "playlists": [
     {
       "name": "RapTrap",
       "songs": [
-        {
-          "name": "Carretera",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 4,
-            "seconds": 53
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 456893111
-        },
-        {
-          "name": "Nosotros",
-          "author": "Natos y Waor",
-          "duration": {
-            "minutes": 4,
-            "seconds": 29
-          },
-          "genres": [
-            {
-              "name": "Rap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 9329371
-        },
-        {
-          "name": "Dracukeo",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 2,
-            "seconds": 36
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 81901392
-        },
-        {
-          "name": "Serpiente Veneno",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 3,
-            "seconds": 11
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 7299872
-        },
-        {
-          "name": "One Million",
-          "author": "Kidd Keo",
-          "duration": {
-            "minutes": 2,
-            "seconds": 58
-          },
-          "genres": [
-            {
-              "name": "Trap",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 43670110
-        }
+        "Carretera",
+        "Nosotros",
+        "Dracukeo",
+        "Serpiente Veneno",
+        "One Million"
       ],
       "duration": {
         "minutes": 20,
         "seconds": 28
       },
       "genres": [
-        {
-          "name": "Rap",
-          "artists": [
-            {
-              "name": "Natos y Waor",
-              "artists": [
-                {
-                  "name": "Natos",
-                  "groups": [],
-                  "genres": [],
-                  "albums": [],
-                  "publishedSongs": [],
-                  "monthlyListeners": 0
-                },
-                {
-                  "name": "Waor",
-                  "groups": [],
-                  "genres": [],
-                  "albums": [],
-                  "publishedSongs": [],
-                  "monthlyListeners": 0
-                }
-              ],
-              "yearOfCreation": 2011,
-              "relatedGenres": [
-                {
-                  "name": "Rap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "albums": [
-                {
-                  "name": "Cicatrices",
-                  "artist": "",
-                  "year": 0,
-                  "genres": [],
-                  "songs": {}
-                },
-                {
-                  "name": "Carretera",
-                  "artist": "",
-                  "year": 0,
-                  "genres": [],
-                  "songs": {}
-                }
-              ],
-              "monthlyListeners": 1396606
-            }
-          ],
-          "albums": [
-            {
-              "name": "Cicatrices",
-              "artist": "Natos y Waor",
-              "year": 2018,
-              "genres": [
-                {
-                  "name": "Rap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "songs": {}
-            },
-            {
-              "name": "Carretera",
-              "artist": "Natos y Waor",
-              "year": 2016,
-              "genres": [
-                {
-                  "name": "Rap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "songs": {}
-            }
-          ],
-          "songs": [
-            {
-              "name": "Cicatrices",
-              "author": "Natos y Waor",
-              "duration": {
-                "minutes": 3,
-                "seconds": 32
-              },
-              "genres": [
-                {
-                  "name": "Rap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 23423432
-            },
-            {
-              "name": "Carretera",
-              "author": "Natos y Waor",
-              "duration": {
-                "minutes": 4,
-                "seconds": 53
-              },
-              "genres": [
-                {
-                  "name": "Rap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 456893111
-            },
-            {
-              "name": "Nosotros",
-              "author": "Natos y Waor",
-              "duration": {
-                "minutes": 4,
-                "seconds": 29
-              },
-              "genres": [
-                {
-                  "name": "Rap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 9329371
-            },
-            {
-              "name": "Piratas",
-              "author": "Natos y Waor",
-              "duration": {
-                "minutes": 3,
-                "seconds": 38
-              },
-              "genres": [
-                {
-                  "name": "Rap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 3827261
-            },
-            {
-              "name": "Bicho Raro",
-              "author": "Natos y Waor",
-              "duration": {
-                "minutes": 3,
-                "seconds": 23
-              },
-              "genres": [
-                {
-                  "name": "Rap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 4865627
-            }
-          ]
-        },
-        {
-          "name": "Trap",
-          "artists": [
-            {
-              "name": "Kidd Keo",
-              "groups": [],
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "albums": [],
-              "publishedSongs": [
-                {
-                  "name": "Dracukeo",
-                  "author": "Kidd Keo",
-                  "duration": {
-                    "minutes": 2,
-                    "seconds": 36
-                  },
-                  "genres": [
-                    {
-                      "name": "Trap",
-                      "artists": [],
-                      "albums": [],
-                      "songs": []
-                    }
-                  ],
-                  "isSingle": true,
-                  "views": 81901392
-                },
-                {
-                  "name": "Mama",
-                  "author": "Kidd Keo",
-                  "duration": {
-                    "minutes": 4,
-                    "seconds": 25
-                  },
-                  "genres": [
-                    {
-                      "name": "Trap",
-                      "artists": [],
-                      "albums": [],
-                      "songs": []
-                    }
-                  ],
-                  "isSingle": true,
-                  "views": 4201425
-                },
-                {
-                  "name": "Lollypop",
-                  "author": "Kidd Keo",
-                  "duration": {
-                    "minutes": 3,
-                    "seconds": 17
-                  },
-                  "genres": [
-                    {
-                      "name": "Trap",
-                      "artists": [],
-                      "albums": [],
-                      "songs": []
-                    }
-                  ],
-                  "isSingle": true,
-                  "views": 5738921
-                },
-                {
-                  "name": "Serpiente Veneno",
-                  "author": "Kidd Keo",
-                  "duration": {
-                    "minutes": 3,
-                    "seconds": 11
-                  },
-                  "genres": [
-                    {
-                      "name": "Trap",
-                      "artists": [],
-                      "albums": [],
-                      "songs": []
-                    }
-                  ],
-                  "isSingle": true,
-                  "views": 7299872
-                },
-                {
-                  "name": "One Million",
-                  "author": "Kidd Keo",
-                  "duration": {
-                    "minutes": 2,
-                    "seconds": 58
-                  },
-                  "genres": [
-                    {
-                      "name": "Trap",
-                      "artists": [],
-                      "albums": [],
-                      "songs": []
-                    }
-                  ],
-                  "isSingle": true,
-                  "views": 43670110
-                }
-              ],
-              "monthlyListeners": 0
-            }
-          ],
-          "albums": [],
-          "songs": [
-            {
-              "name": "Dracukeo",
-              "author": "Kidd Keo",
-              "duration": {
-                "minutes": 2,
-                "seconds": 36
-              },
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 81901392
-            },
-            {
-              "name": "Mama",
-              "author": "Kidd Keo",
-              "duration": {
-                "minutes": 4,
-                "seconds": 25
-              },
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 4201425
-            },
-            {
-              "name": "Lollypop",
-              "author": "Kidd Keo",
-              "duration": {
-                "minutes": 3,
-                "seconds": 17
-              },
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 5738921
-            },
-            {
-              "name": "Serpiente Veneno",
-              "author": "Kidd Keo",
-              "duration": {
-                "minutes": 3,
-                "seconds": 11
-              },
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 7299872
-            },
-            {
-              "name": "One Million",
-              "author": "Kidd Keo",
-              "duration": {
-                "minutes": 2,
-                "seconds": 58
-              },
-              "genres": [
-                {
-                  "name": "Trap",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 43670110
-            }
-          ]
-        }
+        "Rap",
+        "Trap"
       ]
     },
     {
       "name": "PopRock",
       "songs": [
-        {
-          "name": "Zapatillas",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 4,
-            "seconds": 3
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 25624533
-        },
-        {
-          "name": "Besos",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 3,
-            "seconds": 19
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 85668563
-        },
-        {
-          "name": "Volvera",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 5,
-            "seconds": 58
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 8838432
-        },
-        {
-          "name": "Peter Pan",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 4,
-            "seconds": 36
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 67900256
-        },
-        {
-          "name": "La Madre de Jose",
-          "author": "El Canto del Loco",
-          "duration": {
-            "minutes": 4,
-            "seconds": 17
-          },
-          "genres": [
-            {
-              "name": "Pop",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 43654680
-        },
-        {
-          "name": "Self Esteem",
-          "author": "The Offspring",
-          "duration": {
-            "minutes": 4,
-            "seconds": 31
-          },
-          "genres": [
-            {
-              "name": "Rock",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 54357953
-        },
-        {
-          "name": "Pretty Fly",
-          "author": "The Offspring",
-          "duration": {
-            "minutes": 4,
-            "seconds": 48
-          },
-          "genres": [
-            {
-              "name": "Rock",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 91800532
-        },
-        {
-          "name": "Why Don't You Get a Job",
-          "author": "The Offspring",
-          "duration": {
-            "minutes": 3,
-            "seconds": 36
-          },
-          "genres": [
-            {
-              "name": "Rock",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 34017389
-        }
+        "Zapatillas",
+        "Besos",
+        "Volvera",
+        "Peter Pan",
+        "La Madre de Jose",
+        "Self Esteem",
+        "Pretty Fly",
+        "Why Don't You Get a Job"
       ],
       "duration": {
         "minutes": 35,
         "seconds": 58
       },
       "genres": [
-        {
-          "name": "Pop",
-          "artists": [
-            {
-              "name": "El Canto del Loco",
-              "artists": [
-                {
-                  "name": "Dani Martín",
-                  "groups": [],
-                  "genres": [],
-                  "albums": [],
-                  "publishedSongs": [],
-                  "monthlyListeners": 0
-                }
-              ],
-              "yearOfCreation": 1994,
-              "relatedGenres": [
-                {
-                  "name": "Pop",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "albums": [
-                {
-                  "name": "Zapatillas",
-                  "artist": "",
-                  "year": 0,
-                  "genres": [],
-                  "songs": {}
-                },
-                {
-                  "name": "Personas",
-                  "artist": "",
-                  "year": 0,
-                  "genres": [],
-                  "songs": {}
-                }
-              ],
-              "monthlyListeners": 2622773
-            }
-          ],
-          "albums": [
-            {
-              "name": "Zapatillas",
-              "artist": "Dani Martín",
-              "year": 1998,
-              "genres": [
-                {
-                  "name": "Pop",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "songs": {}
-            },
-            {
-              "name": "Personas",
-              "artist": "Dani Martín",
-              "year": 2009,
-              "genres": [
-                {
-                  "name": "Pop",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "songs": {}
-            }
-          ],
-          "songs": [
-            {
-              "name": "Zapatillas",
-              "author": "El Canto del Loco",
-              "duration": {
-                "minutes": 4,
-                "seconds": 3
-              },
-              "genres": [
-                {
-                  "name": "Pop",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 25624533
-            },
-            {
-              "name": "Besos",
-              "author": "El Canto del Loco",
-              "duration": {
-                "minutes": 3,
-                "seconds": 19
-              },
-              "genres": [
-                {
-                  "name": "Pop",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 85668563
-            },
-            {
-              "name": "Volvera",
-              "author": "El Canto del Loco",
-              "duration": {
-                "minutes": 5,
-                "seconds": 58
-              },
-              "genres": [
-                {
-                  "name": "Pop",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 8838432
-            },
-            {
-              "name": "Peter Pan",
-              "author": "El Canto del Loco",
-              "duration": {
-                "minutes": 4,
-                "seconds": 36
-              },
-              "genres": [
-                {
-                  "name": "Pop",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 67900256
-            },
-            {
-              "name": "La Madre de Jose",
-              "author": "El Canto del Loco",
-              "duration": {
-                "minutes": 4,
-                "seconds": 17
-              },
-              "genres": [
-                {
-                  "name": "Pop",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 43654680
-            }
-          ]
-        },
-        {
-          "name": "Rock",
-          "artists": [
-            {
-              "name": "The Offspring",
-              "artists": [],
-              "yearOfCreation": 1984,
-              "relatedGenres": [
-                {
-                  "name": "Rock",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "albums": [
-                {
-                  "name": "Americana",
-                  "artist": "",
-                  "year": 0,
-                  "genres": [],
-                  "songs": {}
-                }
-              ],
-              "monthlyListeners": 12477538
-            }
-          ],
-          "albums": [
-            {
-              "name": "Americana",
-              "artist": "The Offspring",
-              "year": 1995,
-              "genres": [
-                {
-                  "name": "Pop",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "songs": {}
-            }
-          ],
-          "songs": [
-            {
-              "name": "The Kids Aren't Alright",
-              "author": "The Offspring",
-              "duration": {
-                "minutes": 3,
-                "seconds": 12
-              },
-              "genres": [
-                {
-                  "name": "Rock",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 34543578
-            },
-            {
-              "name": "You're Gonna Go Far, Kid",
-              "author": "The Offspring",
-              "duration": {
-                "minutes": 4,
-                "seconds": 51
-              },
-              "genres": [
-                {
-                  "name": "Rock",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 9744001
-            },
-            {
-              "name": "Self Esteem",
-              "author": "The Offspring",
-              "duration": {
-                "minutes": 4,
-                "seconds": 31
-              },
-              "genres": [
-                {
-                  "name": "Rock",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 54357953
-            },
-            {
-              "name": "Pretty Fly",
-              "author": "The Offspring",
-              "duration": {
-                "minutes": 4,
-                "seconds": 48
-              },
-              "genres": [
-                {
-                  "name": "Rock",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 91800532
-            },
-            {
-              "name": "Why Don't You Get a Job",
-              "author": "The Offspring",
-              "duration": {
-                "minutes": 3,
-                "seconds": 36
-              },
-              "genres": [
-                {
-                  "name": "Rock",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 34017389
-            }
-          ]
-        }
+        "Pop",
+        "Rock"
       ]
     },
     {
       "name": "CountryPopularBlues",
       "songs": [
-        {
-          "name": "Take Me Home, Country Roads",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 4,
-            "seconds": 23
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 43524675
-        },
-        {
-          "name": "Back Home Again",
-          "author": "John Denver",
-          "duration": {
-            "minutes": 3,
-            "seconds": 28
-          },
-          "genres": [
-            {
-              "name": "Country",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": false,
-          "views": 74354313
-        },
-        {
-          "name": "Lágrimas negras",
-          "author": "Compay Segundo",
-          "duration": {
-            "minutes": 4,
-            "seconds": 25
-          },
-          "genres": [
-            {
-              "name": "Popular",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 2391764
-        },
-        {
-          "name": "Hasta siempre",
-          "author": "Compay Segundo",
-          "duration": {
-            "minutes": 4,
-            "seconds": 51
-          },
-          "genres": [
-            {
-              "name": "Popular",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 3198415
-        },
-        {
-          "name": "Soul Man",
-          "author": "The Blues Brothers",
-          "duration": {
-            "minutes": 3,
-            "seconds": 14
-          },
-          "genres": [
-            {
-              "name": "Blues",
-              "artists": [],
-              "albums": [],
-              "songs": []
-            }
-          ],
-          "isSingle": true,
-          "views": 2816103
-        }
+        "Take Me Home, Country Roads",
+        "Back Home Again",
+        "Lágrimas negras",
+        "Hasta siempre",
+        "Soul Man"
       ],
       "duration": {
         "minutes": 24,
         "seconds": 18
       },
       "genres": [
-        {
-          "name": "Country",
-          "artists": [
-            {
-              "name": "John Denver",
-              "groups": [],
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "albums": [],
-              "publishedSongs": [
-                {
-                  "name": "Take Me Home, Country Roads",
-                  "author": "John Denver",
-                  "duration": {
-                    "minutes": 4,
-                    "seconds": 23
-                  },
-                  "genres": [
-                    {
-                      "name": "Country",
-                      "artists": [],
-                      "albums": [],
-                      "songs": []
-                    }
-                  ],
-                  "isSingle": false,
-                  "views": 43524675
-                },
-                {
-                  "name": "Annie's Song",
-                  "author": "John Denver",
-                  "duration": {
-                    "minutes": 3,
-                    "seconds": 45
-                  },
-                  "genres": [
-                    {
-                      "name": "Country",
-                      "artists": [],
-                      "albums": [],
-                      "songs": []
-                    }
-                  ],
-                  "isSingle": true,
-                  "views": 8813345
-                },
-                {
-                  "name": "Rocky Mountain High",
-                  "author": "John Denver",
-                  "duration": {
-                    "minutes": 5,
-                    "seconds": 37
-                  },
-                  "genres": [
-                    {
-                      "name": "Country",
-                      "artists": [],
-                      "albums": [],
-                      "songs": []
-                    }
-                  ],
-                  "isSingle": true,
-                  "views": 43515345
-                },
-                {
-                  "name": "Back Home Again",
-                  "author": "John Denver",
-                  "duration": {
-                    "minutes": 3,
-                    "seconds": 28
-                  },
-                  "genres": [
-                    {
-                      "name": "Country",
-                      "artists": [],
-                      "albums": [],
-                      "songs": []
-                    }
-                  ],
-                  "isSingle": false,
-                  "views": 74354313
-                },
-                {
-                  "name": "On the Road",
-                  "author": "John Denver",
-                  "duration": {
-                    "minutes": 4,
-                    "seconds": 19
-                  },
-                  "genres": [
-                    {
-                      "name": "Country",
-                      "artists": [],
-                      "albums": [],
-                      "songs": []
-                    }
-                  ],
-                  "isSingle": false,
-                  "views": 31424577
-                }
-              ],
-              "monthlyListeners": 0
-            }
-          ],
-          "albums": [],
-          "songs": [
-            {
-              "name": "Take Me Home, Country Roads",
-              "author": "John Denver",
-              "duration": {
-                "minutes": 4,
-                "seconds": 23
-              },
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 43524675
-            },
-            {
-              "name": "Annie's Song",
-              "author": "John Denver",
-              "duration": {
-                "minutes": 3,
-                "seconds": 45
-              },
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 8813345
-            },
-            {
-              "name": "Rocky Mountain High",
-              "author": "John Denver",
-              "duration": {
-                "minutes": 5,
-                "seconds": 37
-              },
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 43515345
-            },
-            {
-              "name": "Back Home Again",
-              "author": "John Denver",
-              "duration": {
-                "minutes": 3,
-                "seconds": 28
-              },
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 74354313
-            },
-            {
-              "name": "On the Road",
-              "author": "John Denver",
-              "duration": {
-                "minutes": 4,
-                "seconds": 19
-              },
-              "genres": [
-                {
-                  "name": "Country",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": false,
-              "views": 31424577
-            }
-          ]
-        },
-        {
-          "name": "Popular",
-          "artists": [
-            {
-              "name": "Compay Segundo",
-              "artists": [],
-              "yearOfCreation": 1907,
-              "relatedGenres": [
-                {
-                  "name": "Popular",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "albums": [],
-              "monthlyListeners": 530772
-            }
-          ],
-          "albums": [],
-          "songs": [
-            {
-              "name": "Guajira guantananmera",
-              "author": "Compay Segundo",
-              "duration": {
-                "minutes": 3,
-                "seconds": 45
-              },
-              "genres": [
-                {
-                  "name": "Popular",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 9187631
-            },
-            {
-              "name": "Chan chan",
-              "author": "Compay Segundo",
-              "duration": {
-                "minutes": 3,
-                "seconds": 16
-              },
-              "genres": [
-                {
-                  "name": "Popular",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 821940
-            },
-            {
-              "name": "Lágrimas negras",
-              "author": "Compay Segundo",
-              "duration": {
-                "minutes": 4,
-                "seconds": 25
-              },
-              "genres": [
-                {
-                  "name": "Popular",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 2391764
-            },
-            {
-              "name": "La negra Tomasa",
-              "author": "Compay Segundo",
-              "duration": {
-                "minutes": 3,
-                "seconds": 34
-              },
-              "genres": [
-                {
-                  "name": "Popular",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 2800641
-            },
-            {
-              "name": "Hasta siempre",
-              "author": "Compay Segundo",
-              "duration": {
-                "minutes": 4,
-                "seconds": 51
-              },
-              "genres": [
-                {
-                  "name": "Popular",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 3198415
-            }
-          ]
-        },
-        {
-          "name": "Blues",
-          "artists": [
-            {
-              "name": "The Blues Brothers",
-              "artists": [],
-              "yearOfCreation": 1978,
-              "relatedGenres": [
-                {
-                  "name": "Blues",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "albums": [],
-              "monthlyListeners": 1172651
-            }
-          ],
-          "albums": [],
-          "songs": [
-            {
-              "name": "Everybody Needs Somebody to Love",
-              "author": "The Blues Brothers",
-              "duration": {
-                "minutes": 3,
-                "seconds": 56
-              },
-              "genres": [
-                {
-                  "name": "Blues",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 39845210
-            },
-            {
-              "name": "Think",
-              "author": "The Blues Brothers",
-              "duration": {
-                "minutes": 4,
-                "seconds": 53
-              },
-              "genres": [
-                {
-                  "name": "Blues",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 4828171
-            },
-            {
-              "name": "Sweet Home Chicago",
-              "author": "The Blues Brothers",
-              "duration": {
-                "minutes": 5,
-                "seconds": 16
-              },
-              "genres": [
-                {
-                  "name": "Blues",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 219471
-            },
-            {
-              "name": "Gimme Some Lovin",
-              "author": "The Blues Brothers",
-              "duration": {
-                "minutes": 2,
-                "seconds": 35
-              },
-              "genres": [
-                {
-                  "name": "Blues",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 607613
-            },
-            {
-              "name": "Soul Man",
-              "author": "The Blues Brothers",
-              "duration": {
-                "minutes": 3,
-                "seconds": 14
-              },
-              "genres": [
-                {
-                  "name": "Blues",
-                  "artists": [],
-                  "albums": [],
-                  "songs": []
-                }
-              ],
-              "isSingle": true,
-              "views": 2816103
-            }
-          ]
-        }
+        "Country",
+        "Popular",
+        "Blues"
       ]
     }
   ]

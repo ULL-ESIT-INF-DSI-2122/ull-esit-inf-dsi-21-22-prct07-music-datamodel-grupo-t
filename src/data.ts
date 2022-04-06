@@ -107,7 +107,6 @@ export let songs: Song[] = [
   new Song("Sweet Home Chicago","The Blues Brothers",{minutes: 5, seconds: 16},[genres_aux[9]],true,219471),
   new Song("Gimme Some Lovin","The Blues Brothers",{minutes: 2, seconds: 35},[genres_aux[9]],true,607613),
   new Song("Soul Man","The Blues Brothers",{minutes: 3, seconds: 14},[genres_aux[9]],true,2816103) /*Todas singles */
- 
 ]
 
 export let artists: Artist[] = [

@@ -34,15 +34,27 @@ export class Genre {
       return this.artists[index];
   }
 
+  public getArtists(): (Artist | Group)[] {
+    return this.artists;
+}
+
   public getAlbum(album: Album) {
       const index: number = this.albums.indexOf(album);
       return this.albums[index];
   }
 
+  public getAlbums(): Album[] {
+    return this.albums;
+}
+
   public getSong(song: Song) {
       const index: number = this.songs.indexOf(song);
       return this.songs[index];
   }
+
+  public getSongs(): Song[] {;
+    return this.songs;
+}
 
   public setName(name: GenreName) {
       this.name = name;
