@@ -124,7 +124,7 @@ En este modelo de datos se representa la información relativa a los Géneros Mu
 * **albums**: Vector que contienen los álbums que pertenecen al género.
 * **songs**: Vector que contienen las canciones que pertenecen al género.
 
-#### Prueba
+#### Pruebas
 ![Prueba1](/Assets/Tests/Screenshot_1.png)
 
 ### Modelo de Datos 2 - Canciones (*Songs*)
@@ -200,7 +200,7 @@ En este modelo de datos se representa la información relativa a las Canciones. 
 * **isSingle**: Vector que contienen las canciones que pertenecen al género.
 * **views**: Vector que contienen las canciones que pertenecen al género.
 
-#### Prueba
+#### Pruebas
 ![Prueba2](/Assets/Tests/Screenshot_2.png)
 
 ### Modelo de Datos 3 - Álbums (*Album*)
@@ -284,7 +284,7 @@ En este modelo de datos se representa la información relativa a los álbumes. C
 * **songs**: Canciones que contiene el álbum.
 
 
-#### Prueba
+#### Pruebas
 ![Prueba3](/Assets/Tests/Screenshot_3.png)
 
 ### Modelo de Datos 4 - Grupos (*Group*)
@@ -337,7 +337,7 @@ En este modelo de datos se representa la información relativa a las Grupos. Cad
 * **albums**: Álbumes lanzados por el grupo.
 * **monthlyListeners**: Cantidad de oyentes mensuales.
 
-#### Prueba
+#### Pruebas
 ![Prueba4](/Assets/Tests/Screenshot_4.png)
 
 ### Modelo de Datos 5 - Artistas (*Artist*)
@@ -393,5 +393,5 @@ En este modelo de datos se representa la información relativa a los Artistas. C
 * **albums**: Álbumes en los que ha participado el artista.
 * **publishedSongs**: Canciones publicadas por el artista.
 
-#### Prueba
+#### Pruebas
 ![Prueba5](/Assets/Tests/Screenshot_5.png)
