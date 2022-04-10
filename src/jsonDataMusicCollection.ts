@@ -215,16 +215,16 @@ export class JsonDataMusicCollection extends DataMusicCollection {
       });
     });
     //
-    //if (this.database.has("genres").value()) {
-    //  let dbGenres = this.database.get("genres").value();
-    //  dbGenres.forEach((genre) => {
-    //    if (!this.genres.includes(genre)) {
-    //      this.genres.push(
-    //        new Genre(genre.name, genre.artists, genre.albums, genre.songs)
-    //      );
-    //    }
-    //  });
-    //}
+    // if (this.database.has("genres").value()) {
+    //   let dbGenres = this.database.get("genres").value();
+    //   dbGenres.forEach((genre) => {
+    //     if (!this.genres.includes(genre)) {
+    //       this.genres.push(
+    //         new Genre(genre.name, genre.artists, genre.albums, genre.songs)
+    //       );
+    //     }
+    //   });
+    // }
 //
     //if (this.database.has("songs").value()) {
     //  let dbSongs = this.database.get("songs").value();
