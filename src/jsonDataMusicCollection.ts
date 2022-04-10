@@ -62,17 +62,18 @@ type schemaType = {
 
 
 export class JsonDataMusicCollection extends DataMusicCollection {
-  private database: lowdb.LowdbSync<schemaType>;
+  private database: lowdb.LowdbSync<schemaType> = lowdb(new FileSync("MusicCollection.json"));
 
   public constructor(genres: Genre[] = [], artists: Artist[] = [], albums: Album[] = [],
       groups: Group[] = [], songs: Song[] = [], playlists: PlayList[] = []) {
-    super(genres, artists, albums, groups, songs, playlists);
-    
+    super(genres, artists, albums, groups, songs, playlists);  
+  }
+
+  public exportDefaultData() {
     // Escribiendo los datos en el JSON
-    this.database = lowdb(new FileSync("MusicCollection.json"));
     let dbCollection: schemaType = {genres: [], artists: [], albums: [], groups: [], songs: [], playlists: []};
     // Se escriben los géneros
-    genres.forEach((genre) => {
+    this.genres.forEach((genre) => {
       let name = genre.getName();
       let artistsNames: string[] = [];
       genre.getArtistCollection().forEach((artist) => {
@@ -95,7 +96,7 @@ export class JsonDataMusicCollection extends DataMusicCollection {
       });
     });
     // Se escriben los artistas
-    artists.forEach((artist) => {
+    this.artists.forEach((artist) => {
       let name = artist.getName();
       let groupsNames: string[] = [];
       artist.getGroups().forEach((group) => {
@@ -125,7 +126,7 @@ export class JsonDataMusicCollection extends DataMusicCollection {
       });
     });
     // Se escriben los álbumes
-    albums.forEach((album) => {
+    this.albums.forEach((album) => {
       let name = album.getName();
       let artist = album.getArtist();
       let year = album.getYear();
@@ -147,7 +148,7 @@ export class JsonDataMusicCollection extends DataMusicCollection {
       });
     });
     // Se escriben los grupos
-    groups.forEach((group) => {
+    this.groups.forEach((group) => {
       let name = group.getName();
       let artistsName: string[] = [];
       group.getArtists().forEach((artist) => {
@@ -174,7 +175,7 @@ export class JsonDataMusicCollection extends DataMusicCollection {
       });
     });
     // Se escriben las canciones
-    songs.forEach((song) => {
+    this.songs.forEach((song) => {
       let name = song.getName();
       let artist = song.getAuthor();
       let duration = song.getDuration();
@@ -195,7 +196,7 @@ export class JsonDataMusicCollection extends DataMusicCollection {
       });
     });
     // Se escriben las playlists
-    playlists.forEach((playlist) => {
+    this.playlists.forEach((playlist) => {
       let name = playlist.getName();
       let songsNames: string[] = [];
       playlist.getSongs().forEach((song) => {
@@ -272,7 +273,7 @@ export class JsonDataMusicCollection extends DataMusicCollection {
     this.database.set("albums", dbCollection.albums).write();
     this.database.set("groups", dbCollection.groups).write();
     this.database.set("songs", dbCollection.songs).write();
-    this.database.set("playlists", dbCollection.playlists).write();  
+    this.database.set("playlists", dbCollection.playlists).write();
   }
 
 //   public addNewGenre(newGenre: Genre): void {
