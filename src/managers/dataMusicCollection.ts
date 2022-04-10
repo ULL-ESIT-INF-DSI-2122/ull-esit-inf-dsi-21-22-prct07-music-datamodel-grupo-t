@@ -1,9 +1,9 @@
-import {Genre} from './models/genre';
-import {Album} from './models/album';
-import {Artist} from './models/artist';
-import {Group} from './models/group';
-import {Song} from './models/song';
-import {PlayList} from './models/playlist';
+import {Genre} from '../models/genre';
+import {Album} from '../models/album';
+import {Artist} from '../models/artist';
+import {Group} from '../models/group';
+import {Song} from '../models/song';
+import {PlayList} from '../models/playlist';
 
 export class DataMusicCollection {
   protected genres: Genre[];

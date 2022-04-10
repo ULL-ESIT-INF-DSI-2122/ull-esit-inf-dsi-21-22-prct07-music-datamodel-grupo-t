@@ -1,6 +1,6 @@
 import {Album} from './album';
 import {Artist} from './artist';
-import { Group } from './group';
+import {Group} from './group';
 import {Song} from './song';
 
 /**
@@ -12,6 +12,16 @@ export type GenreName =
   "Reggaeton" | "Punk" | "Reggae" | "Soul" | "Gospel" | "Popular" | "Disco" | "Hip Hop"
 
 /**
+ * An interface that defines a set of simple attributes for a Genre
+ */
+export interface GenreInterface {
+  name: GenreName;
+  artists: string[];
+  albums: string[];
+  songs: string[];
+}
+
+  /**
  * Genre class. Represent one of the genres that are stored in GenreName.
  */
 export class Genre {
@@ -161,11 +171,14 @@ export class Genre {
     }
 
     /**
-     * Removes an song from the set of songs
-     * @param song that will be removed
+     * Removes a song from the set of songs
+     * @param song name of teh song that will be removed
      */
-    public deleteSong(song: Song) {
-        const indice: number = this.songs.indexOf(song);
-        this.songs.splice(indice, 1);
+    public deleteSong(songName: string) {
+      for (let i = 0; i < this.songs.length; i++) {
+        if (this.songs[i].getName() === songName) {
+          this.songs.splice(i, 1);
+        }
+      }
     }
 }

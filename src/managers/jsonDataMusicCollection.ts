@@ -1,64 +1,22 @@
-import {Genre, GenreName} from './models/genre';
-import {Album} from './models/album';
-import {Artist} from './models/artist';
-import {Group} from './models/group';
-import {Song} from './models/song';
-import {PlayList} from './models/playlist';
+import {Genre, GenreInterface} from '../models/genre';
+import {Album, AlbumInterface} from '../models/album';
+import {Artist, ArtistInterface} from '../models/artist';
+import {Group, GroupInterface} from '../models/group';
+import {Song, SongInterface} from '../models/song';
+import {PlayList, PlaylistInterface} from '../models/playlist';
 import {DataMusicCollection} from './dataMusicCollection';
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 
 
-type schemaType = {
-  genres: {
-    name: string;
-    artists: string[];
-    albums: string[];
-    songs: string[];
-  }[];
-
-  artists: {
-    name: string;
-    groups: string[];
-    genres: string[];
-    albums: string[];
-    songs: string[];
-    monthlyListeners: number;
-  }[];
-
-  albums: {
-    name: string;
-    artists: string;
-    year: number;
-    genres: string[];
-    songs: string[];
-  }[];
-
-  groups: {
-    name: string;
-    artists: string[];
-    year: number;
-    genres: string[];
-    albums: string[];
-    monthlyListeners: number;
-  }[];
-
-  songs: {
-    name: string;
-    artist: string;
-    duration: {minutes: number, seconds: number};
-    genres: string[];
-    isSingle: boolean;
-    listeners: number;
-  }[];
-
-  playlists: {
-    name: string;
-    songs: string[];
-    duration: {minutes: number, seconds: number};
-    genres: string[];
-  }[];
-};
+interface schemaType {
+  genres: GenreInterface[];
+  artists: ArtistInterface[];
+  albums: AlbumInterface[];
+  groups: GroupInterface[];
+  songs: SongInterface[];
+  playlists: PlaylistInterface[];
+}
 
 
 export class JsonDataMusicCollection extends DataMusicCollection {
@@ -66,10 +24,14 @@ export class JsonDataMusicCollection extends DataMusicCollection {
 
   public constructor(genres: Genre[] = [], artists: Artist[] = [], albums: Album[] = [],
       groups: Group[] = [], songs: Song[] = [], playlists: PlayList[] = []) {
-    super(genres, artists, albums, groups, songs, playlists);  
+    super(genres, artists, albums, groups, songs, playlists);
+
+    if (!this.database.has("genres").value()) {
+      this.exportData();
+    }
   }
 
-  public exportDefaultData() {
+  public exportData() {
     // Escribiendo los datos en el JSON
     let dbCollection: schemaType = {genres: [], artists: [], albums: [], groups: [], songs: [], playlists: []};
     // Se escriben los géneros
@@ -215,7 +177,15 @@ export class JsonDataMusicCollection extends DataMusicCollection {
         genres: genresNames
       });
     });
-    //
+
+    this.database.set("genres", dbCollection.genres).write();
+    this.database.set("artists", dbCollection.artists).write();
+    this.database.set("albums", dbCollection.albums).write();
+    this.database.set("groups", dbCollection.groups).write();
+    this.database.set("songs", dbCollection.songs).write();
+    this.database.set("playlists", dbCollection.playlists).write();
+  }
+
     // if (this.database.has("genres").value()) {
     //   let dbGenres = this.database.get("genres").value();
     //   dbGenres.forEach((genre) => {
@@ -267,14 +237,6 @@ export class JsonDataMusicCollection extends DataMusicCollection {
     //  });
     //}
 
-
-    this.database.set("genres", dbCollection.genres).write();
-    this.database.set("artists", dbCollection.artists).write();
-    this.database.set("albums", dbCollection.albums).write();
-    this.database.set("groups", dbCollection.groups).write();
-    this.database.set("songs", dbCollection.songs).write();
-    this.database.set("playlists", dbCollection.playlists).write();
-  }
 
 //   public addNewGenre(newGenre: Genre): void {
 //     super.addNewGenre(newGenre);

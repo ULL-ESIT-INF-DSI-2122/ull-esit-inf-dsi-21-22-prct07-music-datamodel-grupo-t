@@ -1,6 +1,18 @@
 import {Genre} from './genre'
 
 /**
+ * An interface that defines simple data for a song
+ */
+export interface SongInterface {
+  name: string;
+  artist: string;
+  duration: {minutes: number, seconds: number};
+  genres: string[];
+  isSingle: boolean;
+  listeners: number;
+}
+
+/**
  * Type that shows the duration of a song in the 'minute:second'
  * format
  */

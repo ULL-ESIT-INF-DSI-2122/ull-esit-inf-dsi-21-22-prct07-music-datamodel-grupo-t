@@ -3,6 +3,18 @@ import {Artist} from './artist';
 import {Genre} from './genre';
 
 /**
+ * An interface that defines simple data for a group
+ */
+export interface GroupInterface {
+  name: string;
+  artists: string[];
+  year: number;
+  genres: string[];
+  albums: string[];
+  monthlyListeners: number;
+}
+
+/**
  * Group class. Represents a group of artist's that owns songs and albums
  */
 export class Group {

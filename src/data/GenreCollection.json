@@ -1,0 +1,158 @@
+{
+  "genres": [
+    {
+      "name": "Rap",
+      "artists": [
+        "Natos y Waor"
+      ],
+      "albums": [
+        "Cicatrices",
+        "Carretera"
+      ],
+      "songs": [
+        "Cicatrices",
+        "Carretera",
+        "Nosotros",
+        "Piratas",
+        "Bicho Raro"
+      ]
+    },
+    {
+      "name": "Pop",
+      "artists": [
+        "El Canto del Loco"
+      ],
+      "albums": [
+        "Zapatillas",
+        "Personas"
+      ],
+      "songs": [
+        "Zapatillas",
+        "Besos",
+        "Volvera",
+        "Peter Pan",
+        "La Madre de Jose"
+      ]
+    },
+    {
+      "name": "Trap",
+      "artists": [
+        "Kidd Keo"
+      ],
+      "albums": [],
+      "songs": [
+        "Dracukeo",
+        "Mama",
+        "Lollypop",
+        "Serpiente Veneno",
+        "One Million"
+      ]
+    },
+    {
+      "name": "Electro",
+      "artists": [
+        "Martin Garrix"
+      ],
+      "albums": [],
+      "songs": [
+        "Dracukeo",
+        "Mama",
+        "Lollypop",
+        "Serpiente Veneno",
+        "One Million"
+      ]
+    },
+    {
+      "name": "Classic",
+      "artists": [
+        "Mozart"
+      ],
+      "albums": [],
+      "songs": [
+        "High on Life",
+        "Animals",
+        "Scared to Be Lonely",
+        "Reboot",
+        "Limitless"
+      ]
+    },
+    {
+      "name": "Reggaeton",
+      "artists": [
+        "Nicky Jam"
+      ],
+      "albums": [],
+      "songs": [
+        "Fantasia in D minor",
+        "Piano Sonata No 16",
+        "Symphony No 25",
+        "Turkish March",
+        "Piano Concerto No 21"
+      ]
+    },
+    {
+      "name": "Rock",
+      "artists": [
+        "The Offspring"
+      ],
+      "albums": [
+        "Americana"
+      ],
+      "songs": [
+        "The Kids Aren't Alright",
+        "You're Gonna Go Far, Kid",
+        "Self Esteem",
+        "Pretty Fly",
+        "Why Don't You Get a Job"
+      ]
+    },
+    {
+      "name": "Country",
+      "artists": [
+        "John Denver"
+      ],
+      "albums": [],
+      "songs": [
+        "Take Me Home, Country Roads",
+        "Annie's Song",
+        "Rocky Mountain High",
+        "Back Home Again",
+        "On the Road"
+      ]
+    },
+    {
+      "name": "Popular",
+      "artists": [
+        "Compay Segundo"
+      ],
+      "albums": [],
+      "songs": [
+        "Guajira guantananmera",
+        "Chan chan",
+        "Lágrimas negras",
+        "La negra Tomasa",
+        "Hasta siempre"
+      ]
+    },
+    {
+      "name": "Blues",
+      "artists": [
+        "The Blues Brothers"
+      ],
+      "albums": [],
+      "songs": [
+        "Everybody Needs Somebody to Love",
+        "Think",
+        "Sweet Home Chicago",
+        "Gimme Some Lovin",
+        "Soul Man"
+      ]
+    },
+    {
+      "name": "Salsa",
+      "artists": [],
+      "albums": [],
+      "songs": []
+    }
+  ]
+}

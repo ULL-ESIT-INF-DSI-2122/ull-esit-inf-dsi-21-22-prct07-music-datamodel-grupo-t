@@ -2,6 +2,16 @@ import {Song, Duration} from './song';
 import {Genre} from './genre';
 
 /**
+ * An interface that defines simple data for a playlist
+ */
+export interface PlaylistInterface {
+  name: string;
+  songs: string[];
+  duration: {minutes: number, seconds: number};
+  genres: string[];
+}
+
+/**
  * Playlist class
  */
 export class PlayList {

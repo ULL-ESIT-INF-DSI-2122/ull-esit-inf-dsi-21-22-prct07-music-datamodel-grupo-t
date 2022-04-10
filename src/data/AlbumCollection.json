@@ -1,0 +1,90 @@
+{
+  "albums": [
+    {
+      "name": "Fénix",
+      "artists": "Nicky Jam",
+      "year": 2007,
+      "genres": [
+        "Reggaeton"
+      ],
+      "songs": [
+        "Travesuras",
+        "Hasta El Amanecer",
+        "El Perdón"
+      ]
+    },
+    {
+      "name": "Back Home Again",
+      "artists": "John Denver",
+      "year": 1987,
+      "genres": [
+        "Country"
+      ],
+      "songs": [
+        "Take Me Home, Country Roads",
+        "Back Home Again",
+        "On the Road"
+      ]
+    },
+    {
+      "name": "Cicatrices",
+      "artists": "Natos y Waor",
+      "year": 2018,
+      "genres": [
+        "Rap"
+      ],
+      "songs": [
+        "Cicatrices",
+        "Bicho Raro"
+      ]
+    },
+    {
+      "name": "Carretera",
+      "artists": "Natos y Waor",
+      "year": 2016,
+      "genres": [
+        "Rap"
+      ],
+      "songs": [
+        "Carretera",
+        "Piratas"
+      ]
+    },
+    {
+      "name": "Zapatillas",
+      "artists": "Dani Martín",
+      "year": 1998,
+      "genres": [
+        "Pop"
+      ],
+      "songs": [
+        "Zapatillas",
+        "Besos",
+        "Volvera"
+      ]
+    },
+    {
+      "name": "Personas",
+      "artists": "Dani Martín",
+      "year": 2009,
+      "genres": [
+        "Pop"
+      ],
+      "songs": [
+        "Peter Pan"
+      ]
+    },
+    {
+      "name": "Americana",
+      "artists": "The Offspring",
+      "year": 1995,
+      "genres": [
+        "Pop"
+      ],
+      "songs": [
+        "The Kids Aren't Alright",
+        "You're Gonna Go Far, Kid"
+      ]
+    }
+  ]
+}

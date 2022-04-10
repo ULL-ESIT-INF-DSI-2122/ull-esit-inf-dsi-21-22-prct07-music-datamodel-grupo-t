@@ -4,6 +4,18 @@ import {Song} from './song';
 import {Genre} from './genre';
 
 /**
+ * An interface that defines simple data of an Artist
+ */
+export interface ArtistInterface {
+  name: string;
+  groups: string[];
+  genres: string[];
+  albums: string[];
+  songs: string[];
+  monthlyListeners: number;
+}
+
+/**
  * Artist class. Represents the owner of songs, albumns and members of a group
  * potentially
  */

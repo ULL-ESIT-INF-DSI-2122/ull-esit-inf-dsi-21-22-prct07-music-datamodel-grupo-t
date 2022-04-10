@@ -2,6 +2,17 @@ import {Genre} from './genre'
 import {Song} from './song'
 
 /**
+ * An Album interface that defines simple data attributes for an Album
+ */
+export interface AlbumInterface {
+  name: string;
+  artists: string;
+  year: number;
+  genres: string[];
+  songs: string[];
+}
+
+/**
  * Album class. It's a set of songs stored that have the same group or
  * artist in common. 
  */
