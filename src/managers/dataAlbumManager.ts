@@ -42,5 +42,13 @@ export class DataAlbumManager {
       });
     });
     this.database.set("albums", dbData.albums).write();
+  } 
+
+  getAlbumsNames(): string[] {
+    const names: string[] = [];
+    this.albums.forEach(album => {
+      names.push(album.getName());
+    });
+    return names;
   }
 }
