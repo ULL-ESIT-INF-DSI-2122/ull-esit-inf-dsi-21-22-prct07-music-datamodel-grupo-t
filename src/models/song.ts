@@ -1,4 +1,4 @@
-import {Genre} from './genre'
+import {Genre, GenreName} from './genre'
 
 /**
  * An interface that defines simple data for a song
@@ -7,7 +7,7 @@ export interface SongInterface {
   name: string;
   artist: string;
   duration: {minutes: number, seconds: number};
-  genres: string[];
+  genres: GenreName[];
   isSingle: boolean;
   listeners: number;
 }

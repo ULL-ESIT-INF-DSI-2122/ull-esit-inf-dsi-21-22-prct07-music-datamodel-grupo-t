@@ -38,7 +38,7 @@ export function promptUser() {
         break;
       case 'Canciones':
         console.log("Gestionar temas")
-        // manageSongs();
+        manageSongs();
         break;
       case 'Álbums':
         console.log("Gestionar albums")
@@ -96,18 +96,18 @@ export function manageGenres() {
       
       case 'Modificar':
         console.log('Modificar un género');
-        let genreElection = [
-          {
-            type: 'list',
-            name: 'election',
-            message: '¿Qué desea género desea administrar?',
-            choices: currentGenres,
-          }
-        ];
-        inquirer.prompt(genreElection).then((answers: any) => {
-          let election = answers.election;
-          modifyGenre(election);
-        });
+        // let genreElection = [
+        //   {
+        //     type: 'list',
+        //     name: 'election',
+        //     message: '¿Qué desea género desea administrar?',
+        //     choices: currentGenres,
+        //   }
+        // ];
+        // inquirer.prompt(genreElection).then((answers: any) => {
+        //   let election = answers.election;
+        //   modifyGenre(election);
+        // });
         break;
 
       case 'Borrar':
@@ -206,6 +206,66 @@ function modifyGenre(nameGenre: GenreName): void {
         break;
     }
   });
+}
+
+function manageSongs() {
+  console.clear()    
+  console.log('Gestor de temas');
+  let currentSongs = dataSongManager.getSongNames();
+  let currentGenres = dataGenreManager.getGenreNames();
+  const questionsSongs = [
+    {
+      type: 'list',
+      name: 'option',
+      message: '¿Que desea hacer (añadir, borrar o modificar una canción)?',
+      choices: ['Añadir', 'Modificar', 'Borrar', 'Atrás']
+    }
+  ];
+
+  inquirer.prompt(questionsSongs).then((answers: any) => {
+    switch(answers['option']) {
+      case 'Añadir':
+        console.log('Añadir un nuevo tema');
+        let addSongQuestions = [
+          {
+            type: 'input',
+            name: 'songName',
+            message: '¿Cuál es el nombre de la canción?'
+          },
+          {
+            type: 'input',
+            name: 'artistName',
+            message: '¿Cuál es el nombre del artista?'
+          },
+          {
+            type: 'list',
+            name: 'genreName',
+            message: '¿A qué género pertenece?',
+            choices: currentGenres
+          },
+          {
+            type: 'input',
+            name: 'duration',
+            message: '¿Cuál es su duración (en segundos)?'
+          },
+          {
+            type: 'list',
+            name: 'isSingle',
+            message: '¿Es un single?',
+            choices: ['Si', 'No']
+          },
+          {
+            type: 'input',
+            name: 'viewers',
+            message: '¿Cuántas visualizaciones tiene la canción?'
+          }
+        ];
+        inquirer.prompt(questionsSongs).then((answers: any) => {
+          dataGenreManager.addNewGenre(new Genre(answers.electionGenre));
+          console.log(`Género ${answers.electionGenre} añadido`);
+        });
+        break;
+      }
 }
 
 promptUser();

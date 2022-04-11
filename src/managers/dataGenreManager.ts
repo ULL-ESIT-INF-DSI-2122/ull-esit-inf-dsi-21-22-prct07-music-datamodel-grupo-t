@@ -126,32 +126,30 @@ export class DataGenreManager {
   public deleteGenre(genreName: string): void {
     for (let i = 0; i < this.genres.length; i++) {
       if (this.genres[i].getName() === genreName) {
-        console.log(this.genres)
         this.genres.splice(i, 1);
-        console.log(this.genres)
       }
     }
     this.writeData(this.genres);
   }
 
 
-  public addSongToGenre(song: Song, genre: GenreName): void {
-    for (let i = 0; i < this.genres.length; i++) {
-      if (this.genres[i].getName() === genre) {
-        this.genres[i].getSongCollection().push(song);
-        this.writeData(this.genres);
-        break;
-      }
-    }
-  }
-
-  public deleteSongOfGenre(song: string, genre: GenreName): void {
-    for (let i = 0; i < this.genres.length; i++) {
-      if (this.genres[i].getName() === genre) {
-        this.genres[i].deleteSong(song);
-        this.writeData(this.genres);
-        break;
-      }
-    }
-  }
+  // public addSongToGenre(song: Song, genre: GenreName): void {
+  //   for (let i = 0; i < this.genres.length; i++) {
+  //     if (this.genres[i].getName() === genre) {
+  //       this.genres[i].getSongCollection().push(song);
+  //       this.writeData(this.genres);
+  //       break;
+  //     }
+  //   }
+  // }
+// 
+  // public deleteSongOfGenre(song: string, genre: GenreName): void {
+  //   for (let i = 0; i < this.genres.length; i++) {
+  //     if (this.genres[i].getName() === genre) {
+  //       this.genres[i].deleteSong(song);
+  //       this.writeData(this.genres);
+  //       break;
+  //     }
+  //   }
+  // }
 }
