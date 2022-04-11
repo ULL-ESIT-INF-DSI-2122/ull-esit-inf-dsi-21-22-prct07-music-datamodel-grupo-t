@@ -1,7 +1,7 @@
 import {Album} from './album';
 import {Group} from './group';
 import {Song} from './song';
-import {Genre} from './genre';
+import {Genre, GenreName} from './genre';
 
 /**
  * An interface that defines simple data of an Artist
@@ -9,7 +9,7 @@ import {Genre} from './genre';
 export interface ArtistInterface {
   name: string;
   groups: string[];
-  genres: string[];
+  genres: GenreName[];
   albums: string[];
   songs: string[];
   monthlyListeners: number;
