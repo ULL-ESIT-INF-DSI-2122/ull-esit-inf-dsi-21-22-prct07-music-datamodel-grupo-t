@@ -7,6 +7,7 @@ import {DataSongManager} from './managers/dataSongManager';
 import {Gestor} from './managers/gestor';
 import {songs, groups, artists, albums, genres, playlists} from './data/defaultData';
 import {Genre} from './models/genre';
+import { Artist } from './models/artist';
 
 
 const dataGenreManager = new DataGenreManager(genres);
@@ -359,6 +360,11 @@ function modifyArtistasPrompt(): void {
   console.clear()    
   console.log('Gestor de Artistas');
   const currentArtist = dataArtistManager.getArtistNames();
+  const currentGenres = dataGenreManager.getGenreNames();
+  const currentGroups = dataGroupManager.getGroupNames();
+  const currentAlbums = dataAlbumManager.getAlbumsNames();
+  const currentSongs = dataSongManager.getSongNames();
+
   const question = [
     {
       type: 'list',
@@ -371,40 +377,44 @@ function modifyArtistasPrompt(): void {
   inquirer.prompt(question).then((answers) => {
     switch(answers['election']) {
       case 'Añadir':
-        // console.log('Añadir una nueva canción');
-        // const addSongQuestions = [
-        //   {
-        //     type: 'list',
-        //     name: 'electionSong',
-        //     message: '¿Qué canción desea añadir?',
-        //     choices: [
-        //       'Rap','Pop','Pop','Rock','Electro','Classic','Country','Heavy','Jazz',
-        //       'Salsa','Flamenco','Folk','Country','Blues','Reggaeton','Punk','Reggae',
-        //       'Soul','Gospel','Funk','Disco','Hip Hop'],
-        //   }
-        // ];
-        // inquirer.prompt(addSongQuestions).then((answers) => {
-        //   dataGenreManager.addNewGenre(new Genre(answers.electionSong));
-        //   console.log(`Género ${answers.electionSong} añadido`);
-        // });
-        // dataArtistManager.addArtist();
+        console.log('Añadir un nuevo tema');
+        let question = [
+          {
+            type: 'input',
+            name: 'artistName',
+            message: '¿Cuál es el nombre del artista?'
+          },
+          {
+            type: 'list',
+            name: 'groups',
+            message: '¿A que grupo pertenece?',
+            choices: currentGroups + 'ninguno'
+          },
+          {
+            type: 'checkbox',
+            name: 'albumns',
+            message: '¿Qué albumes tiene?',
+            choices: currentAlbums + 'ninguno'
+          },
+          {
+            type: 'checkbox',
+            name: 'genres',
+            message: '¿A qué géneros pertenece?',
+            choices: currentGenres
+          },
+          {
+            type: 'checkbox',
+            name: 'songs',
+            message: '¿Qué canciones son suyas?',
+            choices: currentSongs
+          },
+        ];
+        inquirer.prompt(question).then((answers) => {
+          dataArtistManager.addNewArtist(new Artist(answers.artistName, answers.groups, 
+            answers.genres, answers.albums, answers.songs));
+          console.log(`Artista añadido`);
+        });
         break;
-      
-      // case 'Modificar':
-      //   console.log('Modificar un género');
-      //   const genreElection = [
-      //     {
-      //       type: 'list',
-      //       name: 'election',
-      //       message: '¿Qué desea género desea administrar?',
-      //       choices: currentGenres,
-      //     }
-      //   ];
-      //   inquirer.prompt(genreElection).then((answers: any) => {
-      //     const election = answers.election;
-      //     // dataGenreManager.modifyGenre(election);
-      //   });
-      //   break;
 
       case 'Eliminar':
         console.log('Eliminar un artista');
@@ -417,11 +427,10 @@ function modifyArtistasPrompt(): void {
           }
         ];
         inquirer.prompt(questions).then((answers) => {
-          // dataArtistManager.deleteArtist(answers.election);
-          console.log(`Artista ${answers.electionSong} eliminado`);
+          dataArtistManager.deleteArtist(answers.election);
+          console.log(`Artista ${answers.election} eliminado`);
         });
         break;
-      
       case 'Atrás':
         break;
     }
