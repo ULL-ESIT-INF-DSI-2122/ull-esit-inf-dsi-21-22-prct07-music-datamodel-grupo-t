@@ -17,7 +17,7 @@ describe('PlayList class function tests', () => {
   it('It creates a new instance of an object with class Gestor', () => {
     expect(gestor).to.be.instanceOf(Gestor);
   });
-  it('There is a method to show PlayList', () => {
-    expect(gestor.showPlaylists()).not.be.eql(false);
+  it('There is a method to show the PlayLists information', () => {
+    expect(gestor.showPlaylists()).to.be.eql('Name: Reggae ChillSong 1: Redemption SongSong 2: Judge NotGenre 1: ReggaeGenre 2: PopDuration--> Minutes: 3 Seconds: 30');
   });
 });
