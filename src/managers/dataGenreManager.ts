@@ -106,7 +106,7 @@ export class DataGenreManager {
   }
 
 
-  public addNewGenre(newGenre: Genre): void {
+  public addNewGenre(newGenre: Genre): number {
     let alreadyInGenres = false;
     for (let i = 0; i < this.genres.length; i++) {
       if (this.genres[i].getName() === newGenre.getName()) {
@@ -115,10 +115,11 @@ export class DataGenreManager {
       }
     }
     if (alreadyInGenres) {
-      console.log('Error, ese género ya está definido.');
+      return -1;
     } else {
       this.genres.push(newGenre);
       this.writeData(this.genres);
+      return 0;
     }
   }
 
@@ -127,6 +128,7 @@ export class DataGenreManager {
     for (let i = 0; i < this.genres.length; i++) {
       if (this.genres[i].getName() === genreName) {
         this.genres.splice(i, 1);
+        break;
       }
     }
     this.writeData(this.genres);

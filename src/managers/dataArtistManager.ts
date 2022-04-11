@@ -130,7 +130,7 @@ export class DataArtistManager {
     return names;
   }
 
-  public addNewArtist(newArtist: Artist): void {
+  public addNewArtist(newArtist: Artist): number {
     let alreadyInArtist = false;
     for (let i = 0; i < this.artists.length; i++) {
       if (this.artists[i].getName() === newArtist.getName()) {
@@ -139,10 +139,11 @@ export class DataArtistManager {
       }
     }
     if (alreadyInArtist) {
-      console.log('Error, ese género ya está definido.');
+      return -1;
     } else {
       this.artists.push(newArtist);
       this.writeData(this.artists);
+      return 0;
     }
   }
 
