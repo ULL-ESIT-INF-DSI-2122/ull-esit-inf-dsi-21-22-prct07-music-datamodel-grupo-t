@@ -41,4 +41,18 @@ export class Gestor {
   });
     this.database.set("playlists", dbData.playlists).write();
   }
+
+  public showPlaylists() {
+    this.playlists.forEach((playlist) => {
+      console.log(`Name: ${playlist.getName()}`)
+      playlist.getSongs().forEach((song,index) => {
+        console.log(`Song ${index+1}: ${song.getName()}`)
+      });
+
+      playlist.getGenres().forEach((genre,index) => {
+        console.log(`Genre ${index+1}: ${genre.getName()}`)
+      });
+      console.log(`Duration--> Minutes: ${playlist.getDuration().minutes} Seconds: ${playlist.getDuration().seconds}`)
+    });
+  }
 }
