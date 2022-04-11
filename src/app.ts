@@ -8,7 +8,7 @@ import {Gestor} from './managers/gestor';
 import {songs, groups, artists, albums, genres, playlists} from './data/defaultData';
 import {Genre} from './models/genre';
 import {Song} from './models/song';
-import { Artist } from './models/artist';
+import {Artist} from './models/artist';
 
 
 const dataGenreManager = new DataGenreManager(genres);
