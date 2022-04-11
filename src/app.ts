@@ -100,7 +100,7 @@ function modifyGenrePrompt(): void {
             name: 'continue',
             message: 'Pulse enter para continuar',
             type: 'input'
-          }]).then(function(answer) {
+          }]).then(function() {
             promptUser();
           });
         });
@@ -123,7 +123,7 @@ function modifyGenrePrompt(): void {
             name: 'continue',
             message: 'Pulse enter para continuar',
             type: 'input'
-          }]).then(function(answer) {
+          }]).then(function() {
             promptUser();
           });
         });
@@ -202,7 +202,7 @@ function modifySongPrompt(): void {
             name: 'continue',
             message: 'Pulse enter para continuar',
             type: 'input'
-          }]).then(function(answer) {
+          }]).then(function() {
             promptUser();
           });
         });
@@ -242,7 +242,7 @@ function modifySongPrompt(): void {
           name: 'continue',
           message: 'Pulse enter para continuar',
           type: 'input'
-        }]).then(function(answer) {
+        }]).then(function() {
           promptUser();
         });
         break;

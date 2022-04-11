@@ -18,6 +18,23 @@
       ]
     },
     {
+      "name": "Pop",
+      "artists": [
+        "El Canto del Loco"
+      ],
+      "albums": [
+        "Zapatillas",
+        "Personas"
+      ],
+      "songs": [
+        "Zapatillas",
+        "Besos",
+        "Volvera",
+        "Peter Pan",
+        "La Madre de Jose"
+      ]
+    },
+    {
       "name": "Trap",
       "artists": [
         "Kidd Keo"
@@ -130,16 +147,6 @@
         "Gimme Some Lovin",
         "Soul Man"
       ]
-    },
-    {
-<<<<<<< HEAD
-      "name": "Hip Hop",
-=======
-      "name": "Gospel",
->>>>>>> 9ba1b5f5635ddefb4bbe6f80f80606fdc59b10f0
-      "artists": [],
-      "albums": [],
-      "songs": []
     }
   ]
 }
