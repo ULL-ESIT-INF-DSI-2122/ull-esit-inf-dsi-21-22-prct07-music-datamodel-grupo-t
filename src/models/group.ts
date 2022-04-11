@@ -1,6 +1,6 @@
 import {Album} from './album';
 import {Artist} from './artist';
-import {Genre} from './genre';
+import {Genre, GenreName} from './genre';
 
 /**
  * An interface that defines simple data for a group
@@ -9,7 +9,7 @@ export interface GroupInterface {
   name: string;
   artists: string[];
   year: number;
-  genres: string[];
+  genres: GenreName[];
   albums: string[];
   monthlyListeners: number;
 }
