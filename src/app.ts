@@ -83,7 +83,7 @@ function modifyGenrePrompt(): void {
           name: 'electionGenre',
           message: '¿Qué género desea añadir?',
           choices: [
-            'Rap','Pop','Pop','Rock','Electro','Classic','Country','Heavy','Jazz',
+            'Rap','Pop','Popular','Rock','Electro','Classic','Country','Heavy','Jazz',
             'Salsa','Flamenco','Folk','Country','Blues','Reggaeton','Punk','Reggae',
             'Soul','Gospel','Funk','Disco','Hip Hop'],
         }
@@ -95,6 +95,13 @@ function modifyGenrePrompt(): void {
           } else {
             console.log('Error, ese género ya está definido.');
           }
+          inquirer.prompt([{
+            name: 'continue',
+            message: 'Pulse enter para continuar',
+            type: 'input'
+          }]).then(function(answer) {
+            promptUser();
+          });
         });
         break;
       
@@ -127,6 +134,13 @@ function modifyGenrePrompt(): void {
         inquirer.prompt(questions).then((answers) => {
           dataGenreManager.deleteGenre(answers.election);
           console.log(`Género ${answers.election} eliminado`);
+          inquirer.prompt([{
+            name: 'continue',
+            message: 'Pulse enter para continuar',
+            type: 'input'
+          }]).then(function(answer) {
+            promptUser();
+          });
         });
         break;
       
@@ -199,6 +213,13 @@ function modifySongPrompt(): void {
           } else {
             console.log('Error, ya existe una canción con ese nombre y artista.');
           }
+          inquirer.prompt([{
+            name: 'continue',
+            message: 'Pulse enter para continuar',
+            type: 'input'
+          }]).then(function(answer) {
+            promptUser();
+          });
         });
         break;
       
@@ -231,6 +252,13 @@ function modifySongPrompt(): void {
         inquirer.prompt(question).then((answers) => {
           dataSongManager.deleteSong(answers.election);
           console.log(`Canción ${answers.election} eliminada`);
+        });
+        inquirer.prompt([{
+          name: 'continue',
+          message: 'Pulse enter para continuar',
+          type: 'input'
+        }]).then(function(answer) {
+          promptUser();
         });
         break;
       
