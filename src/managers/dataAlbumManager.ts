@@ -17,6 +17,7 @@ export class DataAlbumManager {
     }
   }
 
+
   public exportData(albumData: Album[]): void {
     let dbData: AlbumSchemaInterface = {albums: []};
     // Se escriben los álbumes
@@ -42,7 +43,7 @@ export class DataAlbumManager {
       });
     });
     this.database.set("albums", dbData.albums).write();
-  } 
+  }
 
   getAlbumsNames(): string[] {
     const names: string[] = [];

@@ -7,6 +7,7 @@ import {DataSongManager} from './managers/dataSongManager';
 import {Gestor} from './managers/gestor';
 import {songs, groups, artists, albums, genres, playlists} from './data/defaultData';
 import {Genre} from './models/genre';
+import {Song} from './models/song';
 
 
 const dataGenreManager = new DataGenreManager(genres);
@@ -88,8 +89,12 @@ function modifyGenrePrompt(): void {
         }
         ];
         inquirer.prompt(question).then((answers) => {
-          dataGenreManager.addNewGenre(new Genre(answers.electionGenre));
-          console.log(`Género ${answers.electionGenre} añadido`);
+          const added = dataGenreManager.addNewGenre(new Genre(answers.electionGenre));
+          if (added === 0) {
+            console.log(`Género ${answers.electionGenre} añadido`);
+          } else {
+            console.log('Error, ese género ya está definido.');
+          }
         });
         break;
       
@@ -109,7 +114,7 @@ function modifyGenrePrompt(): void {
       //   });
       //   break;
 
-      case 'Eliminar':
+      case 'Borrar':
         console.log('Eliminar un género');
         const questions = [
         {
@@ -126,16 +131,17 @@ function modifyGenrePrompt(): void {
         break;
       
       case 'Atrás':
+        promptUser();
         break;
     }
-    promptUser();
   });
 }
 
 
 function modifySongPrompt(): void {
-  console.clear()    
+  console.clear();
   console.log('Gestor de Canciones');
+  const currentGenres = dataGenreManager.getGenreNames();
   const currentSongs = dataSongManager.getSongNames();
   const question = [
     {
@@ -149,23 +155,51 @@ function modifySongPrompt(): void {
   inquirer.prompt(question).then((answers) => {
     switch(answers['election']) {
       case 'Añadir':
-        // console.log('Añadir una nueva canción');
-        // const addSongQuestions = [
-        //   {
-        //     type: 'list',
-        //     name: 'electionSong',
-        //     message: '¿Qué canción desea añadir?',
-        //     choices: [
-        //       'Rap','Pop','Pop','Rock','Electro','Classic','Country','Heavy','Jazz',
-        //       'Salsa','Flamenco','Folk','Country','Blues','Reggaeton','Punk','Reggae',
-        //       'Soul','Gospel','Funk','Disco','Hip Hop'],
-        //   }
-        // ];
-        // inquirer.prompt(addSongQuestions).then((answers) => {
-        //   dataGenreManager.addNewGenre(new Genre(answers.electionSong));
-        //   console.log(`Género ${answers.electionSong} añadido`);
-        // });
-        // dataSongManager.addSong();
+        console.log('Añadir un nuevo tema');
+        let addSongQuestions = [
+          {
+            type: 'input',
+            name: 'songName',
+            message: '¿Cuál es el nombre de la canción?'
+          },
+          {
+            type: 'input',
+            name: 'artistName',
+            message: '¿Cuál es el nombre del artista?'
+          },
+          {
+            type: 'list',
+            name: 'genreName',
+            message: '¿A qué género pertenece?',
+            choices: currentGenres
+          },
+          {
+            type: 'input',
+            name: 'duration',
+            message: '¿Cuál es su duración (en segundos)?'
+          },
+          {
+            type: 'list',
+            name: 'isSingle',
+            message: '¿Es un single?',
+            choices: ['Si', 'No']
+          },
+          {
+            type: 'input',
+            name: 'viewers',
+            message: '¿Cuántas visualizaciones tiene la canción?'
+          }
+        ];
+        inquirer.prompt(addSongQuestions).then((answers: any) => {
+          const added = dataSongManager.addNewSong(
+            new Song(answers.songName, answers.artistName, answers.duration,
+              [new Genre(answers.genreName)], answers.isSingle, answers.viewers));
+          if (added === 0) {
+            console.log(`Género ${answers.electionGenre} añadido`);    
+          } else {
+            console.log('Error, ya existe una canción con ese nombre y artista.');
+          }
+        });
         break;
       
       // case 'Modificar':
@@ -184,7 +218,7 @@ function modifySongPrompt(): void {
       //   });
       //   break;
 
-      case 'Eliminar':
+      case 'Borrar':
         console.log('Eliminar una canción');
         let question = [
           {
@@ -195,15 +229,15 @@ function modifySongPrompt(): void {
           }
         ];
         inquirer.prompt(question).then((answers) => {
-          // dataSongManager.deleteSong(answers.election);
+          dataSongManager.deleteSong(answers.election);
           console.log(`Canción ${answers.election} eliminada`);
         });
         break;
       
       case 'Atrás':
+        promptUser();
         break;
     }
-    promptUser();
   });
 }
 
@@ -275,9 +309,9 @@ function modifyAlbumPrompt(): void {
         break;
       
       case 'Atrás':
+        promptUser();
         break;
     }
-    promptUser();
   }); 
 }
 
@@ -349,9 +383,9 @@ function modifyGroupsPrompt(): void {
         break;
       
       case 'Atrás':
+        promptUser();
         break;
     }
-    promptUser();
   }); 
 }
 
@@ -423,9 +457,9 @@ function modifyArtistasPrompt(): void {
         break;
       
       case 'Atrás':
+        promptUser();
         break;
     }
-    promptUser();
   });
 }
 

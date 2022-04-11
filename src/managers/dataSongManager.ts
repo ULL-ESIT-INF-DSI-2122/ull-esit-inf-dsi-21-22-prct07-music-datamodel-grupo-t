@@ -25,6 +25,7 @@ export class DataSongManager {
     return this.songs;
   }
 
+
   public getSongNames(): string[] {
     let songNames: string[] = [];
     this.songs.forEach((song) => {
@@ -78,7 +79,7 @@ export class DataSongManager {
   }
 
 
-  public addSong(newSong: Song): void {
+  public addNewSong(newSong: Song): number {
     let alreadyInSongs = false;
     for (let i = 0; i < this.songs.length; i++) {
       if ((this.songs[i].getName() === newSong.getName()) &&
@@ -88,10 +89,11 @@ export class DataSongManager {
       }
     }
     if (alreadyInSongs) {
-      console.log('Error, ya existe una canción con ese nombre y artista.');
+      return -1;
     } else {
       this.songs.push(newSong);
       this.writeData(this.songs);
+      return 0;
     }
   }
 
