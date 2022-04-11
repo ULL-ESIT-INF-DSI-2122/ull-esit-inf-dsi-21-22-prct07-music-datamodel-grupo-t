@@ -51,4 +51,12 @@ export class DataArtistManager {
     });
     this.database.set("artists", dbData.artists).write();
   }
+
+  getArtistNames(): string[] {
+    const names: string[] = [];
+    this.artists.forEach(artist => {
+      names.push(artist.getName());
+    });
+    return names;
+  }
 }

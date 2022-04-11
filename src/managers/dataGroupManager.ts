@@ -48,4 +48,12 @@ export class DataGroupManager {
     });
     this.database.set("groups", dbData.groups).write();
   }
+
+  getGroupNames(): string[] {
+    const names: string[] = [];
+    this.groups.forEach(group => {
+      names.push(group.getName());
+    });
+    return names;
+  }
 }

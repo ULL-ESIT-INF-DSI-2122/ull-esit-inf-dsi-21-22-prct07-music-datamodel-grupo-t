@@ -41,4 +41,20 @@ export class Gestor {
   });
     this.database.set("playlists", dbData.playlists).write();
   }
+
+  public showPlaylists():string {
+    let cad: string = '';
+    this.playlists.forEach((playlist) => {
+      cad = `Name: ${playlist.getName()}`;
+      playlist.getSongs().forEach((song,index) => {        cad = cad + `Song ${index+1}: ${song.getName()}`;
+      });
+      
+      playlist.getGenres().forEach((genre,index) => {
+        cad = cad + `Genre ${index+1}: ${genre.getName()}`;
+      });
+      cad = cad + `Duration--> Minutes: ${playlist.getDuration().minutes} Seconds: ${playlist.getDuration().seconds}`;
+      console.log(cad);
+    });
+    return cad;
+  }
 }
