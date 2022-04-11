@@ -110,7 +110,7 @@ export function manageGenres() {
         });
         break;
 
-      case 'Eliminar':
+      case 'Borrar':
         console.log('Eliminar un nuevo género');
         let deleteGenreQuestions = [
           {

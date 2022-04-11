@@ -2,6 +2,8 @@ import {Genre, GenreInterface, GenreName} from '../models/genre'
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 import {Song} from '../models/song';
+import {Artist} from '../models/artist';
+import {Album} from '../models/album';
 
 interface GenreSchemaInterface {
   genres: GenreInterface[];
@@ -83,7 +85,22 @@ export class DataGenreManager {
     this.genres = [];
     let dbGenres = this.database.get("genres").value();
     dbGenres.forEach((genre) => {
-      let myGenre = new Genre(genre.name);
+      // Leemos los artistas del género
+      let artists: Artist[] = [];
+      genre.artists.forEach((artist) => {
+        artists.push(new Artist(artist));
+      });
+      // Leemos los álbumes del género
+      let albums: Album[] = [];
+      genre.albums.forEach((album) => {
+        albums.push(new Album(album));
+      });
+      // Leemos las canciones del género
+      let songs: Song[] = [];
+      genre.songs.forEach((song) => {
+        songs.push(new Song(song));
+      });
+      let myGenre = new Genre(genre.name, artists, albums, songs);
       this.genres.push(myGenre);
     });
   }
@@ -109,7 +126,9 @@ export class DataGenreManager {
   public deleteGenre(genreName: string): void {
     for (let i = 0; i < this.genres.length; i++) {
       if (this.genres[i].getName() === genreName) {
+        console.log(this.genres)
         this.genres.splice(i, 1);
+        console.log(this.genres)
       }
     }
     this.writeData(this.genres);
