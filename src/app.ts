@@ -9,6 +9,7 @@ import {songs, groups, artists, albums, genres, playlists} from './data/defaultD
 import {Genre} from './models/genre';
 import {Song} from './models/song';
 import { Artist } from './models/artist';
+import { Group } from './models/group';
 
 
 const dataGenreManager = new DataGenreManager(genres);
@@ -331,7 +332,11 @@ function modifyAlbumPrompt(): void {
 function modifyGroupsPrompt(): void {
   console.clear()    
   console.log('Gestor de Grupos');
+  const currentArtist = dataArtistManager.getArtistNames();
+  const currentGenres = dataGenreManager.getGenreNames();
   const currentGroups = dataGroupManager.getGroupNames();
+  const currentAlbums = dataAlbumManager.getAlbumsNames();
+
   const question = [
     {
       type: 'list',
@@ -344,40 +349,62 @@ function modifyGroupsPrompt(): void {
   inquirer.prompt(question).then((answers) => {
     switch(answers['election']) {
       case 'Añadir':
-        // console.log('Añadir una nueva canción');
-        // const addSongQuestions = [
-        //   {
-        //     type: 'list',
-        //     name: 'electionSong',
-        //     message: '¿Qué canción desea añadir?',
-        //     choices: [
-        //       'Rap','Pop','Pop','Rock','Electro','Classic','Country','Heavy','Jazz',
-        //       'Salsa','Flamenco','Folk','Country','Blues','Reggaeton','Punk','Reggae',
-        //       'Soul','Gospel','Funk','Disco','Hip Hop'],
-        //   }
-        // ];
-        // inquirer.prompt(addSongQuestions).then((answers) => {
-        //   dataGenreManager.addNewGenre(new Genre(answers.electionSong));
-        //   console.log(`Género ${answers.electionSong} añadido`);
-        // });
-        // dataAlbumManager.addAlbum();
-        break;
-      
-      // case 'Modificar':
-      //   console.log('Modificar un género');
-      //   const genreElection = [
-      //     {
-      //       type: 'list',
-      //       name: 'election',
-      //       message: '¿Qué desea género desea administrar?',
-      //       choices: currentGenres,
-      //     }
-      //   ];
-      //   inquirer.prompt(genreElection).then((answers: any) => {
-      //     const election = answers.election;
-      //     // dataGenreManager.modifyGenre(election);
-      //   });
-      //   break;
+        console.log('Añadir un nuevo grupo');
+        const question = [
+          {
+            type: 'input',
+            name: 'name',
+            message: '¿Cuál es el nombre del grupo?'
+          },
+          {
+            type: 'checkbox',
+            name: 'artists',
+            message: '¿Cuales son sus miembros?',
+            choices: currentArtist
+          },
+          {
+            type: 'input',
+            name: 'year',
+            message: '¿Qué año se formó?',
+          },
+          {
+            type: 'checkbox',
+            name: 'genres',
+            message: '¿A qué géneros pertenece?',
+            choices: currentGenres
+          },
+          {
+            type: 'checkbox',
+            name: 'albumns',
+            message: '¿Qué álbumes son suyos?',
+            choices: currentAlbums
+          },
+          {
+            type: 'input',
+            name: 'listeners',
+            message: '¿Cuántos oyentes mensuales tienen?',
+          },
+        ];
+        inquirer.prompt(question).then((answers) => {
+          const added = dataGroupManager.addNewGroup(
+            new Group(answers.name, answers.artists, answers.year,
+              [new Genre(answers.genres)], answers.albums, answers.listeners));
+          
+          if (added === 0) {
+            console.log(`Género ${answers.electionGenre} añadido`);    
+          } else {
+            console.log('Error, ya existe una canción con ese nombre y artista.');
+          }
+
+          inquirer.prompt([{
+            name: 'continue',
+            message: 'Pulse enter para continuar',
+            type: 'input'
+          }]).then(function() {
+            promptUser();
+          });
+        });
+      break;
 
       case 'Eliminar':
         console.log('Eliminar un grupo');
@@ -390,10 +417,17 @@ function modifyGroupsPrompt(): void {
           }
         ];
         inquirer.prompt(questions).then((answers) => {
-          // dataGroupManager.deleteGroup(answers.election);
-          console.log(`Grupo ${answers.electionSong} eliminado`);
+          dataGroupManager.deleteGroup(answers.election);
+          console.log(`Grupo ${answers.election} eliminado`);
         });
-        break;
+        inquirer.prompt([{
+          name: 'continue',
+          message: 'Pulse enter para continuar',
+          type: 'input'
+        }]).then(function() {
+          promptUser();
+        });
+      break;
       
       case 'Atrás':
         promptUser();
@@ -423,49 +457,56 @@ function modifyArtistasPrompt(): void {
   inquirer.prompt(question).then((answers) => {
     switch(answers['election']) {
       case 'Añadir':
-      console.log('Añadir un nuevo artista');
-      let question = [
-        {
-          type: 'input',
-          name: 'artistName',
-          message: '¿Cuál es el nombre del artista?'
-        },
-        {
-          type: 'list',
-          name: 'groups',
-          message: '¿A que grupo pertenece?',
-          choices: currentGroups + 'ninguno'
-        },
-        {
-          type: 'checkbox',
-          name: 'albumns',
-          message: '¿Qué albumes tiene?',
-          choices: currentAlbums + 'ninguno'
-        },
-        {
-          type: 'checkbox',
-          name: 'genres',
-          message: '¿A qué géneros pertenece?',
-          choices: currentGenres
-        },
-        {
-          type: 'checkbox',
-          name: 'songs',
-          message: '¿Qué canciones son suyas?',
-          choices: currentSongs
-        },
-      ];
-      
-      inquirer.prompt(question).then((answers) => {
-        const added = dataArtistManager.addNewArtist(new Artist(answers.artistName, answers.groups, 
-          answers.genres, answers.albums, answers.songs));
+        console.log('Añadir un nuevo artista');
+        let question = [
+            {
+              type: 'input',
+              name: 'name',
+              message: '¿Cuál es el nombre del artista?'
+            },
+            {
+              type: 'list',
+              name: 'groups',
+              message: '¿A que grupo pertenece?',
+              choices: currentGroups + 'ninguno'
+            },
+            {
+              type: 'checkbox',
+              name: 'albumns',
+              message: '¿Qué albumes tiene?',
+              choices: currentAlbums + 'ninguno'
+            },
+            {
+              type: 'checkbox',
+              name: 'genres',
+              message: '¿A qué géneros pertenece?',
+              choices: currentGenres
+            },
+            {
+              type: 'checkbox',
+              name: 'songs',
+              message: '¿Qué canciones son suyas?',
+              choices: currentSongs
+            },
+          ];
+        inquirer.prompt(question).then((answers) => {
+          const added = dataArtistManager.addNewArtist(
+                    new Artist(answers.name, answers.groups, [new Genre(answers.genres)], 
+                    answers.albumns, answers.songs));
           if (added === 0) {
-            console.log(`Género ${answers.electionGenre} añadido`);
+            console.log(`Artista ${answers.electionGenre} añadido`);    
           } else {
-            console.log('Error, ese género ya está definido.');
-          } 
-      });
-      break;
+            console.log('Error, ya existe ese artista.');
+          }
+          inquirer.prompt([{
+            name: 'continue',
+            message: 'Pulse enter para continuar',
+            type: 'input'
+          }]).then(function() {
+            promptUser();
+          });
+        });
+        break;
 
     case 'Eliminar':
       console.log('Eliminar un artista');
@@ -480,6 +521,13 @@ function modifyArtistasPrompt(): void {
       inquirer.prompt(questions).then((answers) => {
         dataArtistManager.deleteArtist(answers.election);
         console.log(`Artista ${answers.election} eliminado`);
+        inquirer.prompt([{
+          name: 'continue',
+          message: 'Pulse enter para continuar',
+          type: 'input'
+        }]).then(function() {
+          promptUser();
+        });        
       });
       break;
 
