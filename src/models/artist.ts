@@ -80,17 +80,21 @@ export class Artist {
   }
 
   /**
-   * @returns the albumns that the artist had realased
+   * @returns the albumns that the artist has realased
    */ 
   public getAlbums(): Album[] {
     return this.albums;
   }
 
   /**
-   * @returns all the songs that the artist had realeased
+   * @returns all the songs that the artist has realeased as a string
    */
-  public getPublishedSongs(): Song[] {
-    return this.publishedSongs;
+  public getPublishedSongs(): string[] {
+    let songsNames: string[] = [];
+    this.publishedSongs.forEach(song => {
+      songsNames.push(song.getName());
+    });
+    return songsNames;
   }
 
   /**

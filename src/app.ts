@@ -29,8 +29,8 @@ export function promptUser() {
     {
         type: 'list',
         name: 'election',
-        message: '¿Que desea hacer?',
-        choices: ['Navegar información de grupos', 'Navegar información de artistas', 'Configuración', 'Salir'],
+        message: '¿Qué desea hacer?',
+        choices: ['Ver información de artistas', 'Ver información de grupos', 'Configuración', 'Salir'],
     },
   ];
   inquirer.prompt(questions).then((answers) => {    
@@ -45,7 +45,7 @@ export function promptUser() {
         modifyCollectionPrompt();
         break;
       case 'Salir':
-        console.log('Saliendo del programa...')
+        console.log('Saliendo del programa...');
         break;
       }
     });
@@ -54,12 +54,105 @@ export function promptUser() {
 
 
 function navigateGroupPrompt() {
-
+  console.clear();
+  console.log('Información de artistas');
+  const currentArtist = dataArtistManager.getArtistNames();
+  const questions = [
+    {
+        type: 'list',
+        name: 'artist',
+        message: '¿Qué artista desea ver?',
+        choices: currentArtist,
+    },
+    {
+      type: 'list',
+      name: 'media',
+      message: '¿Qué desea ver del artista?',
+      choices: ['Canciones', 'Álbumes', 'Playlists'],
+    },
+  ];
+  let checkArtist = "";
+  inquirer.prompt(questions).then((answers) => {
+    checkArtist = answers.artist as string;
+    switch(answers.media) {
+      case 'Canciones':
+        break;
+      case 'Álbumes':
+        break;
+      case 'Playlists':
+        break;
+    }
+  });
 }
 
 
 function navigateArtistPrompt() {
+  console.clear();
+  console.log('Información de artistas');
+  const currentArtist = dataArtistManager.getArtistNames();
+  const questions = [
+    {
+        type: 'list',
+        name: 'artist',
+        message: '¿Qué artista desea ver?',
+        choices: currentArtist,
+    },
+    {
+      type: 'list',
+      name: 'media',
+      message: '¿Qué desea ver del artista?',
+      choices: ['Canciones', 'Álbumes', 'Playlists'],
+    },
+  ];
+  let checkArtist = "";
+  inquirer.prompt(questions).then((answers) => {
+    checkArtist = answers.artist as string;
+    switch(answers.media) {
+      case 'Canciones':
+        checkSongsOfArtists(checkArtist);
+        break;
+      case 'Álbumes':
+        break;
+      case 'Playlists':
+        break;
+    }
+  });
+}
 
+
+function checkSongsOfArtists(checkArtist: string) {
+  const artist = dataArtistManager.getDefinedArtist(checkArtist);
+  const songsOfArtist = artist?.getSongs();
+  const questions = [
+    {
+        type: 'list',
+        name: 'songsOrder',
+        message: '¿Cómo desea ver las canciones?',
+        choices: [
+          'En órden alfabético ascendente', 'En órden alfabético descendente',
+          'Por número de reproducciones ascendente', 'Por número de reproducciones descendente',
+          'Mostrar únicamente singles'],
+    },
+  ];
+  inquirer.prompt(questions).then((answers) => {
+    switch(answers.songsOrder) {
+      case 'En órden alfabético ascendente':
+        checkSongsInOrder(songsOfArtist, 'UpAlphabet');
+        break;
+      case 'En órden alfabético descendente':
+        checkSongsInOrder(songsOfArtist, 'DownAlphabet');
+        break;
+      case 'Por número de reproducciones ascendente':
+        checkSongsInOrder(songsOfArtist, 'UpViews');
+        break;
+      case 'Por número de reproducciones descendente':
+        checkSongsInOrder(songsOfArtist, 'DownViews');
+        break;
+      case 'Mostrar únicamente singles':
+        checkSongsInOrder(songsOfArtist, 'Singles');
+        break;
+    }
+  });
 }
 
 
