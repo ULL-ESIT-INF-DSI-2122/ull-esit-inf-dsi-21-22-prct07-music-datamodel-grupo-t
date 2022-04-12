@@ -2,6 +2,7 @@ import {Song, SongInterface} from '../models/song'
 import {Genre, GenreName} from '../models/genre'
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
+import {DataGenreManager} from './dataGenreManager'; 
 
 interface SongSchemaInterface {
   songs: SongInterface[];
@@ -25,6 +26,14 @@ export class DataSongManager {
     return this.songs;
   }
 
+  public getDefinedSong(songName: string): Song | undefined{
+    for (let i = 0; i < this.songs.length; i++) {
+      if (songName === this.songs[i].getName()) {
+        return this.songs[i];
+      }
+    }
+    return undefined;
+  }
 
   public getSongNames(): string[] {
     let songNames: string[] = [];
@@ -63,13 +72,14 @@ export class DataSongManager {
 
 
   public readData(): void {
+    const dataGenres = new DataGenreManager();
     this.songs = [];
-    let dbGenres = this.database.get("songs").value();
-    dbGenres.forEach((song) => {
+    let dbSongs = this.database.get("songs").value();
+    dbSongs.forEach((song) => {
       // Leemos los géneros de la canción
       let genres: Genre[] = [];
       song.genres.forEach((genre) => {
-        genres.push(new Genre(genre));
+        genres.push(dataGenres.getDefinedGenre(genre) as Genre);
       });
       let mySong = 
         new Song(song.name, song.artist, song.duration, 

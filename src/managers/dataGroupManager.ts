@@ -1,9 +1,12 @@
 import {Group, GroupInterface} from '../models/group'
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
-import { Artist } from '../models/artist';
-import { Genre, GenreName } from '../models/genre';
-import { Album } from '../models/album';
+import {Artist} from '../models/artist';
+import {Genre, GenreName} from '../models/genre';
+import {Album} from '../models/album';
+// import {DataArtistManager} from './dataArtistManager'; 
+// import {DataAlbumManager} from './dataAlbumManager';
+// import {DataGenreManager} from './dataGenreManager'; 
 
 interface GroupSchemaInterface {
   groups: GroupInterface[];
@@ -16,40 +19,23 @@ export class DataGroupManager {
   public constructor(groups: Group[] = []) {
     this.groups = groups;
     if (!this.database.has("groups").value()) {
-      this.exportData(groups);
+      this.writeData(groups);
+    } else {
+      this.readData();
     }
   }
 
-  public exportData(groupData: Group[]): void {
-    let dbData: GroupSchemaInterface = {groups: []};
-    // Se escriben los grupos
-    groupData.forEach((group) => {
-      let name = group.getName();
-      let artistsName: string[] = [];
-      group.getArtists().forEach((artist) => {
-        artistsName.push(artist.getName());
-      });
-      let year = group.getYearOfCreation();
-      let genresNames: GenreName[] = [];
-      group.getRelatedGenres().forEach((genre) => {
-        genresNames.push(genre.getName());
-      });
-      let albumsNames: string[] = [];
-      group.getAlbums().forEach((album) => {
-        albumsNames.push(album.getName());
-      });
-      let views = group.getMonthlyListeners();
+  public getGroups(): Group[] {
+    return this.groups;
+  }
 
-      dbData.groups.push({
-        name: name,
-        artists: artistsName,
-        year: year,
-        genres: genresNames,
-        albums: albumsNames,
-        monthlyListeners: views
-      });
-    });
-    this.database.set("groups", dbData.groups).write();
+  public getDefinedGroup(groupName: string): Group | undefined {
+    for (let i = 0; i < this.groups.length; i++) {
+      if (groupName === this.groups[i].getName()) {
+        return this.groups[i];
+      }
+    }
+    return undefined;
   }
 
   public getGroupNames(): string[] {
@@ -88,9 +74,13 @@ export class DataGroupManager {
         monthlyListeners: group.getMonthlyListeners()
       });
     });
+    this.database.set("groups", dbData.groups).write();
   }
 
   public readData(): void {
+    // const dataArtists = new DataArtistManager();
+    // const dataAlbums = new DataAlbumManager();
+    // const dataGenres = new DataGenreManager();
     this.groups = [];
     const dbGroups = this.database.get("groups").value();
 
@@ -111,7 +101,7 @@ export class DataGroupManager {
       });
 
       const myGroup = new Group(group.name, artists, 
-        group.year, genres, albumns, group.monthlyListeners)
+          group.year, genres, albumns, group.monthlyListeners)
       this.groups.push(myGroup);
     });
   }

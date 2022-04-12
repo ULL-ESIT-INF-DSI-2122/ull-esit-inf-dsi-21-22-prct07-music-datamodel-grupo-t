@@ -1,10 +1,15 @@
-import {Artist, ArtistInterface} from '../models/artist'
+
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
-import { Genre, GenreName } from '../models/genre';
-import { Group } from '../models/group';
-import { Album } from '../models/album';
-import { Song } from '../models/song';
+import {Genre, GenreName} from '../models/genre';
+import {Artist, ArtistInterface} from '../models/artist'
+import {Group} from '../models/group';
+import {Album} from '../models/album';
+import {Song} from '../models/song';
+import {DataSongManager} from './dataSongManager'; 
+import {DataGroupManager} from './dataGroupManager'; 
+import {DataAlbumManager} from './dataAlbumManager';
+import {DataGenreManager} from './dataGenreManager'; 
 
 
 interface ArtistSchemaInterface {
@@ -18,43 +23,10 @@ export class DataArtistManager {
   public constructor(artists: Artist[] = []) {
     this.artists = artists;
     if (!this.database.has("artists").value()) {
-      this.exportData(artists);
+      this.writeData(artists);
+    } else {
+      this.readData();
     }
-  }
-
-  public exportData(artistsData: Artist[]) {
-    let dbData: ArtistSchemaInterface = {artists: []};
-    // Se escriben los artistas
-    artistsData.forEach((artist) => {
-      let name = artist.getName();
-      let groupsNames: string[] = [];
-      artist.getGroups().forEach((group) => {
-        groupsNames.push(group.getName());
-      });
-      let genresNames: GenreName[] = [];
-      artist.getGenres().forEach((genre) => {
-        genresNames.push(genre.getName());
-      });
-      let albumsNames: string[] = [];
-      artist.getAlbums().forEach((album) => {
-        albumsNames.push(album.getName());
-      });
-      let songsNames: string[] = [];
-      artist.getSongs().forEach((song) => {
-        songsNames.push(song.getName());
-      });
-      let views = artist.getMonthlyListeners();
-
-      dbData.artists.push({
-        name: name,
-        groups: groupsNames,
-        genres: genresNames,
-        albums: albumsNames,
-        songs: songsNames,
-        monthlyListeners: views
-      });
-    });
-    this.database.set("artists", dbData.artists).write();
   }
 
   public writeData(artistsData: Artist[] = []) {
@@ -93,33 +65,51 @@ export class DataArtistManager {
   }
 
   public readData(): void {
+    const dataSongs = new DataSongManager();
+    const dataAlbums = new DataAlbumManager();
+    const dataGroups = new DataGroupManager();
+    const dataGenres = new DataGenreManager();
+
     this.artists = [];
-    let dbArtists = this.database.get("artists").value();
+    const dbArtists = this.database.get("artists").value();
     dbArtists.forEach((artist) => {
 
       const groups: Group[] = [];
       artist.groups.forEach((group) => {
-        groups.push(new Group(group));
+        groups.push(dataGroups.getDefinedGroup(group) as Group);
       });
 
       const genres: Genre[] = [];
       artist.genres.forEach((genre) => {
-        genres.push(new Genre(genre));
+        genres.push(dataGenres.getDefinedGenre(genre) as Genre);
       });
       
       const albumns: Album[] = [];
       artist.albums.forEach((album) => {
-        albumns.push(new Album(album));
+        albumns.push(dataAlbums.getDefinedAlbum(album) as Album);
       });
 
       const songs: Song[] = [];
       artist.songs.forEach((song) => {
-        songs.push(new Song(song));
+        songs.push(dataSongs.getDefinedSong(song) as Song);
       });
       
       const myArtists = new Artist(artist.name, groups, genres, albumns, songs);
       this.artists.push(myArtists);
     });
+  }
+
+  public getArtists(): Artist[] {
+    return this.artists;
+  }
+
+  public getDefinedArtist(artistName: string): Artist | undefined {
+    for (let i = 0; i < this.artists.length; i++) {
+      if (artistName === this.artists[i].getName()) {
+        return this.artists[i];
+      }
+    }
+    return undefined;
   }
 
   public getArtistNames(): string[] {
