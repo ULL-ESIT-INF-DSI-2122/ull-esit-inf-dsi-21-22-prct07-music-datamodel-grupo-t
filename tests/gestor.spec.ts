@@ -18,6 +18,6 @@ describe('PlayList class function tests', () => {
     expect(gestor).to.be.instanceOf(Gestor);
   });
   it('There is a method to show the PlayLists information', () => {
-    expect(gestor.showPlaylists()).to.be.eql('Name: Reggae ChillSong 1: Redemption SongSong 2: Judge NotGenre 1: ReggaeGenre 2: PopDuration--> Minutes: 3 Seconds: 30');
+    expect(gestor.showPlaylists()).to.be.eql('Name: Reggae Chill | Song 1: Redemption Song | Song 2: Judge Not | Genre 1: Reggae | Genre 2: Pop | Duration--> Minutes: 3 Seconds: 30');
   });
 });
