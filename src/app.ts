@@ -11,6 +11,7 @@ import {Song} from './models/song';
 import {Album} from './models/album';
 import {Artist} from './models/artist';
 import {Group} from './models/group';
+import { PlayList } from './models/playlist';
 
 
 const dataGenreManager = new DataGenreManager(genres);
@@ -29,7 +30,7 @@ export function promptUser() {
         type: 'list',
         name: 'election',
         message: '¿Que desea hacer (añadir, borrar y/o modificar)?',
-        choices: ['Géneros', 'Canciones', 'Álbums', 'Grupos', 'Artistas', 'Salir'],
+        choices: ['Géneros', 'Canciones', 'Álbums', 'Grupos', 'Artistas', 'PlayLists', 'Salir'],
     },
   ];
 
@@ -55,6 +56,10 @@ export function promptUser() {
         console.log("Gestionar artistas")
         modifyArtistsPrompt();
         break;   
+      case 'PlayLists':
+        console.log("Gestionar playlists")
+        modifyPlayListsPrompt();
+        break;
       case 'Salir':
         console.log('Saliendo del programa...')
         break;
@@ -626,6 +631,99 @@ function modifyArtistsPrompt(): void {
     case 'Atrás':
       promptUser();
       break;
+    }
+  });
+}
+
+function modifyPlayListsPrompt(): void {
+  console.clear();
+  console.log('Gestor de PlayLists');
+  const currentGenres = dataGenreManager.getGenreNames();
+  const currentSongs = dataSongManager.getSongNames();
+  const question = [
+    {
+      type: 'list',
+      name: 'election',
+      message: '¿Que desea hacer (añadir, borrar o modificar una canción)?',
+      choices: ['Añadir'/* , 'Modificar' */, 'Borrar', 'Atrás']
+    }
+  ];
+
+  inquirer.prompt(question).then((answers) => {
+    switch(answers['election']) {
+      case 'Añadir':
+        console.log('Añadir una playlist nueva');
+        let addPlayListQuestions = [
+          {
+            type: 'input',
+            name: 'playListName',
+            message: '¿Cuál es el nombre de la PlayList?'
+          },
+          {
+            type: 'list',
+            name: 'songsInside',
+            message: '¿Que canciones quiere poner en la playlist?',
+            choices: currentSongs
+          },
+          {
+            type: 'input',
+            name: 'duration',
+            message: '¿Cuál es su duración (en minutos)?'
+          },
+          {
+            type: 'list',
+            name: 'genresInside',
+            message: '¿Que géneros hay en la playlist?',
+            choices: currentGenres
+          }
+        ];
+        inquirer.prompt(addPlayListQuestions).then((answers) => {
+          const added = playlistManager.addNewPlaylist(
+            new PlayList(answers.playListName, [], {minutes: 0, seconds: 0},
+              []));
+          if (added === 0) {
+            console.log(`Playlist ${answers.playListName} añadida`);    
+          } else {
+            console.log('Error, ya existe una playlist con ese nombre y artista.');
+          }
+          inquirer.prompt([{
+            name: 'continue',
+            message: 'Pulse enter para continuar',
+            type: 'input'
+          }]).then(function() {
+            promptUser();
+          });
+        });
+        break;
+      
+      
+
+      case 'Borrar':
+        console.log('Eliminar una canción');
+        let question = [
+          {
+            type: 'list',
+            name: 'election',
+            message: '¿Qué canción desea eliminar?',
+            choices: currentSongs,
+          }
+        ];
+        inquirer.prompt(question).then((answers) => {
+          dataSongManager.deleteSong(answers.election);
+          console.log(`Canción ${answers.election} eliminada`);
+        });
+        inquirer.prompt([{
+          name: 'continue',
+          message: 'Pulse enter para continuar',
+          type: 'input'
+        }]).then(function() {
+          promptUser();
+        });
+        break;
+      
+      case 'Atrás':
+        promptUser();
+        break;
     }
   });
 }
