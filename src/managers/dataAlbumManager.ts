@@ -155,3 +155,4 @@ export class DataAlbumManager {
     this.writeData(this.albums);
   }
 }
+

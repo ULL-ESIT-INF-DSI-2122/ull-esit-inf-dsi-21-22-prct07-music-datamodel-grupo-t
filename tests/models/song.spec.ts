@@ -1,7 +1,7 @@
 import 'mocha';
 import { expect } from 'chai';
-import { Song } from '../src/models/song'
-import { Genre } from '../src/models/genre';
+import { Song } from '../../src/models/song'
+import { Genre } from '../../src/models/genre';
 
 const pop = new Genre('Pop', [], [], []);
 const song = new Song('Danza Kuduro', 'Don Omar', {minutes: 1, seconds: 34}, [pop], true, 1000000);
