@@ -1,8 +1,8 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Genre} from '../src/models/genre'
-import {Album} from '../src/models/album'
-import {Song} from '../src/models/song';
+import {Genre} from '../../src/models/genre'
+import {Album} from '../../src/models/album'
+import {Song} from '../../src/models/song';
 
 
 describe('Album class function tests', () => {
@@ -10,6 +10,7 @@ describe('Album class function tests', () => {
   let redemtion = new Song("Redemption Song", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
   let judge = new Song("Judge Not", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
   let album = new Album("Songs of Freedom", "Bob Marley", 1961, [reggae], [redemtion, judge]);
+  
   
   it('It creates a new instance of an object with class Combat', () => {
     expect(album).to.be.instanceOf(Album);

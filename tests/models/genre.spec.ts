@@ -1,10 +1,10 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Genre} from '../src/models/genre'
-import {Album} from '../src/models/album'
-import {Song} from '../src/models/song';
-import {Artist} from '../src/models/artist';
-import {Group} from '../src/models/group';
+import {Genre} from '../../src/models/genre'
+import {Album} from '../../src/models/album'
+import {Song} from '../../src/models/song';
+import {Artist} from '../../src/models/artist';
+import {Group} from '../../src/models/group';
 
 let song = new Song("Song", "Paul", {minutes: 1, seconds: 34}, [], false, 12);
 let album = new Album("", "Paul", 2000, [], [song]);

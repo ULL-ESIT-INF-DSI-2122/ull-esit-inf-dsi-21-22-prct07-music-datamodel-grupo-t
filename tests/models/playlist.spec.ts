@@ -1,8 +1,8 @@
 import 'mocha';
 import {expect} from 'chai';
-import {PlayList} from '../src/models/playlist'
-import {Genre} from '../src/models/genre'
-import {Song} from '../src/models/song';
+import {PlayList} from '../../src/models/playlist'
+import {Genre} from '../../src/models/genre'
+import {Song} from '../../src/models/song';
 
 
 describe('PlayList class function tests', () => {
