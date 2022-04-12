@@ -1,22 +1,31 @@
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 import {PlayList, PlaylistInterface} from '../models/playlist'
-import {Genre, GenreInterface} from '../models/genre'
+import {Genre, GenreName} from '../models/genre'
 import {Group} from '../models/group'
 import {Artist} from '../models/artist'
-import {Song, SongInterface} from '../models/song'
 import {DataArtistManager} from './dataArtistManager'
 import {DataGroupManager} from './dataGroupManager'
+import {Song} from "../models/song";
 
-
+/**
+ * Interface that defines the schema for the Gestor class in the database
+ */
 interface PlaylistSchemaInterface {
   playlists: PlaylistInterface[];
 }
 
+/**
+ * Class in charge of manage all the data of the playlist in the database
+ */
 export class Gestor {
   private playlists: PlayList[];
   private database: lowdb.LowdbSync<PlaylistSchemaInterface> = lowdb(new FileSync("./src/data/PlaylistCollection.json"));
 
+  /**
+   * Constructor
+   * @param playlists the class will storage in order to operate with them. 
+   */
   public constructor(playlists: PlayList[] = []) {
     this.playlists = playlists;
     if (!this.database.has("playlists").value()) {
@@ -24,17 +33,21 @@ export class Gestor {
     }
   }
 
+  /**
+   * This method updates the information stored in the database.
+   * @param playlists data from the songs that will be writen
+   */
   public writeData(playlists: PlayList[]): void {
-    let dbData: PlaylistSchemaInterface = {playlists: []};
-   // Se escriben las playlists
-   playlists.forEach((playlist) => {
-    let name = playlist.getName();
-    let songsNames: string[] = [];
+    const dbData: PlaylistSchemaInterface = {playlists: []};
+
+    playlists.forEach((playlist) => {
+    const name = playlist.getName();
+    const songsNames: string[] = [];
     playlist.getSongs().forEach((song) => {
       songsNames.push(song.getName());
     });
-    let duration = playlist.getDuration();
-    let genresNames: string[] = [];
+    const duration = playlist.getDuration();
+    const genresNames: GenreName[] = [];
     playlist.getGenres().forEach((genre) => {
       genresNames.push(genre.getName());
     });
@@ -49,7 +62,49 @@ export class Gestor {
     this.database.set("playlists", dbData.playlists).write();
   }
 
+  /**
+   * Reads all the information available in the database and stores it. This is 
+   * crucial in order to operate with any type of data
+   */
+  public readData(): void {
+    this.playlists = [];
+    const dbPlaylist = this.database.get("playlists").value();
 
+    dbPlaylist.forEach(playlist => {
+      const songs: Song[] = [];
+      const totalTime: {minutes: number, seconds: number} = {minutes: 0, seconds: 0};
+      
+      playlist.songs.forEach(song => {
+        songs.push(new Song(song));
+      });
+
+      songs.forEach(song => {
+        totalTime.minutes += song.getDuration().minutes;
+        totalTime.seconds += song.getDuration().seconds;
+        if (totalTime.seconds > 59) {
+          totalTime.minutes++;
+          totalTime.seconds = totalTime.seconds % 60;
+        }
+      });
+
+      const genres: Genre[] = [];
+      playlist.genres.forEach(genre => {
+        genres.push(new Genre(genre));
+      });      
+      
+      const myPlaylist = new PlayList(playlist.name, songs, 
+        totalTime, genres);
+
+      this.playlists.push(myPlaylist);
+    });
+  }
+
+  /**   
+   * Add's a new playlist to the database. Calls the write() method in order to update
+   * the database
+   * @param newPlaylist playlist that will be added
+   * @returns 0 or -1 depending of the succes of the operation
+   */  
   public addNewPlaylist(newPlaylist: PlayList): number {
     let alreadyInPlaylist = false;
     for (let i = 0; i < this.playlists.length; i++) {
@@ -68,7 +123,11 @@ export class Gestor {
     }
   }
 
-  public showPlaylists():string {
+  /**
+   * Show's the stored playlist and it's information
+   * @returns the information in string format
+   */
+  public showPlaylists(): string {
     let cad = '';
     this.playlists.forEach((playlist) => {
       cad = `Name: ${playlist.getName()} | `;
