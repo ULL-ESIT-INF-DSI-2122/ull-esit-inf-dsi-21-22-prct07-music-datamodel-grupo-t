@@ -28,33 +28,21 @@ export function promptUser() {
     {
         type: 'list',
         name: 'election',
-        message: '¿Que desea hacer (añadir, borrar y/o modificar)?',
-        choices: ['Géneros', 'Canciones', 'Álbums', 'Grupos', 'Artistas', 'Salir'],
+        message: '¿Que desea hacer?',
+        choices: ['Navegar información de grupos', 'Navegar información de artistas', 'Configuración', 'Salir'],
     },
   ];
-
   inquirer.prompt(questions).then((answers) => {    
     switch(answers['election']) {
-      case 'Géneros':
-        console.log("Gestionar géneros")
-        modifyGenrePrompt();
+      case 'Ver información de artistas':
+        navigateArtistPrompt();
         break;
-      case 'Canciones':
-        console.log("Gestionar temas")
-        modifySongPrompt();
+      case 'Ver información de grupos':
+        navigateGroupPrompt();
         break;
-      case 'Álbums':
-        console.log("Gestionar albums")
-        modifyAlbumPrompt();
+      case 'Configuración':
+        modifyCollectionPrompt();
         break;
-      case 'Grupos':
-        console.log("Gestionar grupos")
-        modifyGroupsPrompt()
-        break;
-      case 'Artistas':
-        console.log("Gestionar artistas")
-        modifyArtistsPrompt();
-        break;   
       case 'Salir':
         console.log('Saliendo del programa...')
         break;
@@ -62,6 +50,17 @@ export function promptUser() {
     });
   return 0;
 }
+
+
+function navigateGroupPrompt() {
+
+}
+
+
+function navigateArtistPrompt() {
+
+}
+
 
 function modifyCollectionPrompt() {
   console.clear();
@@ -104,6 +103,7 @@ function modifyCollectionPrompt() {
       }
     });
 }
+
 
 function modifyGenrePrompt(): void {
   console.clear()    
