@@ -150,4 +150,67 @@ export class DataSongManager {
     }
     this.writeData(this.songs);
   }
+
+
+  /**
+   * Returns an array of ordered Songs given the mode to be sorted
+   * and an optional artist whose songs want to be searched
+   * @param mode mode to sort the array of songs
+   * @param author author whose songs want to be sorted
+   * @returns the array sorted
+   */
+  public getSongsInOrder(mode: string, author = ''): Song[] {
+    let songsToOrder: Song[] = [];
+    if (author === '') {
+      songsToOrder = this.songs;
+    } else {
+      this.songs.forEach(song => {
+        if (song.getAuthor() === author) {
+          songsToOrder.push(song);
+        }
+      });
+    }
+    switch(mode) {
+      case 'UpAlphabet':
+        songsToOrder.sort(function(a, b) {
+          let songNameA = a.getName().toLowerCase(), songNameB = b.getName().toLowerCase();
+          if (songNameA < songNameB) { return -1; }
+          if (songNameA > songNameB) { return 1; }
+          return 0;
+        });
+        break;
+      case 'DownAlphabet':
+        songsToOrder.sort(function(a, b) {
+          let songNameA = a.getName().toLowerCase(), songNameB = b.getName().toLowerCase();
+          if (songNameA > songNameB) { return -1; }
+          if (songNameA < songNameB) { return 1; }
+          return 0;
+        });
+        break;
+      case 'UpViews':
+        songsToOrder.sort(function(a, b) {
+          let songViewsA = a.getViews(), songViewsB = b.getViews();
+          if (songViewsA < songViewsB) { return -1; }
+          if (songViewsA > songViewsB) { return 1; }
+          return 0;
+        });
+        break;
+      case 'DownViews':
+        songsToOrder.sort(function(a, b) {
+          let songViewsA = a.getViews(), songViewsB = b.getViews();
+          if (songViewsA > songViewsB) { return -1; }
+          if (songViewsA < songViewsB) { return 1; }
+          return 0;
+        });
+        break;
+      case 'Singles':
+        this.songs.forEach((song, index) => {
+          if (!song.getIsSingle()) {
+            songsToOrder.splice(index, 1);
+          }
+        });
+        break;
+    }
+    return songsToOrder;
+  }
 }

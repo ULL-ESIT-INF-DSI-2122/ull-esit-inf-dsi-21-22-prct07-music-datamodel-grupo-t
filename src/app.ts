@@ -3,7 +3,7 @@ import {DataGenreManager} from './managers/dataGenreManager';
 import {DataArtistManager} from './managers/dataArtistManager';
 import {DataAlbumManager} from './managers/dataAlbumManager';
 import {DataGroupManager} from './managers/dataGroupManager';
-import {DataSongManager} from './managers/dataSongManager';
+import {DataSongManager, SongSchemaInterface} from './managers/dataSongManager';
 import {Gestor} from './managers/gestor';
 import {songs, groups, artists, albums, genres, playlists} from './data/defaultData';
 import {Genre, GenreName} from './models/genre';
@@ -54,35 +54,35 @@ export function promptUser() {
 
 
 function navigateGroupPrompt() {
-  console.clear();
-  console.log('Información de artistas');
-  const currentArtist = dataArtistManager.getArtistNames();
-  const questions = [
-    {
-        type: 'list',
-        name: 'artist',
-        message: '¿Qué artista desea ver?',
-        choices: currentArtist,
-    },
-    {
-      type: 'list',
-      name: 'media',
-      message: '¿Qué desea ver del artista?',
-      choices: ['Canciones', 'Álbumes', 'Playlists'],
-    },
-  ];
-  let checkArtist = "";
-  inquirer.prompt(questions).then((answers) => {
-    checkArtist = answers.artist as string;
-    switch(answers.media) {
-      case 'Canciones':
-        break;
-      case 'Álbumes':
-        break;
-      case 'Playlists':
-        break;
-    }
-  });
+  // console.clear();
+  // console.log('Información de artistas');
+  // const currentArtist = dataArtistManager.getArtistNames();
+  // const questions = [
+  //   {
+  //       type: 'list',
+  //       name: 'artist',
+  //       message: '¿Qué artista desea ver?',
+  //       choices: currentArtist,
+  //   },
+  //   {
+  //     type: 'list',
+  //     name: 'media',
+  //     message: '¿Qué desea ver del artista?',
+  //     choices: ['Canciones', 'Álbumes', 'Playlists'],
+  //   },
+  // ];
+  // let checkArtist = "";
+  // inquirer.prompt(questions).then((answers) => {
+  //   checkArtist = answers.artist as string;
+  //   switch(answers.media) {
+  //     case 'Canciones':
+  //       break;
+  //     case 'Álbumes':
+  //       break;
+  //     case 'Playlists':
+  //       break;
+  //   }
+  // });
 }
 
 
@@ -121,8 +121,6 @@ function navigateArtistPrompt() {
 
 
 function checkSongsOfArtists(checkArtist: string) {
-  const artist = dataArtistManager.getDefinedArtist(checkArtist);
-  const songsOfArtist = artist?.getSongs();
   const questions = [
     {
         type: 'list',
@@ -134,24 +132,36 @@ function checkSongsOfArtists(checkArtist: string) {
           'Mostrar únicamente singles'],
     },
   ];
+  let songsOfArtist: Song[] = [];
   inquirer.prompt(questions).then((answers) => {
     switch(answers.songsOrder) {
       case 'En órden alfabético ascendente':
-        checkSongsInOrder(songsOfArtist, 'UpAlphabet');
+        songsOfArtist = dataSongManager.getSongsInOrder('UpAlphabet', checkArtist);
         break;
       case 'En órden alfabético descendente':
-        checkSongsInOrder(songsOfArtist, 'DownAlphabet');
+        songsOfArtist = dataSongManager.getSongsInOrder('DownAlphabet', checkArtist);
         break;
       case 'Por número de reproducciones ascendente':
-        checkSongsInOrder(songsOfArtist, 'UpViews');
+        songsOfArtist = dataSongManager.getSongsInOrder('UpViews', checkArtist);
         break;
       case 'Por número de reproducciones descendente':
-        checkSongsInOrder(songsOfArtist, 'DownViews');
+        songsOfArtist = dataSongManager.getSongsInOrder('DownViews', checkArtist);
         break;
       case 'Mostrar únicamente singles':
-        checkSongsInOrder(songsOfArtist, 'Singles');
+        songsOfArtist = dataSongManager.getSongsInOrder('Singles', checkArtist);
         break;
     }
+    console.log(`Las canciones del artista ${checkArtist} son:`)
+    songsOfArtist.forEach((song, index) => {
+      console.log(`${index + 1}) ${song.getName()}`);
+    });
+    inquirer.prompt([{
+      name: 'continue',
+      message: 'Pulse enter para continuar',
+      type: 'input'
+    }]).then(function() {
+      promptUser();
+    });
   });
 }
 
@@ -165,7 +175,7 @@ function modifyCollectionPrompt() {
         type: 'list',
         name: 'election',
         message: '¿Que desea hacer (añadir, borrar y/o modificar)?',
-        choices: ['Géneros', 'Canciones', 'Álbums', 'Grupos', 'Artistas', 'PlayLists', 'Salir'],
+        choices: ['Géneros', 'Canciones', 'Álbums', 'Grupos', 'Artistas', 'PlayLists', 'Atrás'],
     },
   ];
 
