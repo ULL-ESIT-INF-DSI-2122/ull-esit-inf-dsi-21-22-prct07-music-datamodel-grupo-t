@@ -19,7 +19,7 @@ const dataArtistManager = new DataArtistManager(artists);
 const dataAlbumManager = new DataAlbumManager(albums);
 const dataGroupManager = new DataGroupManager(groups);
 const dataSongManager = new DataSongManager(songs);
-const playlistManager = new Gestor(playlists);
+const dataPlaylistManager = new Gestor(playlists);
 
 export function promptUser() {
   console.clear();
@@ -109,23 +109,25 @@ function navigateArtistPrompt() {
     checkArtist = answers.artist as string;
     switch(answers.media) {
       case 'Canciones':
-        checkSongsOfArtists(checkArtist);
+        checkSongsOfArtist(checkArtist);
         break;
       case 'Álbumes':
+        checkAlbumsOfArtist(checkArtist);
         break;
       case 'Playlists':
+        checkPlaylistOfArtist(checkArtist);
         break;
     }
   });
 }
 
 
-function checkSongsOfArtists(checkArtist: string) {
+function checkSongsOfArtist(checkArtist: string) {
   const questions = [
     {
         type: 'list',
         name: 'songsOrder',
-        message: '¿Cómo desea ver las canciones?',
+        message: '¿Cómo desea ver las canciones del artista?',
         choices: [
           'En órden alfabético ascendente', 'En órden alfabético descendente',
           'Por número de reproducciones ascendente', 'Por número de reproducciones descendente',
@@ -154,6 +156,80 @@ function checkSongsOfArtists(checkArtist: string) {
     console.log(`Las canciones del artista ${checkArtist} son:`)
     songsOfArtist.forEach((song, index) => {
       console.log(`${index + 1}) ${song.getName()}`);
+    });
+    inquirer.prompt([{
+      name: 'continue',
+      message: 'Pulse enter para continuar',
+      type: 'input'
+    }]).then(function() {
+      promptUser();
+    });
+  });
+}
+
+
+function checkAlbumsOfArtist(checkArtist: string) {
+  const questions = [
+    {
+        type: 'list',
+        name: 'albumOrder',
+        message: '¿Cómo desea ver los álbumes del artista?',
+        choices: [
+          'En órden alfabético ascendente', 'En órden alfabético descendente',
+          'Por año de lanzamiento'],
+    },
+  ];
+  let albumsOfArtist: Album[] = [];
+  inquirer.prompt(questions).then((answers) => {
+    switch(answers.albumOrder) {
+      case 'En órden alfabético ascendente':
+        albumsOfArtist = dataAlbumManager.getAlbumsInOrder('UpAlphabet', checkArtist);
+        break;
+      case 'En órden alfabético descendente':
+        albumsOfArtist = dataAlbumManager.getAlbumsInOrder('DownAlphabet', checkArtist);
+        break;
+      case 'Por año de lanzamiento':
+        albumsOfArtist = dataAlbumManager.getAlbumsInOrder('YearOfRelease', checkArtist);
+        break;
+    }
+    console.log(`Los álbumes del artista ${checkArtist} son:`)
+    albumsOfArtist.forEach((album, index) => {
+      console.log(`${index + 1}) ${album.getName()}`);
+    });
+    inquirer.prompt([{
+      name: 'continue',
+      message: 'Pulse enter para continuar',
+      type: 'input'
+    }]).then(function() {
+      promptUser();
+    });
+  });
+}
+
+
+function checkPlaylistOfArtist(checkArtist: string) {
+  const questions = [
+    {
+        type: 'list',
+        name: 'playlistOrder',
+        message: '¿Cómo desea ver las playlists relacionadas del artista?',
+        choices: [
+          'En órden alfabético ascendente', 'En órden alfabético descendente',]
+    },
+  ];
+  let playlistsOfArtist: PlayList[] = [];
+  inquirer.prompt(questions).then((answers) => {
+    switch(answers.playlistOrder) {
+      case 'En órden alfabético ascendente':
+        playlistsOfArtist = dataPlaylistManager.getPlaylistInOrder('UpAlphabet', checkArtist);
+        break;
+      case 'En órden alfabético descendente':
+        playlistsOfArtist = dataPlaylistManager.getPlaylistInOrder('DownAlphabet', checkArtist);
+        break;
+    }
+    console.log(`Las playlists relacionadas con el artista ${checkArtist} son:`)
+    playlistsOfArtist.forEach((playlist, index) => {
+      console.log(`${index + 1}) ${playlist.getName()}`);
     });
     inquirer.prompt([{
       name: 'continue',
@@ -823,7 +899,7 @@ function modifyPlayListsPrompt(): void {
           }
         ];
         inquirer.prompt(addPlayListQuestions).then((answers) => {
-          const added = playlistManager.addNewPlaylist(
+          const added = dataPlaylistManager.addNewPlaylist(
             new PlayList(answers.playListName, [], {minutes: 0, seconds: 0},
               []));
           if (added === 0) {

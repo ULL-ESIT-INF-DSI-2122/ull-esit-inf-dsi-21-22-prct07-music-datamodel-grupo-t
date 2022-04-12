@@ -1,8 +1,13 @@
-import {PlayList, PlaylistInterface} from '../models/playlist'
-import {Genre, GenreInterface} from '../models/genre'
-import {Song, SongInterface} from '../models/song'
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
+import {PlayList, PlaylistInterface} from '../models/playlist'
+import {Genre, GenreInterface} from '../models/genre'
+import {Group} from '../models/group'
+import {Artist} from '../models/artist'
+import {Song, SongInterface} from '../models/song'
+import {DataArtistManager} from './dataArtistManager'
+import {DataGroupManager} from './dataGroupManager'
+
 
 interface PlaylistSchemaInterface {
   playlists: PlaylistInterface[];
@@ -15,11 +20,11 @@ export class Gestor {
   public constructor(playlists: PlayList[] = []) {
     this.playlists = playlists;
     if (!this.database.has("playlists").value()) {
-      this.exportData(playlists);
+      this.writeData(playlists);
     }
   }
 
-  public exportData(playlists: PlayList[]): void {
+  public writeData(playlists: PlayList[]): void {
     let dbData: PlaylistSchemaInterface = {playlists: []};
    // Se escriben las playlists
    playlists.forEach((playlist) => {
@@ -58,13 +63,13 @@ export class Gestor {
       return -1;
     } else {
       this.playlists.push(newPlaylist);
-      this.exportData(this.playlists);
+      this.writeData(this.playlists);
       return 0;
     }
   }
 
   public showPlaylists():string {
-    let cad: string = '';
+    let cad = '';
     this.playlists.forEach((playlist) => {
       cad = `Name: ${playlist.getName()} | `;
       playlist.getSongs().forEach((song,index) => {        
@@ -80,5 +85,76 @@ export class Gestor {
     return cad;
   }
 
+
+  /**
+   * Returns an array of PlayLists that are related to a group or artist given.
+   * @param artist whose related playlist are searched
+   * @returns the array of related playlists of the group or artist
+   */
+  public getPlayListOfArtist(artist: string): PlayList[] | undefined {
+    let playlistOfArtist: PlayList[] = [];
+    let relatedArtist: (Group | Artist | undefined);
+    let dataArtistManager = new DataArtistManager();
+    let dataGroupManager = new DataGroupManager();
+    relatedArtist = dataArtistManager.getDefinedArtist(artist);
+    if (relatedArtist === undefined) {
+      relatedArtist = dataGroupManager.getDefinedGroup(artist);
+    }
+    if (relatedArtist === undefined) {
+      return undefined;
+    } else {
+      this.playlists.forEach(playlist => {
+        let songsOfPlaylist = playlist.getSongs();
+        for (let i = 0; i < songsOfPlaylist.length; i++) {
+          if (songsOfPlaylist[i].getAuthor() === relatedArtist?.getName()) {
+            playlistOfArtist.push(playlist);
+            break;
+          }
+        }
+      });
+      return playlistOfArtist;
+    }
+  }
+
+
+  /**
+   * Returns an array of ordered Playlists given the mode to be sorted
+   * and an optional artist or group whose related playlists want to be searched
+   * @param mode mode to sort the array of playlists
+   * @param artist author whose related playlists want to be sorted
+   * @returns the array sorted
+   */
+   public getPlaylistInOrder(mode: string, artist = ''): PlayList[] {
+    let playlistsToOrder: PlayList[] = [];
+    if (artist === '') {
+      playlistsToOrder = this.playlists;
+    } else {
+      let playlistArtist = this.getPlayListOfArtist(artist)
+      if (playlistArtist === undefined) {
+        return [];
+      } else {
+        playlistsToOrder = playlistArtist;
+      }    
+    }
+    switch(mode) {
+      case 'UpAlphabet':
+        playlistsToOrder.sort(function(a, b) {
+          let albumNameA = a.getName().toLowerCase(), albumNameB = b.getName().toLowerCase();
+          if (albumNameA < albumNameB) { return -1; }
+          if (albumNameA > albumNameB) { return 1; }
+          return 0;
+        });
+        break;
+      case 'DownAlphabet':
+        playlistsToOrder.sort(function(a, b) {
+          let albumNameA = a.getName().toLowerCase(), albumNameB = b.getName().toLowerCase();
+          if (albumNameA > albumNameB) { return -1; }
+          if (albumNameA < albumNameB) { return 1; }
+          return 0;
+        });
+        break;
+    }
+    return playlistsToOrder;
+  }
 }
 
