@@ -1,5 +1,5 @@
-import {Genre} from './genre'
-import {Song} from './song'
+import {Genre, GenreName} from './genre';
+import {Song} from './song';
 
 /**
  * An Album interface that defines simple data attributes for an Album
@@ -8,7 +8,7 @@ export interface AlbumInterface {
   name: string;
   artists: string;
   year: number;
-  genres: string[];
+  genres: GenreName[];
   songs: string[];
 }
 
