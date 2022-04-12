@@ -43,8 +43,8 @@ describe('Pruebas de la clase Genre', () => {
   });
 
   it('Elimina datos correctamente', () => {
-    expect(genre.deleteArtists(artist)).to.be.undefined;
-    expect(genre.deleteAlbum(album)).to.be.undefined;
-    expect(genre.deleteSong(song)).to.be.undefined;
+    expect(genre.deleteArtists(artist.getName())).to.be.undefined;
+    expect(genre.deleteAlbum(album.getName())).to.be.undefined;
+    expect(genre.deleteSong(song.getName())).to.be.undefined;
   });
 });

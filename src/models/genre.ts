@@ -154,27 +154,33 @@ export class Genre {
 
     /**
      * Removes an artist from the set of artists
-     * @param artist that will be removed
+     * @param artistName that will be removed
      */
-    public deleteArtists(artist: (Artist | Group)) {
-        const indice: number = this.artists.indexOf(artist);
-        this.artists.splice(indice, 1);
+    public deleteArtists(artistName: string): void {
+      for (let i = 0; i < this.artists.length; i++) {
+        if (this.artists[i].getName() === artistName) {
+          this.artists.splice(i, 1);
+        }
+      }
     }
 
     /**
      * Removes an album from the set of albums
-     * @param album that will be removed
+     * @param albumName that will be removed
      */
-    public deleteAlbum(album: Album) {
-        const indice: number = this.albums.indexOf(album);
-        this.albums.splice(indice, 1);
+    public deleteAlbum(albumName: string): void {
+      for (let i = 0; i < this.albums.length; i++) {
+        if (this.albums[i].getName() === albumName) {
+          this.albums.splice(i, 1);
+        }
+      }
     }
 
     /**
      * Removes a song from the set of songs
      * @param song name of teh song that will be removed
      */
-    public deleteSong(songName: string) {
+    public deleteSong(songName: string): void {
       for (let i = 0; i < this.songs.length; i++) {
         if (this.songs[i].getName() === songName) {
           this.songs.splice(i, 1);
