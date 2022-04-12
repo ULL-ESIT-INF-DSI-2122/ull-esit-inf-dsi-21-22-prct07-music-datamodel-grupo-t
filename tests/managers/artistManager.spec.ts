@@ -16,7 +16,7 @@ describe('Artist Manager class function tests', () => {
     let artist = new Artist("Paul", [fallout, imagine], [pop], [album], [song]);
     let artistManager = new DataArtistManager([artist]);
     
-    it('It creates a new instance of an object with class Artist', () => {
+    it('It creates a new instance of an object with class DataArtistManager', () => {
       expect(artistManager).to.be.instanceOf(DataArtistManager);
     });
   

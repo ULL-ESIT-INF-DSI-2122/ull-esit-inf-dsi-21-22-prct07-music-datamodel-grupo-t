@@ -14,7 +14,7 @@ describe('Album Manager class function tests', () => {
   let album = new Album("Songs of Freedom", "Bob Marley", 1961, [reggae], [redemtion, judge]);
   let albumManager = new DataAlbumManager([album]);
 
-  it('It creates a new instance of an object with class Combat', () => {
+  it('It creates a new instance of an object with class DataAlbumManager', () => {
     expect(albumManager).to.be.instanceOf(DataAlbumManager);
   });
 
