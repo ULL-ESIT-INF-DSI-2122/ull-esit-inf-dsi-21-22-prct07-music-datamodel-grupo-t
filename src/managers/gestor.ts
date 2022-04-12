@@ -70,6 +70,22 @@ export class Gestor {
   }
 
   /**
+   * Returns an specific playlist, searched by it's name
+   * @param name of the playlist
+   * @returns the playlist
+   */
+  public getSpecificPlaylist(name: string): PlayList {
+    this.readData();
+    let result: PlayList = new PlayList('', [], {minutes: 0, seconds: 0}, []);
+    for (let i = 0; i < this.playlists.length; i++) {
+      if (name === this.playlists[i].getName()) {
+        result = this.playlists[i];
+      }
+    }
+    return result;
+  }
+
+  /**
    * Reads all the information available in the database and stores it. This is 
    * crucial in order to operate with any type of data
    */
