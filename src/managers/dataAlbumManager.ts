@@ -4,14 +4,24 @@ import {Song} from '../models/song';
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 
-interface AlbumSchemaInterface {
+/**
+ * Interface that defines the schema for the Album class in the database
+ */
+export interface AlbumSchemaInterface {
   albums: AlbumInterface[];
 }
 
+/**
+ * Class in charge of manage all the data of the albumns in the database. 
+ */
 export class DataAlbumManager {
   private albums: Album[];
   private database: lowdb.LowdbSync<AlbumSchemaInterface> = lowdb(new FileSync("./src/data/AlbumCollection.json"));
 
+  /**
+   * Constructor
+   * @param albums the class will storage in order to operate with them. 
+   */
   public constructor(albums: Album[] = []) {
     this.albums = albums;
     if (!this.database.has("albums").value()) {
@@ -21,9 +31,13 @@ export class DataAlbumManager {
     }
   }
 
+  /**
+   * This method updates the information stored in the database.
+   * @param albumData data from the albumns that will be writen
+   */
   public writeData(albumData: Album[]): void {
     let dbData: AlbumSchemaInterface = {albums: []};
-    // Se escriben los álbumes
+  
     albumData.forEach((album) => {
       let name = album.getName();
       let artist = album.getArtist();
@@ -48,16 +62,20 @@ export class DataAlbumManager {
     this.database.set("albums", dbData.albums).write();
   }
 
+  /**
+   * Reads all the information available in the database and stores it. This is 
+   * crucial in order to operate with any type of data
+   */
   public readData() {
     this.albums = [];
     let dbAlbums = this.database.get("albums").value();
     dbAlbums.forEach((album) => {
-      // Leemos los géneros del álbum
+
       let genres: Genre[] = [];
       album.genres.forEach((genre) => {
         genres.push(new Genre(genre));
       });
-      // Leemos las canciones del álbum
+
       let songs: Song[] = [];
       album.songs.forEach((song) => {
         songs.push(new Song(song));
@@ -68,10 +86,18 @@ export class DataAlbumManager {
     });
   }
 
+  /**
+   * @returns albumns stored
+   */
   public getAlbums(): Album[] {
     return this.albums;
   }
 
+  /**
+   * Searches an album by it's name
+   * @param albumName name of the album the method will search
+   * @returns that specific album
+   */
   public getDefinedAlbum(albumName: string): Album | undefined {
     for (let i = 0; i < this.albums.length; i++) {
       if (albumName === this.albums[i].getName()) {
@@ -81,6 +107,9 @@ export class DataAlbumManager {
     return undefined;
   }
   
+  /**
+   * @returns all albumn names in form of array
+   */
   public getAlbumsNames(): string[] {
     const names: string[] = [];
     this.albums.forEach(album => {
@@ -89,6 +118,12 @@ export class DataAlbumManager {
     return names;
   }
 
+  /**
+   * Add's a new album to the database. Calls the write() method in order to update
+   * the database
+   * @param newAlbum album that will be added
+   * @returns 0 or -1 depending of the succes of the operation
+   */
   public addNewAlbum(newAlbum: Album): number {
     let alreadyInAlbums = false;
     for (let i = 0; i < this.albums.length; i++) {
@@ -107,6 +142,10 @@ export class DataAlbumManager {
     }
   }
 
+  /**
+   * Deletes an album, searching it by it's name
+   * @param albumName name of the album that will be deleted
+   */
   public deleteAlbum(albumName: string): void {
     for (let i = 0; i < this.albums.length; i++) {
       if (this.albums[i].getName() === albumName) {

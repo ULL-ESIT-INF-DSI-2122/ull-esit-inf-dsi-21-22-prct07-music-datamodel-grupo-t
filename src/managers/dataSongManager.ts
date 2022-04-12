@@ -4,14 +4,24 @@ import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 import {DataGenreManager} from './dataGenreManager'; 
 
-interface SongSchemaInterface {
+/**
+ * Interface that defines the schema for the Song class in the database
+ */
+export interface SongSchemaInterface {
   songs: SongInterface[];
 }
 
+/**
+ * Class in charge of manage all the data of the songs in the database
+ */
 export class DataSongManager {
   private songs: Song[];
   private database: lowdb.LowdbSync<SongSchemaInterface> = lowdb(new FileSync("./src/data/SongCollection.json"));
 
+  /**
+   * Constructor
+   * @param songs the class will storage in order to operate with them. 
+   */
   public constructor(songs: Song[] = []) {
     this.songs = songs;
     if (!this.database.has("songs").value()) {
@@ -21,11 +31,18 @@ export class DataSongManager {
     }
   }
 
-
+  /** 
+   * @returns all the songs stored
+   */
   public getSongs(): Song[] {
     return this.songs;
   }
 
+  /**
+   * Searches an song by it's name
+   * @param songName name of the song the method will search
+   * @returns that specific song
+   */
   public getDefinedSong(songName: string): Song | undefined{
     for (let i = 0; i < this.songs.length; i++) {
       if (songName === this.songs[i].getName()) {
@@ -35,6 +52,9 @@ export class DataSongManager {
     return undefined;
   }
 
+  /**
+   * @returns all song names in form of array
+   */
   public getSongNames(): string[] {
     let songNames: string[] = [];
     this.songs.forEach((song) => {
@@ -43,10 +63,13 @@ export class DataSongManager {
     return songNames;
   }
 
-
+  /**
+   * This method updates the information stored in the database.
+   * @param songData data from the songs that will be writen
+   */
   public writeData(songData: Song[]): void {
     let dbData: SongSchemaInterface = {songs: []};
-    // Se escriben las canciones
+
     songData.forEach((song) => {
       let name = song.getName();
       let artist = song.getAuthor();
@@ -70,7 +93,10 @@ export class DataSongManager {
     this.database.set("songs", dbData.songs).write();
   }
 
-
+  /**
+   * Reads all the information available in the database and stores it. This is 
+   * crucial in order to operate with any type of data
+   */
   public readData(): void {
     const dataGenres = new DataGenreManager();
     this.songs = [];
@@ -88,7 +114,12 @@ export class DataSongManager {
     });
   }
 
-
+  /**
+   * Add's a new song to the database. Calls the write() method in order to update
+   * the database
+   * @param newSong song that will be added
+   * @returns 0 or -1 depending of the succes of the operation
+   */
   public addNewSong(newSong: Song): number {
     let alreadyInSongs = false;
     for (let i = 0; i < this.songs.length; i++) {
@@ -107,7 +138,10 @@ export class DataSongManager {
     }
   }
 
-
+  /**
+   * Deletes a song, searching it by it's name
+   * @param songName name of the song that will be deleted
+   */
   public deleteSong(songName: string): void {
     for (let i = 0; i < this.songs.length; i++) {
       if (this.songs[i].getName() === songName) {

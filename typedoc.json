@@ -5,7 +5,12 @@
         "./src/models/genre.ts",
         "./src/models/group.ts",
         "./src/models/playlist.ts",
-        "./src/models/song.ts"
+        "./src/models/song.ts",
+        "./src/managers/dataAlbumManager.ts",
+        "./src/managers/dataArtistManager.ts",
+        "./src/managers/dataGenreManager.ts",
+        "./src/managers/dataGroupManager.ts",
+        "./src/managers/dataSongManager.ts"
     ],
     "out": "./docs"
 }

@@ -11,11 +11,16 @@ import {DataGroupManager} from './dataGroupManager';
 import {DataAlbumManager} from './dataAlbumManager';
 import {DataGenreManager} from './dataGenreManager'; 
 
-
-interface ArtistSchemaInterface {
+/**
+ * Interface that defines the schema for the Artist class in the database
+ */
+export interface ArtistSchemaInterface {
   artists: ArtistInterface[];
 }
 
+/**
+ * Class in charge of manage all the data of the artists in the database
+ */
 export class DataArtistManager {
   private artists: Artist[];
   private database: lowdb.LowdbSync<ArtistSchemaInterface> = lowdb(new FileSync("./src/data/ArtistCollection.json"));
@@ -29,9 +34,13 @@ export class DataArtistManager {
     }
   }
 
+  /**
+   * This method updates the information stored in the database.
+   * @param artistsData data from the artists that will be writen
+   */
   public writeData(artistsData: Artist[] = []) {
     let dbData: ArtistSchemaInterface = {artists: []};
-    // Se escriben los géneros
+
     artistsData.forEach((artist) => {
       let name = artist.getName();
       let genreNames: GenreName[] = [];
@@ -64,6 +73,10 @@ export class DataArtistManager {
     this.database.set("artists", dbData.artists).write();
   }
 
+  /**
+   * Reads all the information available in the database and stores it. This is 
+   * crucial in order to operate with any type of data
+   */
   public readData(): void {
     const dataSongs = new DataSongManager();
     const dataAlbums = new DataAlbumManager();
@@ -99,10 +112,18 @@ export class DataArtistManager {
     });
   }
 
+  /**
+   * @returns artists stored
+   */
   public getArtists(): Artist[] {
     return this.artists;
   }
 
+  /**
+   * Searches an artist by it's name
+   * @param artistName name of the artist the method will search
+   * @returns that specific artist
+   */
   public getDefinedArtist(artistName: string): Artist | undefined {
     for (let i = 0; i < this.artists.length; i++) {
       if (artistName === this.artists[i].getName()) {
@@ -112,6 +133,9 @@ export class DataArtistManager {
     return undefined;
   }
 
+  /**
+   * @returns all artist names in form of array
+   */
   public getArtistNames(): string[] {
     const names: string[] = [];
     this.artists.forEach(artist => {
@@ -120,6 +144,12 @@ export class DataArtistManager {
     return names;
   }
 
+  /**
+   * Add's a new artist to the database. Calls the write() method in order to update
+   * the database
+   * @param newArtist artist that will be added
+   * @returns 0 or -1 depending of the succes of the operation
+   */
   public addNewArtist(newArtist: Artist): number {
     let alreadyInArtist = false;
     for (let i = 0; i < this.artists.length; i++) {
@@ -137,6 +167,10 @@ export class DataArtistManager {
     }
   }
 
+  /**
+   * Deletes an artist, searching it by it's name
+   * @param artistName name of the artist that will be deleted
+   */
   public deleteArtist(artistName: string) {
     for (let i = 0; i < this.artists.length; i++) {
       if (this.artists[i].getName() === artistName) {
