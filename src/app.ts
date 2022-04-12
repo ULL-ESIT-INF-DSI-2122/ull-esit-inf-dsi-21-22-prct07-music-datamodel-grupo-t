@@ -63,6 +63,48 @@ export function promptUser() {
   return 0;
 }
 
+function modifyCollectionPrompt() {
+  console.clear();
+  console.log('Configuración de la biblioteca musical');
+  
+  const questions = [
+    {
+        type: 'list',
+        name: 'election',
+        message: '¿Que desea hacer (añadir, borrar y/o modificar)?',
+        choices: ['Géneros', 'Canciones', 'Álbums', 'Grupos', 'Artistas', 'Atrás'],
+    },
+  ];
+
+  inquirer.prompt(questions).then((answers) => {    
+    switch(answers['election']) {
+      case 'Géneros':
+        console.log("Gestionar géneros")
+        modifyGenrePrompt();
+        break;
+      case 'Canciones':
+        console.log("Gestionar temas")
+        modifySongPrompt();
+        break;
+      case 'Álbums':
+        console.log("Gestionar albums")
+        modifyAlbumPrompt();
+        break;
+      case 'Grupos':
+        console.log("Gestionar grupos")
+        modifyGroupsPrompt()
+        break;
+      case 'Artistas':
+        console.log("Gestionar artistas")
+        modifyArtistsPrompt();
+        break;   
+      case 'Atrás':
+        promptUser();
+        break;
+      }
+    });
+}
+
 function modifyGenrePrompt(): void {
   console.clear()    
   console.log('Gestor de géneros');
