@@ -4,18 +4,25 @@ import * as FileSync from "lowdb/adapters/FileSync";
 import {Artist} from '../models/artist';
 import {Genre, GenreName} from '../models/genre';
 import {Album} from '../models/album';
-// import {DataArtistManager} from './dataArtistManager'; 
-// import {DataAlbumManager} from './dataAlbumManager';
-// import {DataGenreManager} from './dataGenreManager'; 
 
-interface GroupSchemaInterface {
+/**
+ * Interface that defines the schema for the Group class in the database
+ */
+ export interface GroupSchemaInterface {
   groups: GroupInterface[];
 }
 
+/**
+ * Class in charge of manage all the data of the groups in the database
+ */
 export class DataGroupManager {
   private groups: Group[];
   private database: lowdb.LowdbSync<GroupSchemaInterface> = lowdb(new FileSync("./src/data/GroupCollection.json"));
 
+  /**
+   * Constructor
+   * @param groups the class will storage in order to operate with them. 
+   */
   public constructor(groups: Group[] = []) {
     this.groups = groups;
     if (!this.database.has("groups").value()) {
@@ -25,10 +32,18 @@ export class DataGroupManager {
     }
   }
 
+  /**
+   * @returns all the groups stored
+   */
   public getGroups(): Group[] {
     return this.groups;
   }
 
+  /**
+   * Searches an group by it's name
+   * @param groupName name of the group the method will search
+   * @returns that specific group
+   */
   public getDefinedGroup(groupName: string): Group | undefined {
     for (let i = 0; i < this.groups.length; i++) {
       if (groupName === this.groups[i].getName()) {
@@ -38,6 +53,9 @@ export class DataGroupManager {
     return undefined;
   }
 
+  /**
+   * @returns all group names in form of array
+   */
   public getGroupNames(): string[] {
     const names: string[] = [];
     this.groups.forEach(group => {
@@ -46,6 +64,10 @@ export class DataGroupManager {
     return names;
   }
   
+  /**
+   * This method updates the information stored in the database.
+   * @param groupData data from the groups that will be writen
+   */
   public writeData(groupData: Group[] = []) {
     const dbData: GroupSchemaInterface = {groups: []};
   
@@ -77,10 +99,11 @@ export class DataGroupManager {
     this.database.set("groups", dbData.groups).write();
   }
 
+  /**
+   * Reads all the information available in the database and stores it. This is 
+   * crucial in order to operate with any type of data
+   */
   public readData(): void {
-    // const dataArtists = new DataArtistManager();
-    // const dataAlbums = new DataAlbumManager();
-    // const dataGenres = new DataGenreManager();
     this.groups = [];
     const dbGroups = this.database.get("groups").value();
 
@@ -106,6 +129,12 @@ export class DataGroupManager {
     });
   }
 
+  /**
+   * Add's a new group to the database. Calls the write() method in order to update
+   * the database
+   * @param newGroup group that will be added
+   * @returns 0 or -1 depending of the succes of the operation
+   */
   public addNewGroup(newGroup: Group): number {
     let alreadyInGroup = false;
     for (let i = 0; i < this.groups.length; i++) {
@@ -123,6 +152,10 @@ export class DataGroupManager {
     }
   }
 
+  /**
+   * Deletes a group, searching it by it's name
+   * @param groupName name of the group that will be deleted
+   */
   public deleteGroup(groupName: string) {
     for (let i = 0; i < this.groups.length; i++) {
       if (this.groups[i].getName() === groupName) {

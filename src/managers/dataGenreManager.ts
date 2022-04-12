@@ -5,14 +5,24 @@ import {Song} from '../models/song';
 import {Artist} from '../models/artist';
 import {Album} from '../models/album';
 
-interface GenreSchemaInterface {
+/**
+ * Interface that defines the schema for the Genre class in the database
+ */
+ export interface GenreSchemaInterface {
   genres: GenreInterface[];
 }
 
+/**
+ * Class in charge of manage all the data of the genres in the database
+ */
 export class DataGenreManager {
   private genres: Genre[];
   private database: lowdb.LowdbSync<GenreSchemaInterface> = lowdb(new FileSync('./src/data/GenreCollection.json'));
 
+  /**
+   * Constructor
+   * @param genres the class will storage in order to operate with them. 
+   */
   public constructor(genres: Genre[] = []) {
     this.genres = genres;
     if (!this.database.has("genres").value()) {
@@ -22,12 +32,18 @@ export class DataGenreManager {
     }
   }
 
-
+  /**
+   * @returns all the genres stored
+   */
   public getGenres(): Genre[] {
     return this.genres;
   }
 
-
+  /**
+   * Searches an genre by it's name
+   * @param genreName name of the genre the method will search
+   * @returns that specific genre
+   */
   public getDefinedGenre(genreName: GenreName): Genre | undefined {
     for (let i = 0; i < this.genres.length; i++) {
       if (genreName === this.genres[i].getName()) {
@@ -37,7 +53,9 @@ export class DataGenreManager {
     return undefined;
   }
 
-
+  /**
+   * @returns all genre names in form of array
+   */
   public getGenreNames(): GenreName[] {
     let genreNames: GenreName[] = [];
     this.genres.forEach((genre) => {
@@ -46,15 +64,13 @@ export class DataGenreManager {
     return genreNames;
   }
 
-  // public printGenres(): void {
-  //   let currentGenres = this.database.get("genres").value;
-  //   console.log(currentGenres);
-  // }
-
-
+  /**
+   * This method updates the information stored in the database.
+   * @param genresData data from the genre that will be writen
+   */
   public writeData(genresData: Genre[] = []) {
     let dbData: GenreSchemaInterface = {genres: []};
-    // Se escriben los géneros
+
     genresData.forEach((genre) => {
       let name = genre.getName();
       let artistsNames: string[] = [];
@@ -80,22 +96,25 @@ export class DataGenreManager {
     this.database.set("genres", dbData.genres).write();
   }
 
-
+  /**
+   * Reads all the information available in the database and stores it. This is 
+   * crucial in order to operate with any type of data
+   */
   public readData(): void {
     this.genres = [];
     let dbGenres = this.database.get("genres").value();
     dbGenres.forEach((genre) => {
-      // Leemos los artistas del género
+
       let artists: Artist[] = [];
       genre.artists.forEach((artist) => {
         artists.push(new Artist(artist));
       });
-      // Leemos los álbumes del género
+
       let albums: Album[] = [];
       genre.albums.forEach((album) => {
         albums.push(new Album(album));
       });
-      // Leemos las canciones del género
+
       let songs: Song[] = [];
       genre.songs.forEach((song) => {
         songs.push(new Song(song));
@@ -105,7 +124,12 @@ export class DataGenreManager {
     });
   }
 
-
+  /**
+   * Add's a new genre to the database. Calls the write() method in order to update
+   * the database
+   * @param newGenre genre that will be added
+   * @returns 0 or -1 depending of the succes of the operation
+   */
   public addNewGenre(newGenre: Genre): number {
     let alreadyInGenres = false;
     for (let i = 0; i < this.genres.length; i++) {
@@ -123,7 +147,10 @@ export class DataGenreManager {
     }
   }
 
-
+  /**
+   * Deletes a genre, searching it by it's name
+   * @param genreName name of the genre that will be deleted
+   */
   public deleteGenre(genreName: string): void {
     for (let i = 0; i < this.genres.length; i++) {
       if (this.genres[i].getName() === genreName) {
@@ -133,25 +160,4 @@ export class DataGenreManager {
     }
     this.writeData(this.genres);
   }
-
-
-  // public addSongToGenre(song: Song, genre: GenreName): void {
-  //   for (let i = 0; i < this.genres.length; i++) {
-  //     if (this.genres[i].getName() === genre) {
-  //       this.genres[i].getSongCollection().push(song);
-  //       this.writeData(this.genres);
-  //       break;
-  //     }
-  //   }
-  // }
-// 
-  // public deleteSongOfGenre(song: string, genre: GenreName): void {
-  //   for (let i = 0; i < this.genres.length; i++) {
-  //     if (this.genres[i].getName() === genre) {
-  //       this.genres[i].deleteSong(song);
-  //       this.writeData(this.genres);
-  //       break;
-  //     }
-  //   }
-  // }
 }
