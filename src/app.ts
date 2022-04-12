@@ -30,7 +30,7 @@ export function promptUser() {
         type: 'list',
         name: 'election',
         message: '¿Qué desea hacer?',
-        choices: ['Ver información de artistas', 'Ver información de grupos', 'Configuración', 'Salir'],
+        choices: ['Ver información de artistas', 'Ver información de grupos', 'Ver playlist', 'Configuración', 'Salir'],
     },
   ];
   inquirer.prompt(questions).then((answers) => {    
@@ -40,6 +40,9 @@ export function promptUser() {
         break;
       case 'Ver información de grupos':
         navigateGroupPrompt();
+        break;
+      case 'Ver playlist':
+        checkPlaylist();
         break;
       case 'Configuración':
         modifyCollectionPrompt();
@@ -52,6 +55,133 @@ export function promptUser() {
   return 0;
 }
 
+// function showAllPlaylistPrompt() {
+//   const currentPlaylist = dataPlaylistManager.getPlaylists();
+//   const questions = [
+//     {
+//         type: 'list',
+//         name: 'songsOrder',
+//         message: '¿Cómo desea ver las canciones del artista?',
+//         choices: currentPlaylist,
+//     },
+//   ];
+// }
+
+/**
+ * Navigates throw the songs of the playlist
+ */
+function checkPlaylist() {
+  const currentPlaylist = dataPlaylistManager.getPlaylists();
+  const questions = [
+    {
+      type: 'list',
+      name: 'playlistChoose',
+      message: '¿Qué playlist desea examinar?',
+      choices: currentPlaylist,
+    },
+    {
+      type: 'list',
+      name: 'playlistOrder',
+      message: '¿Cómo desea ver las canciones de la playlists?',
+      choices: [
+        'En órden alfabético por canción ascendente', 'En órden alfabético por canción descendente',
+        'En órden alfabético por artista ascendente', 'En órden alfabético por artista ascendente',
+        'Por año de lanzamiento ascendiente', 'Por año de lanzamiento descendiente', 
+        'Por duración de canción ascendente', 'Por duración de canción descendente',
+        'Por género, ascendente', 'Por género, descendente', 'Por reproducciones totales ascendente',
+        'Por reproducciones totales descendente'
+      ],
+    },
+  ];
+  const gestor: Gestor = new Gestor;
+  let songs: Song[] = [];
+  inquirer.prompt(questions).then((answers) => {
+    switch(answers.playlistOrder) {
+      case 'En órden alfabético por canción ascendente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpAlphabet');
+        break;
+      case 'En órden alfabético por canción descendente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownAlphabet');
+        break;
+      case 'En órden alfabético por artista ascendente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpArtist');
+        break;
+      case 'En órden alfabético por artista descendente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownArtist');
+        break;
+      case 'Por año de lanzamiento ascendiente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpYear');
+        break;
+      case 'Por año de lanzamiento descendiente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownYear');
+        break;     
+      case 'Por duración de canción ascendente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpTime');
+        break;    
+      case 'Por duración de canción descendente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownTime');
+        break;   
+      case 'Por género, ascendente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpGenre');
+        break; 
+      case 'Por género, descendente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownGenre');
+        break;
+      case 'Por reproducciones totales ascendente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpViewns');
+        break;
+      case 'Por reproducciones totales descendente':
+        songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownViews');
+        break;
+    
+    }
+    console.log(`Canciones de ${answers.playlistChoose} ordenadas: `);
+    songs.forEach((song, index) => {
+      console.log(`${index + 1}) ${song.getName()}`);
+    });
+    inquirer.prompt([{
+      name: 'continue',
+      message: 'Pulse enter para continuar',
+      type: 'input'
+    }]).then(function() {
+      promptUser();
+    });
+  });
+}
+
+function checkPlaylistOfArtist(checkArtist: string) {
+  const questions = [
+    {
+        type: 'list',
+        name: 'playlistOrder',
+        message: '¿Cómo desea ver las playlists relacionadas del artista?',
+        choices: [
+          'En órden alfabético ascendente', 'En órden alfabético descendente',]
+    },
+  ];
+  let playlistsOfArtist: PlayList[] = [];
+  inquirer.prompt(questions).then((answers) => {
+    switch(answers.playlistOrder) {
+      case 'En órden alfabético ascendente':
+        playlistsOfArtist = dataPlaylistManager.getPlaylistInOrder('UpAlphabet', checkArtist);
+        break;
+      case 'En órden alfabético descendente':
+        playlistsOfArtist = dataPlaylistManager.getPlaylistInOrder('DownAlphabet', checkArtist);
+        break;
+    }
+    console.log(`Las playlists relacionadas con el artista ${checkArtist} son:`)
+    playlistsOfArtist.forEach((playlist, index) => {
+      console.log(`${index + 1}) ${playlist.getName()}`);
+    });
+    inquirer.prompt([{
+      name: 'continue',
+      message: 'Pulse enter para continuar',
+      type: 'input'
+    }]).then(function() {
+      promptUser();
+    });
+  });
+}
 
 function navigateGroupPrompt() {
   // console.clear();
@@ -195,41 +325,6 @@ function checkAlbumsOfArtist(checkArtist: string) {
     console.log(`Los álbumes del artista ${checkArtist} son:`)
     albumsOfArtist.forEach((album, index) => {
       console.log(`${index + 1}) ${album.getName()}`);
-    });
-    inquirer.prompt([{
-      name: 'continue',
-      message: 'Pulse enter para continuar',
-      type: 'input'
-    }]).then(function() {
-      promptUser();
-    });
-  });
-}
-
-
-function checkPlaylistOfArtist(checkArtist: string) {
-  const questions = [
-    {
-        type: 'list',
-        name: 'playlistOrder',
-        message: '¿Cómo desea ver las playlists relacionadas del artista?',
-        choices: [
-          'En órden alfabético ascendente', 'En órden alfabético descendente',]
-    },
-  ];
-  let playlistsOfArtist: PlayList[] = [];
-  inquirer.prompt(questions).then((answers) => {
-    switch(answers.playlistOrder) {
-      case 'En órden alfabético ascendente':
-        playlistsOfArtist = dataPlaylistManager.getPlaylistInOrder('UpAlphabet', checkArtist);
-        break;
-      case 'En órden alfabético descendente':
-        playlistsOfArtist = dataPlaylistManager.getPlaylistInOrder('DownAlphabet', checkArtist);
-        break;
-    }
-    console.log(`Las playlists relacionadas con el artista ${checkArtist} son:`)
-    playlistsOfArtist.forEach((playlist, index) => {
-      console.log(`${index + 1}) ${playlist.getName()}`);
     });
     inquirer.prompt([{
       name: 'continue',

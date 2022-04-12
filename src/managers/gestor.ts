@@ -63,6 +63,13 @@ export class Gestor {
   }
 
   /**
+   * @returns all stored playlists
+   */
+  getPlaylists() {
+    return this.playlists;
+  }
+
+  /**
    * Reads all the information available in the database and stores it. This is 
    * crucial in order to operate with any type of data
    */
@@ -71,9 +78,9 @@ export class Gestor {
     const dbPlaylist = this.database.get("playlists").value();
 
     dbPlaylist.forEach(playlist => {
-      const songs: Song[] = [];
       const totalTime: {minutes: number, seconds: number} = {minutes: 0, seconds: 0};
       
+      const songs: Song[] = [];
       playlist.songs.forEach(song => {
         songs.push(new Song(song));
       });
@@ -180,7 +187,6 @@ export class Gestor {
    * Returns an array of ordered Playlists given the mode to be sorted
    * and an optional artist or group whose related playlists want to be searched
    * @param mode mode to sort the array of playlists
-   * @param artist author whose related playlists want to be sorted
    * @returns the array sorted
    */
    public getPlaylistInOrder(mode: string, artist = ''): PlayList[] {
@@ -214,6 +220,35 @@ export class Gestor {
         break;
     }
     return playlistsToOrder;
+  }
+
+  /**
+   * Returns ordered songs from a specific playlist in diferent modes
+   * @param playlist in which the songs belong
+   * @param mode dictates how it will be sorted
+   * @returns sorted songs
+   */
+  public orderedSongsFromPlaylist(playlist: PlayList, mode: string): Song[] {
+    let songs = playlist.getSongs();
+    switch(mode) {
+      case 'UpAlphabet':
+        songs.sort(function(a, b) {
+          let songNameA = a.getName().toLowerCase(), songNameB = b.getName().toLowerCase();
+          if (songNameA < songNameB) { return -1; }
+          if (songNameA > songNameB) { return 1; }
+          return 0;
+        });
+        break;
+      case 'DownAlphabet':
+        songs.sort(function(a, b) {
+          let songNameA = a.getName().toLowerCase(), songNameB = b.getName().toLowerCase();
+          if (songNameA > songNameB) { return -1; }
+          if (songNameA < songNameB) { return 1; }
+          return 0;
+        });
+        break;
+    }
+    return songs;
   }
 }
 
