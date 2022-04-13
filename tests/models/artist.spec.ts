@@ -36,7 +36,7 @@ describe('Artist class function tests', () => {
   });
 
   it('It has an attribute for its published songs', () => {
-    expect(artist.getPublishedSongs()).to.be.eql([song]);
+    expect(artist.getSongs()).to.be.eql([song]);
   });
 
   it('There is a method to get the monthly listeners', () => {

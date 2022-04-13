@@ -154,5 +154,52 @@ export class DataAlbumManager {
     }
     this.writeData(this.albums);
   }
+
+   /**
+   * Returns an array of ordered Albums given the mode to be sorted
+   * and an optional artist whose albums want to be searched
+   * @param mode mode to sort the array of albums
+   * @param author author whose albums want to be sorted
+   * @returns the array sorted
+   */
+    public getAlbumsInOrder(mode: string, author = ''): Album[] {
+      let albumsToOrder: Album[] = [];
+      if (author === '') {
+        albumsToOrder = this.albums;
+      } else {
+        this.albums.forEach(album => {
+          if (album.getArtist() === author) {
+            albumsToOrder.push(album);
+          }
+        });
+      }
+      switch(mode) {
+        case 'UpAlphabet':
+          albumsToOrder.sort(function(a, b) {
+            let albumNameA = a.getName().toLowerCase(), albumNameB = b.getName().toLowerCase();
+            if (albumNameA < albumNameB) { return -1; }
+            if (albumNameA > albumNameB) { return 1; }
+            return 0;
+          });
+          break;
+        case 'DownAlphabet':
+          albumsToOrder.sort(function(a, b) {
+            let albumNameA = a.getName().toLowerCase(), albumNameB = b.getName().toLowerCase();
+            if (albumNameA > albumNameB) { return -1; }
+            if (albumNameA < albumNameB) { return 1; }
+            return 0;
+          });
+          break;
+        case 'YearOfRelease':
+          albumsToOrder.sort(function(a, b) {
+            let albumYearA = a.getYear(), albumYearB = b.getYear();
+            if (albumYearA > albumYearB) { return -1; }
+            if (albumYearA < albumYearB) { return 1; }
+            return 0;
+          });
+          break;
+      }
+      return albumsToOrder;
+    }
 }
 

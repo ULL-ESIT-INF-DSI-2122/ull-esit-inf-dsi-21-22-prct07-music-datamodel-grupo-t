@@ -20,8 +20,8 @@ export class DataGenreManager {
   private database: lowdb.LowdbSync<GenreSchemaInterface> = lowdb(new FileSync('./src/data/GenreCollection.json'));
 
   /**
-   * Constructor
-   * @param genres the class will storage in order to operate with them. 
+   * Constructor that will store the values of the default genres if there is no data.
+   * @param genres default data of the genres that will be stored in the file if no data is found.
    */
   public constructor(genres: Genre[] = []) {
     this.genres = genres;
