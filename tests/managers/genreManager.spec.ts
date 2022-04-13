@@ -7,7 +7,7 @@ import {DataGenreManager} from '../../src/managers/dataGenreManager'
 
 
 
-describe('Album Manager class function tests', () => {
+describe('DataGenreManager Manager class function tests', () => {
   let reggae = new Genre("Reggae", [], [], []);
   let redemtion = new Song("Redemption Song", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
   let judge = new Song("Judge Not", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);

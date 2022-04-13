@@ -1,5 +1,5 @@
 {
   "extension": ["ts"],
-  "spec": "tests/managers/songManager.spec.ts",
+  "spec": "tests/managers/artistManager.spec.ts",
   "require": "ts-node/register"
 }

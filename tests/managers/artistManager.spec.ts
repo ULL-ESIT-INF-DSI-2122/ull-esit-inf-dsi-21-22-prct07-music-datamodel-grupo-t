@@ -24,10 +24,6 @@ describe('Artist Manager class function tests', () => {
         expect(artistManager.writeData([artist])).not.to.equal(null);
     });
     
-    it('It can read the data from the Database', () => {
-        expect(artistManager.readData()).not.to.equal(null);
-    });
-    
     it('It can get the artist', () => {
         expect(artistManager.getArtists()).not.to.be.eql(null);
     });
