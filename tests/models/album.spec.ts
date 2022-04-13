@@ -7,7 +7,7 @@ import {Song} from '../../src/models/song';
 
 describe('Album class function tests', () => {
   let reggae = new Genre("Reggae", [], [], []);
-  let redemtion = new Song("Redemption Song", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
+  let redemtion = new Song("Dracukeo","Kidd Keo",{minutes: 2, seconds: 36} , [reggae], true, 81901392);
   let judge = new Song("Judge Not", "Bob Marley", {minutes: 1, seconds: 34}, [reggae], false, 1239128);
   let album = new Album("Songs of Freedom", "Bob Marley", 1961, [reggae], [redemtion, judge]);
   
