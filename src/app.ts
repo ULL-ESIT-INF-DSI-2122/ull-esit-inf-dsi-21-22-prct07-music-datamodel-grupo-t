@@ -68,13 +68,17 @@ export function promptUser() {
  * Navigates throw the songs of the playlist
  */
 function checkPlaylists() {
-  const currentPlaylist = dataPlaylistManager.getPlaylists();
+  const currentPlaylist = dataPlaylistManager.getPlaylists()
+  const formatedCurrentPlayList: string[] = [];
+  currentPlaylist.forEach(playlist => {
+    formatedCurrentPlayList.push(playlist.asString());
+  });
   const questions = [
     {
       type: 'list',
       name: 'playlistChoose',
-      message: '¿Qué playlist desea examinar?',
-      choices: currentPlaylist,
+      message: 'Playlists en la colección:',
+      choices: formatedCurrentPlayList.concat('Atrás'),
     },
     {
       type: 'list',

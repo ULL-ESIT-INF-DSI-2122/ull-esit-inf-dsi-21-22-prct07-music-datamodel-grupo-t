@@ -126,9 +126,12 @@ export class PlayList {
     this.genres.forEach(genre => {
       genresString += `${genre.getName()} `;
     });
+    let duration = `${Math.floor(this.duration.minutes / 60)} h ` + 
+      `${this.duration.minutes % 60} min ${this.duration.seconds} seg`;
     let numberOfSongs = this.songs.length;
-    let formatedPlaylist = `${this.name} - Duration: ${this.duration.minutes}:${this.duration.seconds}, ` +
+    let formatedPlaylist = `${this.name} - Duration: ${duration}, ` +
       `${numberOfSongs} Songs, Genres: ${genresString}`;
-    return formatedPlaylist;
+
+      return formatedPlaylist;
   }
 }
