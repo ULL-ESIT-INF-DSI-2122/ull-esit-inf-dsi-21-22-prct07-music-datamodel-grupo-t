@@ -190,16 +190,16 @@ export class DataSongManager {
       case 'UpViews':
         songsToOrder.sort(function(a, b) {
           let songViewsA = a.getViews(), songViewsB = b.getViews();
-          if (songViewsA < songViewsB) { return -1; }
-          if (songViewsA > songViewsB) { return 1; }
+          if (songViewsA > songViewsB) { return -1; }
+          if (songViewsA < songViewsB) { return 1; }
           return 0;
         });
         break;
       case 'DownViews':
         songsToOrder.sort(function(a, b) {
           let songViewsA = a.getViews(), songViewsB = b.getViews();
-          if (songViewsA > songViewsB) { return -1; }
-          if (songViewsA < songViewsB) { return 1; }
+          if (songViewsA < songViewsB) { return -1; }
+          if (songViewsA > songViewsB) { return 1; }
           return 0;
         });
         break;

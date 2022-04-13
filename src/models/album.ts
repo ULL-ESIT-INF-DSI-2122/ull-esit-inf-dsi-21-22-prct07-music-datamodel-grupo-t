@@ -143,4 +143,23 @@ export class Album implements Iterable<Song> {
       }
     });
   }
+
+  /**
+   * Returns the information of the album as a string
+   */
+   public asString(): string {
+    let genresString = '';
+    this.genres.forEach(genre => {
+      genresString += `${genre.getName()} `;
+    });
+
+    let songsString = '';
+    [...this].forEach(song => {
+      songsString += `${song.getName()}, `;
+    });
+
+    let formatedAlbum = `${this.name} - Author: ${this.artist}, Year: ${this.year}, ` +
+      `Songs: ${songsString}Genres: ${genresString}`;
+    return formatedAlbum;
+  }
 }

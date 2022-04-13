@@ -117,4 +117,18 @@ export class PlayList {
   public getNumberOfSongs(): number {
     return this.songs.length;
   }
+
+  /**
+   * Returns the information of the playlist as a string
+   */
+   public asString(): string {
+    let genresString = '';
+    this.genres.forEach(genre => {
+      genresString += `${genre.getName()} `;
+    });
+    let numberOfSongs = this.songs.length;
+    let formatedPlaylist = `${this.name} - Duration: ${this.duration.minutes}:${this.duration.seconds}, ` +
+      `${numberOfSongs} Songs, Genres: ${genresString}`;
+    return formatedPlaylist;
+  }
 }
