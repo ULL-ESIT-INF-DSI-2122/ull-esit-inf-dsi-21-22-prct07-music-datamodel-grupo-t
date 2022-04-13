@@ -69,8 +69,19 @@ export class Gestor {
   /**
    * @returns all stored playlists
    */
-  getPlaylists() {
+  public getPlaylists(): PlayList[] {
     return this.playlists;
+  }
+
+  /**
+  * @returns all stored playlists's names
+  */
+  public getPlaylistNames(): string[] {
+    let playlistNames: string[] = [];
+    this.playlists.forEach(playlist => {
+      playlistNames.push(playlist.getName());
+    });
+    return playlistNames;
   }
 
   /**
@@ -320,8 +331,8 @@ export class Gestor {
             let timeA = a.getDuration().minutes, timeB = b.getDuration().minutes;
             // Si los minutos son iguales se medirán por los segundos
             if (timeA === timeB) timeA = a.getDuration().seconds, timeB = b.getDuration().seconds;
-            if (timeA < timeB) { return -1; }
-            if (timeA > timeB) { return 1; }
+            if (timeA > timeB) { return -1; }
+            if (timeA < timeB) { return 1; }
             return 0;
           });
           break;
@@ -330,8 +341,8 @@ export class Gestor {
             let timeA = a.getDuration().minutes, timeB = b.getDuration().minutes;
             // Si los minutos son iguales se medirán por los segundos
             if (timeA === timeB) timeA = a.getDuration().seconds, timeB = b.getDuration().seconds;
-            if (timeA > timeB) { return -1; }
-            if (timeA < timeB) { return 1; }
+            if (timeA < timeB) { return -1; }
+            if (timeA > timeB) { return 1; }
             return 0;
           });
           break;
@@ -351,19 +362,19 @@ export class Gestor {
             return 0;
           });
           break;
-          case 'UpViewns':
+          case 'UpViews':
         songs.sort(function(a, b) {
           let viewsA = a.getViews(), viewsB = b.getViews();
-          if (viewsA < viewsB) { return -1; }
-          if (viewsA > viewsB) { return 1; }
+          if (viewsA > viewsB) { return -1; }
+          if (viewsA < viewsB) { return 1; }
           return 0;
         });
         break;
         case 'DownViews':
           songs.sort(function(a, b) {
             let viewsA = a.getViews(), viewsB = b.getViews();
-            if (viewsA > viewsB) { return -1; }
-            if (viewsA < viewsB) { return 1; }
+            if (viewsA < viewsB) { return -1; }
+            if (viewsA > viewsB) { return 1; }
             return 0;
           });
           break;
