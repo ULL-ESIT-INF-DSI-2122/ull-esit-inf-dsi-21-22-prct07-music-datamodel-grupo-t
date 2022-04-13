@@ -3,7 +3,7 @@ import {DataGenreManager} from './managers/dataGenreManager';
 import {DataArtistManager} from './managers/dataArtistManager';
 import {DataAlbumManager} from './managers/dataAlbumManager';
 import {DataGroupManager} from './managers/dataGroupManager';
-import {DataSongManager, SongSchemaInterface} from './managers/dataSongManager';
+import {DataSongManager} from './managers/dataSongManager';
 import {Gestor} from './managers/gestor';
 import {songs, groups, artists, albums, genres, playlists} from './data/defaultData';
 import {Genre, GenreName} from './models/genre';
@@ -16,9 +16,9 @@ import { PlayList } from './models/playlist';
 
 const dataGenreManager = new DataGenreManager(genres);
 const dataArtistManager = new DataArtistManager(artists);
-const dataAlbumManager = new DataAlbumManager(albums);
+export const dataAlbumManager = new DataAlbumManager(albums);
 const dataGroupManager = new DataGroupManager(groups);
-const dataSongManager = new DataSongManager(songs);
+export const dataSongManager = new DataSongManager(songs);
 const dataPlaylistManager = new Gestor(playlists);
 
 export function promptUser() {
@@ -84,12 +84,12 @@ function checkPlaylist() {
       name: 'playlistOrder',
       message: '¿Cómo desea ver las canciones de la playlists?',
       choices: [
-        'En órden alfabético por canción ascendente', 'En órden alfabético por canción descendente'/* ,
-        'En órden alfabético por artista ascendente', 'En órden alfabético por artista ascendente',
+        'En órden alfabético por canción ascendente', 'En órden alfabético por canción descendente',
+        'En órden alfabético por artista ascendente', 'En órden alfabético por artista descendente',
         'Por año de lanzamiento ascendiente', 'Por año de lanzamiento descendiente', 
         'Por duración de canción ascendente', 'Por duración de canción descendente',
         'Por género, ascendente', 'Por género, descendente', 'Por reproducciones totales ascendente',
-        'Por reproducciones totales descendente' */
+        'Por reproducciones totales descendente'
       ],
     },
   ];
@@ -100,43 +100,52 @@ function checkPlaylist() {
     switch(answers.playlistOrder) {
       case 'En órden alfabético por canción ascendente':
         playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
-        console.log(playlist.getName());
         songs = gestor.orderedSongsFromPlaylist(playlist, 'UpAlphabet');
         break;
       case 'En órden alfabético por canción descendente':
         playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
         songs = gestor.orderedSongsFromPlaylist(playlist, 'DownAlphabet');
         break;
-      // case 'En órden alfabético por artista ascendente':
-      //   songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpArtist');
-      //   break;
-      // case 'En órden alfabético por artista descendente':
-      //   songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownArtist');
-      //   break;
-      // case 'Por año de lanzamiento ascendiente':
-      //   songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpYear');
-      //   break;
-      // case 'Por año de lanzamiento descendiente':
-      //   songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownYear');
-      //   break;     
-      // case 'Por duración de canción ascendente':
-      //   songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpTime');
-      //   break;    
-      // case 'Por duración de canción descendente':
-      //   songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownTime');
-      //   break;   
-      // case 'Por género, ascendente':
-      //   songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpGenre');
-      //   break; 
-      // case 'Por género, descendente':
-      //   songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownGenre');
-      //   break;
-      // case 'Por reproducciones totales ascendente':
-      //   songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'UpViewns');
-      //   break;
-      // case 'Por reproducciones totales descendente':
-      //   songs = gestor.orderedSongsFromPlaylist(answers.playlistChoose, 'DownViews');
-      //   break;
+      case 'En órden alfabético por artista ascendente':
+        playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
+        songs = gestor.orderedSongsFromPlaylist(playlist, 'UpArtist');
+        break;
+      case 'En órden alfabético por artista descendente':
+        playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
+        songs = gestor.orderedSongsFromPlaylist(playlist, 'DownArtist');
+        break;
+      case 'Por año de lanzamiento ascendiente':
+          playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
+        songs = gestor.orderedSongsFromPlaylist(playlist, 'UpYear');
+        break;
+      case 'Por año de lanzamiento descendiente':
+        playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
+        songs = gestor.orderedSongsFromPlaylist(playlist, 'DownYear');
+        break;     
+      case 'Por duración de canción ascendente':
+        playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
+        songs = gestor.orderedSongsFromPlaylist(playlist, 'UpTime');
+        break;    
+      case 'Por duración de canción descendente':
+        playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
+        songs = gestor.orderedSongsFromPlaylist(playlist, 'DownTime');
+        break;   
+      case 'Por género, ascendente':
+        playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
+        songs = gestor.orderedSongsFromPlaylist(playlist, 'UpGenre');
+        break; 
+      case 'Por género, descendente':
+        playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
+        songs = gestor.orderedSongsFromPlaylist(playlist, 'DownGenre');
+        break;
+      case 'Por reproducciones totales ascendente':
+        playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
+        songs = gestor.orderedSongsFromPlaylist(playlist, 'UpViewns');
+        break;
+      case 'Por reproducciones totales descendente':
+        playlist = gestor.getSpecificPlaylist(answers.playlistChoose);
+        songs = gestor.orderedSongsFromPlaylist(playlist, 'DownViews');
+        break;
     
     }
     console.log(`Canciones de ${answers.playlistChoose} ordenadas: `);

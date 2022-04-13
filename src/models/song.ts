@@ -1,4 +1,5 @@
 import {Genre, GenreName} from './genre'
+import {dataAlbumManager} from "../app";
 
 /**
  * An interface that defines simple data for a song
@@ -126,5 +127,18 @@ export class Song {
    */
   public setViews(views: number) {
     this.views = views;
+  }
+
+  /**
+   * Find's the year the album releases. That album is where 'this' belong
+   */
+  public getMyAlbumYear(): number {
+    let albumYear = 0;
+    dataAlbumManager.getAlbums().forEach(album => {
+      if (album.getSong(this.name) !== undefined) {
+        albumYear = album.getYear();
+      }
+    });
+    return albumYear;
   }
 }

@@ -7,6 +7,10 @@ import {Artist} from '../models/artist'
 import {DataArtistManager} from './dataArtistManager'
 import {DataGroupManager} from './dataGroupManager'
 import {Song} from "../models/song";
+// import {DataSongManager} from '../managers/dataSongManager';
+// import {songs/* , groups, artists, albums, genres, playlists */} from '../data/defaultData';
+import {dataSongManager} from "../app";
+
 
 /**
  * Interface that defines the schema for the Gestor class in the database
@@ -245,7 +249,18 @@ export class Gestor {
    * @returns sorted songs
    */
   public orderedSongsFromPlaylist(playlist: PlayList, mode: string): Song[] {
-    let songs = playlist.getSongs();
+    const songs: Song[] = [];
+    // const storedSongs = dataSongManager.getSongs();
+
+    for (let i = 0; i < dataSongManager.getSongs().length; i++) {
+      for (let j = 0; j < playlist.getSongs().length; j++) {
+        if (dataSongManager.getSongs()[i].getName() === playlist.getSongs()[j].getName()) {
+          songs.push(dataSongManager.getSongs()[i]);
+          break;
+        } 
+      }
+    }    
+    
     switch(mode) {
       case 'UpAlphabet':
         songs.sort(function(a, b) {
@@ -263,6 +278,90 @@ export class Gestor {
           return 0;
         });
         break;
+        case 'UpArtist':
+          songs.sort(function(a, b) {
+            let artistA = a.getAuthor().toLowerCase(), artistB = b.getAuthor().toLowerCase();
+            if (artistA < artistB) { return -1; }
+            if (artistA > artistB) { return 1; }
+            return 0;
+          });
+          break;
+        case 'DownArtist':
+          songs.sort(function(a, b) {
+            let artistA = a.getAuthor().toLowerCase(), artistB = b.getAuthor().toLowerCase();
+            if (artistA > artistB) { return -1; }
+            if (artistA < artistB) { return 1; }
+            return 0;
+          });
+          break;
+        case 'UpYear':
+          songs.sort(function(a, b) {
+            let yearA = a.getMyAlbumYear(), yearB = b.getMyAlbumYear();
+            if (yearA < yearB) { return -1; }
+            if (yearA > yearB) { return 1; }
+            return 0;
+          });
+          break;
+        case 'DownYear':
+          songs.sort(function(a, b) {
+            let yearA = a.getMyAlbumYear(), yearB = b.getMyAlbumYear();
+            if (yearA > yearB) { return -1; }
+            if (yearA < yearB) { return 1; }
+            return 0;
+          });
+          break;
+        case 'UpTime':
+          songs.sort(function(a, b) {
+            let timeA = a.getDuration().minutes, timeB = b.getDuration().minutes;
+            // Si los minutos son iguales se medirán por los segundos
+            if (timeA === timeB) timeA = a.getDuration().seconds, timeB = b.getDuration().seconds;
+            if (timeA < timeB) { return -1; }
+            if (timeA > timeB) { return 1; }
+            return 0;
+          });
+          break;
+        case 'DownTime':
+          songs.sort(function(a, b) {
+            let timeA = a.getDuration().minutes, timeB = b.getDuration().minutes;
+            // Si los minutos son iguales se medirán por los segundos
+            if (timeA === timeB) timeA = a.getDuration().seconds, timeB = b.getDuration().seconds;
+            if (timeA > timeB) { return -1; }
+            if (timeA < timeB) { return 1; }
+            return 0;
+          });
+          break;
+        case 'UpGenre':
+          songs.sort(function(a, b) {
+            let genreA = a.getGenres()[0].getName().toLowerCase(), genreB = b.getGenres()[0].getName().toLowerCase();
+            if (genreA < genreB) { return -1; }
+            if (genreA > genreB) { return 1; }
+            return 0;
+          });
+          break;
+        case 'DownGenre':
+          songs.sort(function(a, b) {
+            let genreA = a.getGenres()[0].getName().toLowerCase(), genreB = b.getGenres()[0].getName().toLowerCase();
+            if (genreA > genreB) { return -1; }
+            if (genreA < genreB) { return 1; }
+            return 0;
+          });
+          break;
+          case 'UpViewns':
+        songs.sort(function(a, b) {
+          let viewsA = a.getViews(), viewsB = b.getViews();
+          if (viewsA < viewsB) { return -1; }
+          if (viewsA > viewsB) { return 1; }
+          return 0;
+        });
+        break;
+        case 'DownViews':
+          songs.sort(function(a, b) {
+            let viewsA = a.getViews(), viewsB = b.getViews();
+            if (viewsA > viewsB) { return -1; }
+            if (viewsA < viewsB) { return 1; }
+            return 0;
+          });
+          break;
     }
     return songs;
   }

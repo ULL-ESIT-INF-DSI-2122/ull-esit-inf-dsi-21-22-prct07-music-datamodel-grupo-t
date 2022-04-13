@@ -1,3 +1,138 @@
 {
-  "artists": []
+  "artists": [
+    {
+      "name": "Kidd Keo",
+      "groups": [],
+      "genres": [
+        "Trap"
+      ],
+      "albums": [],
+      "songs": [
+        "Dracukeo",
+        "Mama",
+        "Lollypop",
+        "Serpiente Veneno",
+        "One Million"
+      ],
+      "monthlyListeners": 142811720
+    },
+    {
+      "name": "Martin Garrix",
+      "groups": [],
+      "genres": [
+        "Electro"
+      ],
+      "albums": [],
+      "songs": [
+        "High on Life",
+        "Animals",
+        "Scared to Be Lonely",
+        "Reboot",
+        "Limitless"
+      ],
+      "monthlyListeners": 650622732
+    },
+    {
+      "name": "Mozart",
+      "groups": [],
+      "genres": [
+        "Classic"
+      ],
+      "albums": [],
+      "songs": [
+        "Fantasia in D minor",
+        "Piano Sonata No 16",
+        "Symphony No 25",
+        "Turkish March",
+        "Piano Concerto No 21"
+      ],
+      "monthlyListeners": 409721044
+    },
+    {
+      "name": "Nicky Jam",
+      "groups": [],
+      "genres": [
+        "Reggaeton"
+      ],
+      "albums": [],
+      "songs": [
+        "Travesuras",
+        "Hasta El Amanecer",
+        "El Perdón",
+        "Poblado-Remix",
+        "Bzrp Session 49"
+      ],
+      "monthlyListeners": 93331744
+    },
+    {
+      "name": "John Denver",
+      "groups": [],
+      "genres": [
+        "Country"
+      ],
+      "albums": [],
+      "songs": [
+        "Take Me Home, Country Roads",
+        "Annie's Song",
+        "Rocky Mountain High",
+        "Back Home Again",
+        "On the Road"
+      ],
+      "monthlyListeners": 201632255
+    },
+    {
+      "name": "Natos",
+      "groups": [
+        "Natos y Waor"
+      ],
+      "genres": [
+        "Rap"
+      ],
+      "albums": [],
+      "songs": [
+        "Cicatrices",
+        "Carretera",
+        "Nosotros",
+        "Piratas",
+        "Bicho Raro"
+      ],
+      "monthlyListeners": 498338802
+    },
+    {
+      "name": "Waor",
+      "groups": [
+        "Natos y Waor"
+      ],
+      "genres": [
+        "Rap"
+      ],
+      "albums": [],
+      "songs": [
+        "Cicatrices",
+        "Carretera",
+        "Nosotros",
+        "Piratas",
+        "Bicho Raro"
+      ],
+      "monthlyListeners": 498338802
+    },
+    {
+      "name": "Dani Martín",
+      "groups": [
+        "El Canto del Loco"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "albums": [],
+      "songs": [
+        "Zapatillas",
+        "Besos",
+        "Volvera",
+        "Peter Pan",
+        "La Madre de Jose"
+      ],
+      "monthlyListeners": 231686464
+    }
+  ]
 }

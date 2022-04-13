@@ -1,3 +1,654 @@
 {
-  "songs": []
+  "songs": [
+    {
+      "name": "Dracukeo",
+      "artist": "Kidd Keo",
+      "duration": {
+        "minutes": 2,
+        "seconds": 36
+      },
+      "isSingle": true,
+      "genres": [
+        "Trap"
+      ],
+      "listeners": 81901392
+    },
+    {
+      "name": "Mama",
+      "artist": "Kidd Keo",
+      "duration": {
+        "minutes": 4,
+        "seconds": 25
+      },
+      "isSingle": true,
+      "genres": [
+        "Trap"
+      ],
+      "listeners": 4201425
+    },
+    {
+      "name": "Lollypop",
+      "artist": "Kidd Keo",
+      "duration": {
+        "minutes": 3,
+        "seconds": 17
+      },
+      "isSingle": true,
+      "genres": [
+        "Trap"
+      ],
+      "listeners": 5738921
+    },
+    {
+      "name": "Serpiente Veneno",
+      "artist": "Kidd Keo",
+      "duration": {
+        "minutes": 3,
+        "seconds": 11
+      },
+      "isSingle": true,
+      "genres": [
+        "Trap"
+      ],
+      "listeners": 7299872
+    },
+    {
+      "name": "One Million",
+      "artist": "Kidd Keo",
+      "duration": {
+        "minutes": 2,
+        "seconds": 58
+      },
+      "isSingle": true,
+      "genres": [
+        "Trap"
+      ],
+      "listeners": 43670110
+    },
+    {
+      "name": "High on Life",
+      "artist": "Martin Garrix",
+      "duration": {
+        "minutes": 3,
+        "seconds": 12
+      },
+      "isSingle": true,
+      "genres": [
+        "Electro"
+      ],
+      "listeners": 431270356
+    },
+    {
+      "name": "Animals",
+      "artist": "Martin Garrix",
+      "duration": {
+        "minutes": 4,
+        "seconds": 1
+      },
+      "isSingle": true,
+      "genres": [
+        "Electro"
+      ],
+      "listeners": 64782811
+    },
+    {
+      "name": "Scared to Be Lonely",
+      "artist": "Martin Garrix",
+      "duration": {
+        "minutes": 5,
+        "seconds": 7
+      },
+      "isSingle": true,
+      "genres": [
+        "Electro"
+      ],
+      "listeners": 78540184
+    },
+    {
+      "name": "Reboot",
+      "artist": "Martin Garrix",
+      "duration": {
+        "minutes": 3,
+        "seconds": 41
+      },
+      "isSingle": true,
+      "genres": [
+        "Electro"
+      ],
+      "listeners": 36829188
+    },
+    {
+      "name": "Limitless",
+      "artist": "Martin Garrix",
+      "duration": {
+        "minutes": 3,
+        "seconds": 45
+      },
+      "isSingle": true,
+      "genres": [
+        "Electro"
+      ],
+      "listeners": 39200193
+    },
+    {
+      "name": "Fantasia in D minor",
+      "artist": "Mozart",
+      "duration": {
+        "minutes": 7,
+        "seconds": 52
+      },
+      "isSingle": true,
+      "genres": [
+        "Classic"
+      ],
+      "listeners": 3737821
+    },
+    {
+      "name": "Piano Sonata No 16",
+      "artist": "Mozart",
+      "duration": {
+        "minutes": 6,
+        "seconds": 14
+      },
+      "isSingle": true,
+      "genres": [
+        "Classic"
+      ],
+      "listeners": 383765011
+    },
+    {
+      "name": "Symphony No 25",
+      "artist": "Mozart",
+      "duration": {
+        "minutes": 8,
+        "seconds": 18
+      },
+      "isSingle": true,
+      "genres": [
+        "Classic"
+      ],
+      "listeners": 9836161
+    },
+    {
+      "name": "Turkish March",
+      "artist": "Mozart",
+      "duration": {
+        "minutes": 4,
+        "seconds": 59
+      },
+      "isSingle": true,
+      "genres": [
+        "Classic"
+      ],
+      "listeners": 7198874
+    },
+    {
+      "name": "Piano Concerto No 21",
+      "artist": "Mozart",
+      "duration": {
+        "minutes": 10,
+        "seconds": 42
+      },
+      "isSingle": true,
+      "genres": [
+        "Classic"
+      ],
+      "listeners": 5183177
+    },
+    {
+      "name": "Travesuras",
+      "artist": "Nicky Jam",
+      "duration": {
+        "minutes": 3,
+        "seconds": 17
+      },
+      "isSingle": false,
+      "genres": [
+        "Reggaeton"
+      ],
+      "listeners": 4522113
+    },
+    {
+      "name": "Hasta El Amanecer",
+      "artist": "Nicky Jam",
+      "duration": {
+        "minutes": 3,
+        "seconds": 24
+      },
+      "isSingle": false,
+      "genres": [
+        "Reggaeton"
+      ],
+      "listeners": 12446941
+    },
+    {
+      "name": "El Perdón",
+      "artist": "Nicky Jam",
+      "duration": {
+        "minutes": 4,
+        "seconds": 28
+      },
+      "isSingle": false,
+      "genres": [
+        "Reggaeton"
+      ],
+      "listeners": 1199631
+    },
+    {
+      "name": "Poblado-Remix",
+      "artist": "Nicky Jam",
+      "duration": {
+        "minutes": 4,
+        "seconds": 59
+      },
+      "isSingle": true,
+      "genres": [
+        "Reggaeton"
+      ],
+      "listeners": 67181921
+    },
+    {
+      "name": "Bzrp Session 49",
+      "artist": "Nicky Jam",
+      "duration": {
+        "minutes": 3,
+        "seconds": 47
+      },
+      "isSingle": true,
+      "genres": [
+        "Reggaeton"
+      ],
+      "listeners": 7981138
+    },
+    {
+      "name": "Take Me Home, Country Roads",
+      "artist": "John Denver",
+      "duration": {
+        "minutes": 4,
+        "seconds": 23
+      },
+      "isSingle": false,
+      "genres": [
+        "Country"
+      ],
+      "listeners": 43524675
+    },
+    {
+      "name": "Annie's Song",
+      "artist": "John Denver",
+      "duration": {
+        "minutes": 3,
+        "seconds": 45
+      },
+      "isSingle": true,
+      "genres": [
+        "Country"
+      ],
+      "listeners": 8813345
+    },
+    {
+      "name": "Rocky Mountain High",
+      "artist": "John Denver",
+      "duration": {
+        "minutes": 5,
+        "seconds": 37
+      },
+      "isSingle": true,
+      "genres": [
+        "Country"
+      ],
+      "listeners": 43515345
+    },
+    {
+      "name": "Back Home Again",
+      "artist": "John Denver",
+      "duration": {
+        "minutes": 3,
+        "seconds": 28
+      },
+      "isSingle": false,
+      "genres": [
+        "Country"
+      ],
+      "listeners": 74354313
+    },
+    {
+      "name": "On the Road",
+      "artist": "John Denver",
+      "duration": {
+        "minutes": 4,
+        "seconds": 19
+      },
+      "isSingle": false,
+      "genres": [
+        "Country"
+      ],
+      "listeners": 31424577
+    },
+    {
+      "name": "Cicatrices",
+      "artist": "Natos y Waor",
+      "duration": {
+        "minutes": 3,
+        "seconds": 32
+      },
+      "isSingle": false,
+      "genres": [
+        "Rap"
+      ],
+      "listeners": 23423432
+    },
+    {
+      "name": "Carretera",
+      "artist": "Natos y Waor",
+      "duration": {
+        "minutes": 4,
+        "seconds": 53
+      },
+      "isSingle": false,
+      "genres": [
+        "Rap"
+      ],
+      "listeners": 456893111
+    },
+    {
+      "name": "Nosotros",
+      "artist": "Natos y Waor",
+      "duration": {
+        "minutes": 4,
+        "seconds": 29
+      },
+      "isSingle": true,
+      "genres": [
+        "Rap"
+      ],
+      "listeners": 9329371
+    },
+    {
+      "name": "Piratas",
+      "artist": "Natos y Waor",
+      "duration": {
+        "minutes": 3,
+        "seconds": 38
+      },
+      "isSingle": false,
+      "genres": [
+        "Rap"
+      ],
+      "listeners": 3827261
+    },
+    {
+      "name": "Bicho Raro",
+      "artist": "Natos y Waor",
+      "duration": {
+        "minutes": 3,
+        "seconds": 23
+      },
+      "isSingle": false,
+      "genres": [
+        "Rap"
+      ],
+      "listeners": 4865627
+    },
+    {
+      "name": "Zapatillas",
+      "artist": "El Canto del Loco",
+      "duration": {
+        "minutes": 4,
+        "seconds": 3
+      },
+      "isSingle": false,
+      "genres": [
+        "Pop"
+      ],
+      "listeners": 25624533
+    },
+    {
+      "name": "Besos",
+      "artist": "El Canto del Loco",
+      "duration": {
+        "minutes": 3,
+        "seconds": 19
+      },
+      "isSingle": false,
+      "genres": [
+        "Pop"
+      ],
+      "listeners": 85668563
+    },
+    {
+      "name": "Volvera",
+      "artist": "El Canto del Loco",
+      "duration": {
+        "minutes": 5,
+        "seconds": 58
+      },
+      "isSingle": false,
+      "genres": [
+        "Pop"
+      ],
+      "listeners": 8838432
+    },
+    {
+      "name": "Peter Pan",
+      "artist": "El Canto del Loco",
+      "duration": {
+        "minutes": 4,
+        "seconds": 36
+      },
+      "isSingle": true,
+      "genres": [
+        "Pop"
+      ],
+      "listeners": 67900256
+    },
+    {
+      "name": "La Madre de Jose",
+      "artist": "El Canto del Loco",
+      "duration": {
+        "minutes": 4,
+        "seconds": 17
+      },
+      "isSingle": true,
+      "genres": [
+        "Pop"
+      ],
+      "listeners": 43654680
+    },
+    {
+      "name": "The Kids Aren't Alright",
+      "artist": "The Offspring",
+      "duration": {
+        "minutes": 3,
+        "seconds": 12
+      },
+      "isSingle": false,
+      "genres": [
+        "Rock"
+      ],
+      "listeners": 34543578
+    },
+    {
+      "name": "You're Gonna Go Far, Kid",
+      "artist": "The Offspring",
+      "duration": {
+        "minutes": 4,
+        "seconds": 51
+      },
+      "isSingle": false,
+      "genres": [
+        "Rock"
+      ],
+      "listeners": 9744001
+    },
+    {
+      "name": "Self Esteem",
+      "artist": "The Offspring",
+      "duration": {
+        "minutes": 4,
+        "seconds": 31
+      },
+      "isSingle": true,
+      "genres": [
+        "Rock"
+      ],
+      "listeners": 54357953
+    },
+    {
+      "name": "Pretty Fly",
+      "artist": "The Offspring",
+      "duration": {
+        "minutes": 4,
+        "seconds": 48
+      },
+      "isSingle": true,
+      "genres": [
+        "Rock"
+      ],
+      "listeners": 91800532
+    },
+    {
+      "name": "Why Don't You Get a Job",
+      "artist": "The Offspring",
+      "duration": {
+        "minutes": 3,
+        "seconds": 36
+      },
+      "isSingle": true,
+      "genres": [
+        "Rock"
+      ],
+      "listeners": 34017389
+    },
+    {
+      "name": "Guajira guantananmera",
+      "artist": "Compay Segundo",
+      "duration": {
+        "minutes": 3,
+        "seconds": 45
+      },
+      "isSingle": true,
+      "genres": [
+        "Popular"
+      ],
+      "listeners": 9187631
+    },
+    {
+      "name": "Chan chan",
+      "artist": "Compay Segundo",
+      "duration": {
+        "minutes": 3,
+        "seconds": 16
+      },
+      "isSingle": true,
+      "genres": [
+        "Popular"
+      ],
+      "listeners": 821940
+    },
+    {
+      "name": "Lágrimas negras",
+      "artist": "Compay Segundo",
+      "duration": {
+        "minutes": 4,
+        "seconds": 25
+      },
+      "isSingle": true,
+      "genres": [
+        "Popular"
+      ],
+      "listeners": 2391764
+    },
+    {
+      "name": "La negra Tomasa",
+      "artist": "Compay Segundo",
+      "duration": {
+        "minutes": 3,
+        "seconds": 34
+      },
+      "isSingle": true,
+      "genres": [
+        "Popular"
+      ],
+      "listeners": 2800641
+    },
+    {
+      "name": "Hasta siempre",
+      "artist": "Compay Segundo",
+      "duration": {
+        "minutes": 4,
+        "seconds": 51
+      },
+      "isSingle": true,
+      "genres": [
+        "Popular"
+      ],
+      "listeners": 3198415
+    },
+    {
+      "name": "Everybody Needs Somebody to Love",
+      "artist": "The Blues Brothers",
+      "duration": {
+        "minutes": 3,
+        "seconds": 56
+      },
+      "isSingle": true,
+      "genres": [
+        "Blues"
+      ],
+      "listeners": 39845210
+    },
+    {
+      "name": "Think",
+      "artist": "The Blues Brothers",
+      "duration": {
+        "minutes": 4,
+        "seconds": 53
+      },
+      "isSingle": true,
+      "genres": [
+        "Blues"
+      ],
+      "listeners": 4828171
+    },
+    {
+      "name": "Sweet Home Chicago",
+      "artist": "The Blues Brothers",
+      "duration": {
+        "minutes": 5,
+        "seconds": 16
+      },
+      "isSingle": true,
+      "genres": [
+        "Blues"
+      ],
+      "listeners": 219471
+    },
+    {
+      "name": "Gimme Some Lovin",
+      "artist": "The Blues Brothers",
+      "duration": {
+        "minutes": 2,
+        "seconds": 35
+      },
+      "isSingle": true,
+      "genres": [
+        "Blues"
+      ],
+      "listeners": 607613
+    },
+    {
+      "name": "Soul Man",
+      "artist": "The Blues Brothers",
+      "duration": {
+        "minutes": 3,
+        "seconds": 14
+      },
+      "isSingle": true,
+      "genres": [
+        "Blues"
+      ],
+      "listeners": 2816103
+    }
+  ]
 }
