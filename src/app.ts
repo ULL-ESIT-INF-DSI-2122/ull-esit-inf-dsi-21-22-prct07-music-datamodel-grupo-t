@@ -30,19 +30,16 @@ export function promptUser() {
         type: 'list',
         name: 'election',
         message: '¿Qué desea hacer?',
-        choices: ['Ver información de artistas', 'Ver información de grupos', 'Ver playlist', 'Configuración', 'Salir'],
+        choices: ['Ver información de artistas y grupos', 'Ver playlists', 'Configuración', 'Salir'],
     },
   ];
   inquirer.prompt(questions).then((answers) => {    
     switch(answers['election']) {
-      case 'Ver información de artistas':
+      case 'Ver información de artistas y grupos':
         navigateArtistPrompt();
         break;
-      case 'Ver información de grupos':
-        navigateGroupPrompt();
-        break;
-      case 'Ver playlist':
-        checkPlaylist();
+      case 'Ver playlists':
+        checkPlaylists();
         break;
       case 'Configuración':
         modifyCollectionPrompt();
@@ -70,7 +67,7 @@ export function promptUser() {
 /**
  * Navigates throw the songs of the playlist
  */
-function checkPlaylist() {
+function checkPlaylists() {
   const currentPlaylist = dataPlaylistManager.getPlaylists();
   const questions = [
     {
@@ -167,7 +164,7 @@ function checkPlaylistOfArtist(checkArtist: string) {
     {
         type: 'list',
         name: 'playlistOrder',
-        message: '¿Cómo desea ver las playlists relacionadas del artista?',
+        message: '¿Cómo desea ver las playlists relacionadas del artista o grupo?',
         choices: [
           'En órden alfabético ascendente', 'En órden alfabético descendente',]
     },
@@ -182,9 +179,9 @@ function checkPlaylistOfArtist(checkArtist: string) {
         playlistsOfArtist = dataPlaylistManager.getPlaylistInOrder('DownAlphabet', checkArtist);
         break;
     }
-    console.log(`Las playlists relacionadas con el artista ${checkArtist} son:`)
+    console.log(`Las playlists relacionadas con ${checkArtist} son:`)
     playlistsOfArtist.forEach((playlist, index) => {
-      console.log(`${index + 1}) ${playlist.getName()}`);
+      console.log(`${index + 1}) ${playlist.asString()}`);
     });
     inquirer.prompt([{
       name: 'continue',
@@ -196,54 +193,23 @@ function checkPlaylistOfArtist(checkArtist: string) {
   });
 }
 
-function navigateGroupPrompt() {
-  // console.clear();
-  // console.log('Información de artistas');
-  // const currentArtist = dataArtistManager.getArtistNames();
-  // const questions = [
-  //   {
-  //       type: 'list',
-  //       name: 'artist',
-  //       message: '¿Qué artista desea ver?',
-  //       choices: currentArtist,
-  //   },
-  //   {
-  //     type: 'list',
-  //     name: 'media',
-  //     message: '¿Qué desea ver del artista?',
-  //     choices: ['Canciones', 'Álbumes', 'Playlists'],
-  //   },
-  // ];
-  // let checkArtist = "";
-  // inquirer.prompt(questions).then((answers) => {
-  //   checkArtist = answers.artist as string;
-  //   switch(answers.media) {
-  //     case 'Canciones':
-  //       break;
-  //     case 'Álbumes':
-  //       break;
-  //     case 'Playlists':
-  //       break;
-  //   }
-  // });
-}
-
 
 function navigateArtistPrompt() {
   console.clear();
-  console.log('Información de artistas');
-  const currentArtist = dataArtistManager.getArtistNames();
+  console.log('Información de artistas y grupos');
+  const currentArtists = dataArtistManager.getArtistNames();
+  const currentGroups = dataGroupManager.getGroupNames();
   const questions = [
     {
         type: 'list',
         name: 'artist',
-        message: '¿Qué artista desea ver?',
-        choices: currentArtist,
+        message: '¿Qué artista o grupo desea ver?',
+        choices: currentArtists.concat(currentGroups),
     },
     {
       type: 'list',
       name: 'media',
-      message: '¿Qué desea ver del artista?',
+      message: '¿Qué desea ver del artista o grupo?',
       choices: ['Canciones', 'Álbumes', 'Playlists'],
     },
   ];
@@ -270,7 +236,7 @@ function checkSongsOfArtist(checkArtist: string) {
     {
         type: 'list',
         name: 'songsOrder',
-        message: '¿Cómo desea ver las canciones del artista?',
+        message: '¿Cómo desea ver las canciones?',
         choices: [
           'En órden alfabético ascendente', 'En órden alfabético descendente',
           'Por número de reproducciones ascendente', 'Por número de reproducciones descendente',
@@ -296,9 +262,9 @@ function checkSongsOfArtist(checkArtist: string) {
         songsOfArtist = dataSongManager.getSongsInOrder('Singles', checkArtist);
         break;
     }
-    console.log(`Las canciones del artista ${checkArtist} son:`)
+    console.log(`Las canciones de ${checkArtist} son:`)
     songsOfArtist.forEach((song, index) => {
-      console.log(`${index + 1}) ${song.getName()}`);
+      console.log(`${index + 1}) ${song.asString()}`);
     });
     inquirer.prompt([{
       name: 'continue',
@@ -316,7 +282,7 @@ function checkAlbumsOfArtist(checkArtist: string) {
     {
         type: 'list',
         name: 'albumOrder',
-        message: '¿Cómo desea ver los álbumes del artista?',
+        message: '¿Cómo desea ver los álbumes?',
         choices: [
           'En órden alfabético ascendente', 'En órden alfabético descendente',
           'Por año de lanzamiento'],
@@ -335,9 +301,9 @@ function checkAlbumsOfArtist(checkArtist: string) {
         albumsOfArtist = dataAlbumManager.getAlbumsInOrder('YearOfRelease', checkArtist);
         break;
     }
-    console.log(`Los álbumes del artista ${checkArtist} son:`)
+    console.log(`Los álbumes de ${checkArtist} son:`)
     albumsOfArtist.forEach((album, index) => {
-      console.log(`${index + 1}) ${album.getName()}`);
+      console.log(`${index + 1}) ${album.asString()}`);
     });
     inquirer.prompt([{
       name: 'continue',

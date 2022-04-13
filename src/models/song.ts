@@ -141,4 +141,17 @@ export class Song {
     });
     return albumYear;
   }
+
+  /**
+   * Returns the information of the song as a string
+   */
+  public asString(): string {
+    let genresString = '';
+    this.genres.forEach(genre => {
+      genresString += `${genre.getName()} `;
+    });
+    let formatedSong = `${this.name} - Author: ${this.author}, Duration: ${this.duration.minutes}:${this.duration.seconds}, ` +
+      `Views: ${this.views}, Genres: ${genresString}`;
+    return formatedSong;
+  }
 }

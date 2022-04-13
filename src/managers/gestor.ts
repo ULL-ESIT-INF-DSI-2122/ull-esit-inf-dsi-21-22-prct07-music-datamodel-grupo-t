@@ -151,12 +151,17 @@ export class Gestor {
   }
 
   /**
-   * Show's the stored playlist and it's information
+   * Returns the given playlists's information as a string.
+   * If no array is given, returns the stored playlists in the database.
    * @returns the information in string format
    */
-  public showPlaylists(): string {
+  public showPlaylists(playlist: PlayList[] = []): string {
     let cad = '';
-    this.playlists.forEach((playlist) => {
+    let playlistToReturn = playlist;
+    if (playlist.length === 0) {
+      playlistToReturn = this.playlists;
+    }
+    playlistToReturn.forEach((playlist) => {
       cad = `Name: ${playlist.getName()} | `;
       playlist.getSongs().forEach((song,index) => {        
         cad = cad + `Song ${index+1}: ${song.getName()} | `;
