@@ -146,6 +146,18 @@ export class Album implements Iterable<Song> {
   }
 
   /**
+   * Removes a genre of the album
+   * @param genreName the genre that will be removed
+   */
+  public removeGenre(genreName: string): void {
+    this.genres.forEach((genre, i) => {
+      if (genre.getName() === genreName) {
+        this.genres.splice(i, 1);
+      }
+    });
+  }
+
+  /**
    * Returns the information of the album as a string
    */
    public asString(): string {
