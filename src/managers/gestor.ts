@@ -180,7 +180,6 @@ export class Gestor {
         cad = cad + `Genre ${index+1}: ${genre.getName()} | `;
       });
       cad = cad + `Duration--> Minutes: ${playlist.getDuration().minutes} Seconds: ${playlist.getDuration().seconds}`;
-      console.log(cad);
     });
     return cad;
   }
