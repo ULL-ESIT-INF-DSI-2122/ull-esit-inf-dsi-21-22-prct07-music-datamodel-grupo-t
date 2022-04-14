@@ -60,6 +60,40 @@ export class Group {
   }
 
   /**
+   * Removes an genre from the group
+   */
+  public removeGenre(genreName: string): void {
+    this.relatedGenres.forEach((genre, i) => {
+      if (genre.getName() === genreName) {
+        this.relatedGenres.splice(i, 1);
+      }
+    });
+  }
+
+  /**
+   * Removes an genre from the group
+   */
+   public removeArtist(artistName: string): void {
+    this.artists.forEach((artist, i) => {
+      if (artist.getName() === artistName) {
+        this.artists.splice(i, 1);
+      }
+    });
+  }
+
+  /**
+ * Removes a album of the album
+ * @param albumName the album that will be removed
+ */
+  public removeAlbum(albumName: string): void {
+    this.albums.forEach((album, i) => {
+      if (album.getName() === albumName) {
+        this.albums.splice(i, 1);
+      }
+    });
+  }
+
+  /**
    * @returns the set albums of the group
    */
   public getAlbums(): Album[] {

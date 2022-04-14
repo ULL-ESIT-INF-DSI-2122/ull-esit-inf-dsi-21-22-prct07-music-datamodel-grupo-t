@@ -527,8 +527,11 @@ inquirer.prompt(question).then((answers) => {
 function modifySongPrompt(): void {
   console.clear();
   console.log('Gestor de Canciones');
+  const currentAlbums = dataAlbumManager.getAlbumsNames();
   const currentGenres = dataGenreManager.getGenreNames();
   const currentSongs = dataSongManager.getSongNames();
+  const currentArtist = dataArtistManager.getArtistNames();
+  const currentGroups = dataGroupManager.getGroupNames();
   const question = [
     {
       type: 'list',
@@ -602,18 +605,57 @@ function modifySongPrompt(): void {
         break;
         
       case 'Modificar':
-        console.log('Modificar un género');
+        console.log('Modificar una canción');
         const genreElection = [
           {
             type: 'list',
-            name: 'election',
-            message: '¿Qué desea género desea administrar?',
-            choices: currentGenres,
-          }
+            name: 'name',
+            message: '¿Cuál es la canción?',
+            choices: currentSongs
+          },
+          {
+            type: 'list',
+            name: 'artist',
+            message: '¿Quieres que la canción sea de otro autor?',
+            choices: ['No, siguiente'].concat(currentArtist)
+          },
+          {
+            type: 'list',
+            name: 'genre',
+            message: '¿Quieres asignarle un nuevo género a la canción?',
+            choices: ['No, siguiente'].concat(currentGenres),
+          },
+          {
+            type: 'list',
+            name: 'dgenre',
+            message: '¿Quieres borrar un género a la canción?',
+            choices: ['No, siguiente'].concat(currentGenres),
+          },
         ];
         inquirer.prompt(genreElection).then((answers: any) => {
-          const election = answers.election;
-          // dataGenreManager.modifyGenre(election);
+          const song: Song = dataSongManager.getDefinedSong(answers.name) as Song;
+              if (answers.artist != 'No, siguiente') {
+                const newAuthor = dataArtistManager.getDefinedArtist(answers.artist) as Artist;
+                song.setAuthor(newAuthor.getName());
+              }
+              if (answers.genre != 'No, siguiente') {
+                song.getGenres().push((dataGenreManager.getDefinedGenre(answers.genre) as Genre));
+              }   
+              if (answers.dgenre != 'No, siguiente') {
+                const genreToDelete = dataGenreManager.getDefinedGenre(answers.dgenre) as Genre;
+                if (song.getGenres().indexOf(genreToDelete) !== -1) {
+                  if (song.getGenres().length > 2) {
+                    song.removeGenre(genreToDelete.getName());
+                  } else {
+                    console.log('No puedes dejar a una canción sin géneros');
+                  }
+                } else { 
+                  console.log('Ese género que deseas quitar no le pertenece a la canción');
+                }
+              }   
+              dataSongManager.deleteSong(song.getName());
+              dataSongManager.addNewSong(new Song(song.getName(), song.getAuthor(), song.getDuration(), 
+                song.getGenres(), song.getIsSingle(), song.getViews()));
         });
         break;
 
@@ -750,7 +792,19 @@ function modifyAlbumPrompt(): void {
                 type: 'list',
                 name: 'genre',
                 message: '¿Quieres asignarle un nuevo género al album?',
-                choices: ['No, siguiente'].concat(currentGenres)
+                choices: ['No, siguiente'].concat(currentGenres),
+              },
+              {
+                type: 'list',
+                name: 'dgenre',
+                message: '¿Quieres borrar un género al album?',
+                choices: ['No, siguiente'].concat(currentGenres),
+              },
+              {
+                type: 'list',
+                name: 'dsong',
+                message: '¿Quieres borrar una canción del album?',
+                choices: ['No, siguiente'].concat(currentSongs),
               },
             ];
             inquirer.prompt(question).then((answers) => {
@@ -765,7 +819,28 @@ function modifyAlbumPrompt(): void {
               if (answers.genre != 'No, siguiente') {
                 album.getGenres().push(dataGenreManager.getDefinedGenre(answers.genre) as Genre)
                 album.setGenre(album.getGenres());
-              }              
+              }       
+              if (answers.dgenre != 'No, siguiente') {
+                const genreToDelete = dataGenreManager.getDefinedGenre(answers.genre) as Genre;
+                if (album.getGenres().indexOf(genreToDelete) !== -1) {
+                  if (album.getGenres().length > 2) {
+                    album.removeGenre(genreToDelete.getName());
+                  } else {
+                    console.log('No puedes dejar a un album sin géneros');
+                  }
+                } else { 
+                  console.log('Ese género que deseas quitar no le pertenece al album');
+                }
+              } 
+              if (answers.dsong != 'No, siguiente') {
+                const songToDelete = dataSongManager.getDefinedSong(answers.dsong) as Song;
+                if (Array.from(album.getSongs()).indexOf(songToDelete) !== -1) {
+                  album.removeSong(songToDelete.getName());
+                } else { 
+                  console.log('Esta canción que deseas quitar no le pertenece al album');
+                }
+              }
+                   
               dataAlbumManager.deleteAlbum(album.getName());
               dataAlbumManager.addNewAlbum(new Album(album.getName(), album.getArtist(), album.getYear(),
                 album.getGenres(), Array.from(album.getSongs())));
@@ -925,6 +1000,24 @@ function modifyGroupsPrompt(): void {
                 message: '¿Quieres asignarle un nuevo género al grupo?',
                 choices: ['No, siguiente'].concat(currentGenres)
               },
+              {
+                type: 'list',
+                name: 'dgenre',
+                message: '¿Quieres eliminarle un género al grupo?',
+                choices: ['No, siguiente'].concat(currentGenres)
+              },
+              {
+                type: 'list',
+                name: 'dartist',
+                message: '¿Quieres eliminar algun participante de este grupo?',
+                choices: ['No, siguiente'].concat(currentArtist)
+              },
+              {
+                type: 'list',
+                name: 'dalbum',
+                message: '¿Quieres eliminar algun album de este grupo?',
+                choices: ['No, siguiente'].concat(currentArtist)
+              },
             ];
             inquirer.prompt(question2).then((answers) => {
               const group: Group = dataGroupManager.getDefinedGroup(answers.name) as Group;
@@ -933,7 +1026,35 @@ function modifyGroupsPrompt(): void {
               }
               if (answers.genre != 'No, siguiente') {
                 group.addGenre(dataGenreManager.getDefinedGenre(answers.genre) as Genre)
-              }              
+              }   
+              if (answers.dgenre != 'No, siguiente') {
+                const genreToDelete = dataGenreManager.getDefinedGenre(answers.dgenre) as Genre;
+                if (group.getRelatedGenres().indexOf(genreToDelete) !== -1) {
+                  if (group.getRelatedGenres().length > 2) {
+                    group.removeGenre(genreToDelete.getName());
+                  } else {
+                    console.log('No puedes dejar a un grupo sin géneros');
+                  }
+                } else { 
+                  console.log('Ese género que deseas quitar no le pertenece al grupo');
+                }
+              } 
+              if (answers.dartist != 'No, siguiente') {
+                const artistToDelete = dataArtistManager.getDefinedArtist(answers.dartist) as Artist;
+                if (group.getArtists().indexOf(artistToDelete) !== -1) {
+                  group.removeArtist(artistToDelete.getName());
+                } else { 
+                  console.log('Este artista que deseas quitar no le pertenece al grupo');
+                }
+              }           
+              if (answers.dalbum != 'No, siguiente') {
+                const albumToDelete = dataAlbumManager.getDefinedAlbum(answers.dalbum) as Album;
+                if (group.getAlbums().indexOf(albumToDelete) !== -1) {
+                  group.removeAlbum(albumToDelete.getName());
+                } else { 
+                  console.log('Este  que deseas quitar no le pertenece al grupo');
+                }
+              } 
               dataGroupManager.deleteGroup(group.getName());
               dataGroupManager.addNewGroup(new Group(group.getName(), group.getArtists(), group.getYearOfCreation(),
                 group.getRelatedGenres(), group.getAlbums(), group.getMonthlyListeners()));
@@ -947,6 +1068,7 @@ function modifyGroupsPrompt(): void {
               });
             });
         break;
+
       case 'Borrar':
         console.log('Eliminar un grupo');
         const questions = [

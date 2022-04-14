@@ -129,6 +129,18 @@ export class Song {
   }
 
   /**
+   * Removes a genre from a song
+   * @param genreName name of the genre that will be removed
+   */
+  public removeGenre(genreName: string): void {
+    this.genres.forEach((genre, i) => {
+      if (genre.getName() === genreName) {
+        this.genres.splice(i, 1);
+      }
+    });
+  }
+
+  /**
    * Returns the information of the song as a string
    */
   public asString(): string {
