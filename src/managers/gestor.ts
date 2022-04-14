@@ -161,6 +161,7 @@ export class Gestor {
     } else {
       this.playlists.push(newPlaylist);
       this.writeData(this.playlists);
+      this.readData();
       return 0;
     }
   }
@@ -175,6 +176,7 @@ export class Gestor {
       if (this.playlists[i].getName() === playlistName) {
         this.playlists.splice(i, 1);
         this.writeData(this.playlists);
+        this.readData();
         return 0;
       }
     }
