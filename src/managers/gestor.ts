@@ -42,27 +42,36 @@ export class Gestor {
    * @param playlists data from the songs that will be writen
    */
   public writeData(playlists: PlayList[]): void {
+    const dataSongManager = new DataSongManager();
     const dbData: PlaylistSchemaInterface = {playlists: []};
 
     playlists.forEach((playlist) => {
-    const name = playlist.getName();
-    const songsNames: string[] = [];
-    playlist.getSongs().forEach((song) => {
-      songsNames.push(song.getName());
-    });
-    const duration = playlist.getDuration();
-    const genresNames: GenreName[] = [];
-    playlist.getGenres().forEach((genre) => {
-      genresNames.push(genre.getName());
-    });
+      const name = playlist.getName();
+      let songsNames: string[] = [];
+      let totalTime = 0;
+      playlist.getSongs().forEach((song) => {
+        songsNames.push(song.getName());
+        let songsStored = dataSongManager.getSongs();
+        for (let i = 0; i < songsStored.length; i++) {
+          if (songsStored[i].getName() === song.getName()) {
+            totalTime += songsStored[i].getDuration().minutes * 60 +
+              songsStored[i].getDuration().seconds;
+            break;
+          }
+        }
+      });
+      const genresNames: GenreName[] = [];
+      playlist.getGenres().forEach((genre) => {
+        genresNames.push(genre.getName());
+      });
 
-    dbData.playlists.push({
-      name: name,
-      songs: songsNames,
-      duration: duration,
-      genres: genresNames
+      dbData.playlists.push({
+        name: name,
+        songs: songsNames,
+        duration: {minutes: Math.floor(totalTime / 60), seconds: totalTime % 60},
+        genres: genresNames
+      });
     });
-  });
     this.database.set("playlists", dbData.playlists).write();
   }
 
@@ -106,22 +115,19 @@ export class Gestor {
   public readData(): void {
     this.playlists = [];
     const dbPlaylist = this.database.get("playlists").value();
+    const dataSongManager = new DataSongManager();
 
     dbPlaylist.forEach(playlist => {
-      const totalTime: {minutes: number, seconds: number} = {minutes: 0, seconds: 0};
-      
+      let totalTime = 0;
       const songs: Song[] = [];
-      playlist.songs.forEach(song => {
-        songs.push(new Song(song));
-      });
-
-      songs.forEach(song => {
-        totalTime.minutes += song.getDuration().minutes;
-        totalTime.seconds += song.getDuration().seconds;
-        if (totalTime.seconds > 59) {
-          totalTime.minutes++;
-          totalTime.seconds = totalTime.seconds % 60;
-        }
+      playlist.songs.forEach(songInPlaylist => {
+        dataSongManager.getSongs().forEach(songStored => {
+          if (songInPlaylist === songStored.getName()) {
+            songs.push(songStored);
+            totalTime += songStored.getDuration().minutes * 60 + 
+              songStored.getDuration().seconds;
+          }
+        });
       });
 
       const genres: Genre[] = [];
@@ -130,7 +136,7 @@ export class Gestor {
       });      
       
       const myPlaylist = new PlayList(playlist.name, songs, 
-        totalTime, genres);
+        {minutes: Math.floor(totalTime / 60), seconds: totalTime % 60}, genres);
 
       this.playlists.push(myPlaylist);
     });
@@ -155,8 +161,26 @@ export class Gestor {
     } else {
       this.playlists.push(newPlaylist);
       this.writeData(this.playlists);
+      this.readData();
       return 0;
     }
+  }
+
+  /**
+   * Deletes a playlist from the database given it`s name.
+   * @param playlistName playlist to be deleted from the database.
+   * @returns 0 if deleted with success, -1 otherwise.
+   */
+  public deletePlaylist(playlistName: string): number {
+    for (let i = 0; i < this.playlists.length; i++) {
+      if (this.playlists[i].getName() === playlistName) {
+        this.playlists.splice(i, 1);
+        this.writeData(this.playlists);
+        this.readData();
+        return 0;
+      }
+    }
+    return -1;
   }
 
   /**

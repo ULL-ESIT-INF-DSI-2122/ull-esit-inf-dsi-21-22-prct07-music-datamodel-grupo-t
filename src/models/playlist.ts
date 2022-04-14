@@ -42,6 +42,17 @@ export class PlayList {
   }
 
   /**
+   * @returns the names of the songs stored
+   */
+  public getSongNames(): string[] {
+    let songNames: string[] = [];
+    this.songs.forEach((song) => {
+      songNames.push(song.getName());
+    });
+    return songNames;
+  }
+
+  /**
    * @returns the duration of the playlist
    */
   public getDuration(): Duration {
@@ -72,11 +83,13 @@ export class PlayList {
   }
 
   /**
-   * Adds a song to the playlist
+   * Adds a song to the playlist if it`s not already
    * @param song that will be added
    */
   public addSong(song: Song): void {
-    this.songs.push(song);
+    if (!this.isSong(song.getName())) {
+      this.songs.push(song);
+    }
   }
 
   /**
