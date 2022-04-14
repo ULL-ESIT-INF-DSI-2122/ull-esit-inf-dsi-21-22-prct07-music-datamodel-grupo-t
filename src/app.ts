@@ -4,9 +4,9 @@ import {DataArtistManager} from './managers/dataArtistManager';
 import {DataAlbumManager} from './managers/dataAlbumManager';
 import {DataGroupManager} from './managers/dataGroupManager';
 import {DataSongManager} from './managers/dataSongManager';
-import {Gestor} from './managers/gestor';
-import {songs, groups, artists, albums, genres, playlists} from './data/defaultData';
+import * as DefaultData from './data/defaultData';
 import {Genre, GenreName} from './models/genre';
+import {Gestor} from './managers/gestor';
 import {Song} from './models/song';
 import {Album} from './models/album';
 import {Artist} from './models/artist';
@@ -14,12 +14,12 @@ import {Group} from './models/group';
 import {PlayList} from './models/playlist';
 
 
-const dataGenreManager = new DataGenreManager(genres);
-const dataArtistManager = new DataArtistManager(artists);
-const dataAlbumManager = new DataAlbumManager(albums);
-const dataGroupManager = new DataGroupManager(groups);
-const dataSongManager = new DataSongManager(songs);
-const dataPlaylistManager = new Gestor(playlists);
+const dataGenreManager = new DataGenreManager(DefaultData.genres);
+const dataArtistManager = new DataArtistManager(DefaultData.artists);
+const dataAlbumManager = new DataAlbumManager(DefaultData.albums);
+const dataGroupManager = new DataGroupManager(DefaultData.groups);
+const dataSongManager = new DataSongManager(DefaultData.songs);
+const dataPlaylistManager = new Gestor(DefaultData.playlists);
 
 export function promptUser() {
   console.clear();
@@ -1006,28 +1006,56 @@ function modifyPlayListsPrompt(): void {
         break;
 
       case 'Borrar una playlist':
-        // console.log('Eliminar una canción');
-        // let question = [
-        //   {
-        //     type: 'list',
-        //     name: 'election',
-        //     message: '¿Qué canción desea eliminar?',
-        //     choices: currentSongs,
-        //   }
-        // ];
-        // inquirer.prompt(question).then((answers) => {
-        //   dataSongManager.deleteSong(answers.election);
-        //   console.log(`Canción ${answers.election} eliminada`);
-        // });
-        // inquirer.prompt([{
-        //   name: 'continue',
-        //   message: 'Pulse enter para continuar',
-        //   type: 'input'
-        // }]).then(function() {
-        //   promptUser();
-        // });
+        // Differentiates between the playlists created by the user and the system.
+        let playlistsOfUser: string[] = [];
+        let defaultPlaylistNames: string[] = [];
+        DefaultData.playlists.forEach(defaultPlaylist => {
+          defaultPlaylistNames.push(defaultPlaylist.getName());
+        });
+        currentPlaylists.forEach(playlist => {
+          if (!defaultPlaylistNames.includes(playlist)) {
+            playlistsOfUser.push(playlist);
+          }
+        });
+        if (playlistsOfUser.length !== 0) {
+          let question = [
+            {
+              type: 'checkbox',
+              name: 'elections',
+              message: '¿Qué playlist(s) del usuario desea eliminar?',
+              choices: playlistsOfUser,
+            }
+          ];
+          inquirer.prompt(question).then((answers) => {
+            let playlistsToDelete = answers['elections'] as string[];
+            playlistsToDelete.forEach(playlist => {
+              if (dataPlaylistManager.deletePlaylist(playlist) === 0) {
+                console.log(`Playlist ${playlist} eliminada correctamente`);
+              } else {
+                console.log(`Error al intentar borrar ${playlist}`);
+              }
+              
+            });
+            inquirer.prompt([{
+              name: 'continue',
+              message: 'Pulse enter para continuar',
+              type: 'input'
+            }]).then(function() {
+              promptUser();
+            });
+          });
+        } else {
+          console.log(`¡No hay playlists del usuario a borrar!`);
+          inquirer.prompt([{
+            name: 'continue',
+            message: 'Pulse enter para continuar',
+            type: 'input'
+          }]).then(function() {
+            promptUser();
+          });
+        }
         break;
-      
+
       case 'Atrás':
         promptUser();
         break;

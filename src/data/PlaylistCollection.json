@@ -1,0 +1,62 @@
+{
+  "playlists": [
+    {
+      "name": "RapTrap",
+      "songs": [
+        "Carretera",
+        "Nosotros",
+        "Dracukeo",
+        "Serpiente Veneno",
+        "One Million"
+      ],
+      "duration": {
+        "minutes": 18,
+        "seconds": 7
+      },
+      "genres": [
+        "Rap",
+        "Trap"
+      ]
+    },
+    {
+      "name": "PopRock",
+      "songs": [
+        "Zapatillas",
+        "Besos",
+        "Volvera",
+        "Peter Pan",
+        "La Madre de Jose",
+        "Self Esteem",
+        "Pretty Fly",
+        "Why Don't You Get a Job"
+      ],
+      "duration": {
+        "minutes": 35,
+        "seconds": 8
+      },
+      "genres": [
+        "Pop",
+        "Rock"
+      ]
+    },
+    {
+      "name": "CountryPopularBlues",
+      "songs": [
+        "Take Me Home, Country Roads",
+        "Back Home Again",
+        "Lágrimas negras",
+        "Hasta siempre",
+        "Soul Man"
+      ],
+      "duration": {
+        "minutes": 20,
+        "seconds": 21
+      },
+      "genres": [
+        "Country",
+        "Popular",
+        "Blues"
+      ]
+    }
+  ]
+}
