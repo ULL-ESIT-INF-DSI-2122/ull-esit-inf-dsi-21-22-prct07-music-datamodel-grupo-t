@@ -396,13 +396,16 @@ function modifyCollectionPrompt() {
 function modifyGenrePrompt(): void {
   console.clear()    
   console.log('Gestor de géneros');
-  const currentGenres = dataGenreManager.getGenreNames();
-  const question = [
+  const currentArtist: string[] = dataArtistManager.getArtistNames();
+  const currentGenres: string[] = dataGenreManager.getGenreNames();
+  const currentGroups: string[] = dataGroupManager.getGroupNames();
+  const currentAlbums: string[] = dataAlbumManager.getAlbumsNames();
+  const currentSongs: string[] = dataSongManager.getSongNames();  const question = [
     {
       type: 'list',
       name: 'election',
       message: '¿Que desea hacer (añadir, borrar o modificar un género)?',
-      choices: ['Añadir'/* , 'Modificar' */, 'Borrar', 'Atrás']
+      choices: ['Añadir', 'Modificar', 'Borrar', 'Atrás']
     }
   ];
 
@@ -438,6 +441,58 @@ inquirer.prompt(question).then((answers) => {
         });
         break;
 
+    case 'Modificar':
+      console.log('Menú de modificación de géneros');
+        let question2 = [
+            {
+              type: 'list',
+              name: 'name',
+              message: '¿Cuál es el nombre del género?',
+              choices: currentArtist
+            },
+            {
+              type: 'list',
+              name: 'song',
+              message: '¿Quieres asignarle una nueva canción?',
+              choices: ['No, siguiente'].concat(currentSongs),
+            },
+            {
+              type: 'list',
+              name: 'album',
+              message: '¿Quieres asignarle un nuevo album?',
+              choices: ['No, siguiente'].concat(currentAlbums),
+            },
+            {
+              type: 'checkbox',
+              name: 'artist',
+              message: '¿Quieres asignarle un nuevo artista o grupo al género?',
+              choices: ['No, siguiente'].concat(currentArtist).concat(currentGroups),
+            },
+          ];
+          inquirer.prompt(question2).then((answers) => {
+            const genre: Genre = dataGenreManager.getDefinedGenre(answers.name) as Genre;
+            if (answers.song != 'No, siguiente') {
+              genre.addSong(dataSongManager.getDefinedSong(answers.song) as Song);
+            }
+            if (answers.album != 'No, siguiente') {
+              genre.addAlbum(dataAlbumManager.getDefinedAlbum(answers.albums) as Album);
+            }
+            if (answers.artist != 'No, siguiente') {
+              genre.addArtists(dataArtistManager.getDefinedArtist(answers.artist) as Artist);
+            }
+            dataGenreManager.deleteGenre(genre.getName());  
+            dataGenreManager.addNewGenre(new Genre(genre.getName(), genre.getArtistCollection(), genre.getAlbumCollection(),
+              genre.getSongCollection()));
+            
+            inquirer.prompt([{
+              name: 'continue',
+              message: 'Pulse enter para continuar',
+              type: 'input'
+            }]).then(function() {
+              promptUser();
+            });
+          });
+      break;
       case 'Borrar':
         console.log('Eliminar un género');
         const questions = [
@@ -683,19 +738,19 @@ function modifyAlbumPrompt(): void {
                 type: 'list',
                 name: 'songs',
                 message: '¿Quieres asignarle una nueva canción?',
-                choices: currentSongs + 'No, siguiente'
+                choices: ['No, siguiente'].concat(currentSongs)
               },
               {
                 type: 'list',
                 name: 'artist',
                 message: '¿Quieres asignarle a otro artista?',
-                choices: currentAlbums + 'No, siguiente'
+                choices: ['No, siguiente'].concat(currentArtist)
               },
               {
                 type: 'list',
                 name: 'genre',
                 message: '¿Quieres asignarle un nuevo género al album?',
-                choices: currentGenres + 'No, siguiente'
+                choices: ['No, siguiente'].concat(currentGenres)
               },
             ];
             inquirer.prompt(question).then((answers) => {
@@ -762,13 +817,15 @@ function modifyGroupsPrompt(): void {
   const currentGenres = dataGenreManager.getGenreNames();
   const currentGroups = dataGroupManager.getGroupNames();
   const currentAlbums = dataAlbumManager.getAlbumsNames();
+  const currentSongs = dataSongManager.getSongNames();
+
 
   const question = [
     {
       type: 'list',
       name: 'election',
       message: '¿Que desea hacer (añadir, borrar o modificar un grupo)?',
-      choices: ['Añadir'/* , 'Modificar' */, 'Borrar', 'Atrás']
+      choices: ['Añadir', 'Modificar', 'Borrar', 'Atrás']
     }
   ];
 
@@ -847,6 +904,49 @@ function modifyGroupsPrompt(): void {
         });
         break;
 
+      case 'Modificar':
+        console.log('Menú de modificación de un grupo');
+          let question2 = [
+              {
+                type: 'list',
+                name: 'name',
+                message: '¿Cuál es el nombre del grupo?',
+                choices: currentGroups
+              },
+              {
+                type: 'list',
+                name: 'artist',
+                message: '¿Quieres asignarle a otro artista participante?',
+                choices: ['No, siguiente'].concat(currentArtist)
+              },
+              {
+                type: 'list',
+                name: 'genre',
+                message: '¿Quieres asignarle un nuevo género al grupo?',
+                choices: ['No, siguiente'].concat(currentGenres)
+              },
+            ];
+            inquirer.prompt(question2).then((answers) => {
+              const group: Group = dataGroupManager.getDefinedGroup(answers.name) as Group;
+              if (answers.artist != 'No, siguiente') {
+                group.addArtist(dataArtistManager.getDefinedArtist(answers.artist) as Artist);
+              }
+              if (answers.genre != 'No, siguiente') {
+                group.addGenre(dataGenreManager.getDefinedGenre(answers.genre) as Genre)
+              }              
+              dataGroupManager.deleteGroup(group.getName());
+              dataGroupManager.addNewGroup(new Group(group.getName(), group.getArtists(), group.getYearOfCreation(),
+                group.getRelatedGenres(), group.getAlbums(), group.getMonthlyListeners()));
+
+              inquirer.prompt([{
+                name: 'continue',
+                message: 'Pulse enter para continuar',
+                type: 'input'
+              }]).then(function() {
+                promptUser();
+              });
+            });
+        break;
       case 'Borrar':
         console.log('Eliminar un grupo');
         const questions = [
@@ -880,11 +980,11 @@ function modifyGroupsPrompt(): void {
 function modifyArtistsPrompt(): void {
   console.clear()    
   console.log('Gestor de Artistas');
-  const currentArtist = dataArtistManager.getArtistNames();
-  const currentGenres = dataGenreManager.getGenreNames();
-  const currentGroups = dataGroupManager.getGroupNames();
-  const currentAlbums = dataAlbumManager.getAlbumsNames();
-  const currentSongs = dataSongManager.getSongNames();
+  const currentArtist: string[] = dataArtistManager.getArtistNames();
+  const currentGenres: string[] = dataGenreManager.getGenreNames();
+  const currentGroups: string[] = dataGroupManager.getGroupNames();
+  const currentAlbums: string[] = dataAlbumManager.getAlbumsNames();
+  const currentSongs: string[] = dataSongManager.getSongNames();
 
   const question = [
     {
@@ -981,19 +1081,19 @@ function modifyArtistsPrompt(): void {
               type: 'list',
               name: 'song',
               message: '¿Quieres asignarle una nueva canción?',
-              choices: currentSongs + 'No, siguiente'
+              choices: ['No, siguiente'].concat(currentSongs),
             },
             {
               type: 'list',
-              name: 'albumn',
+              name: 'album',
               message: '¿Quieres asignarle un nuevo album?',
-              choices: currentAlbums + 'No, siguiente'
+              choices: ['No, siguiente'].concat(currentAlbums),
             },
             {
               type: 'list',
               name: 'genre',
               message: '¿Quieres asignarle un nuevo género al artista?',
-              choices: currentGenres + 'No, siguiente'
+              choices: ['No, siguiente'].concat(currentGenres),
             },
           ];
           inquirer.prompt(question).then((answers) => {
@@ -1011,7 +1111,7 @@ function modifyArtistsPrompt(): void {
             dataArtistManager.deleteArtist(artist.getName());  
             dataArtistManager.addNewArtist(new Artist(artist.getName(), artist.getGroups(), artist.getGenres(),
             artist.getAlbums(), artist.getSongs()));
-
+            
             inquirer.prompt([{
               name: 'continue',
               message: 'Pulse enter para continuar',
