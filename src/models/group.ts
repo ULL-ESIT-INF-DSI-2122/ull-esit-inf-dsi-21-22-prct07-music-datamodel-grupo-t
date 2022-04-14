@@ -80,4 +80,12 @@ export class Group {
   public addArtist(artist: Artist): void {
     this.artists.push(artist);
   }
+
+  /**
+   * Adds an artist to the set of artists
+   * @param genre that will be added
+   */
+   public addGenre(genre: Genre): void {
+    this.relatedGenres.push(genre);
+  }
 }

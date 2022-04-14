@@ -103,4 +103,28 @@ export class Artist {
   public getMonthlyListeners(): number {
     return this.monthlyListeners;
   }
+
+  /**
+   * Add's a song to the artist
+   * @param song that will be added
+   */
+  public addPublishedSong(song: Song) {
+    this.publishedSongs.push(song);
+  }
+
+  /**
+   * Add's an album to the artist
+   * @param album that will be added
+   */
+  public addPublishedAlbum(album: Album) {
+    this.albums.push(album);
+  }
+
+  /**
+   * Add's an album to the artist
+   * @param genre that will be added
+   */
+   public addGenre(genre: Genre) {
+    this.genres.push(genre);
+  }
 }
