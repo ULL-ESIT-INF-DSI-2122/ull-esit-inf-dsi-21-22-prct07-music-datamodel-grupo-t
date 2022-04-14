@@ -32,6 +32,8 @@ export class Gestor {
     this.playlists = playlists;
     if (!this.database.has("playlists").value()) {
       this.writeData(playlists);
+    } else {
+      this.readData();
     }
   }
 
@@ -87,15 +89,14 @@ export class Gestor {
    * @param name of the playlist
    * @returns the playlist
    */
-  public getSpecificPlaylist(name: string): PlayList {
+  public getSpecificPlaylist(name: string): PlayList | undefined {
     this.readData();
-    let result: PlayList = new PlayList('', [], {minutes: 0, seconds: 0}, []);
     for (let i = 0; i < this.playlists.length; i++) {
       if (name === this.playlists[i].getName()) {
-        result = this.playlists[i];
+        return this.playlists[i];
       }
     }
-    return result;
+    return undefined;
   }
 
   /**
@@ -144,13 +145,12 @@ export class Gestor {
   public addNewPlaylist(newPlaylist: PlayList): number {
     let alreadyInPlaylist = false;
     for (let i = 0; i < this.playlists.length; i++) {
-      console.log(this.playlists[i].getName())
-      console.log(newPlaylist.getName())
       if ((this.playlists[i].getName() === newPlaylist.getName())) {
           alreadyInPlaylist = true;
         break;
       }
-    }    if (alreadyInPlaylist) {
+    }    
+    if (alreadyInPlaylist) {
       return -1;
     } else {
       this.playlists.push(newPlaylist);
