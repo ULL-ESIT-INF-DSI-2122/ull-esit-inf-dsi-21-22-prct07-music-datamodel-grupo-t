@@ -17,21 +17,6 @@
       "monthlyListeners": 1396606
     },
     {
-      "name": "El Canto del Loco",
-      "artists": [
-        "Dani Martín"
-      ],
-      "year": 1994,
-      "genres": [
-        "Pop"
-      ],
-      "albums": [
-        "Zapatillas",
-        "Personas"
-      ],
-      "monthlyListeners": 2622773
-    },
-    {
       "name": "The Offspring",
       "artists": [],
       "year": 1984,
@@ -44,16 +29,6 @@
       "monthlyListeners": 12477538
     },
     {
-      "name": "Compay Segundo",
-      "artists": [],
-      "year": 1907,
-      "genres": [
-        "Popular"
-      ],
-      "albums": [],
-      "monthlyListeners": 530772
-    },
-    {
       "name": "The Blues Brothers",
       "artists": [],
       "year": 1978,
@@ -62,6 +37,34 @@
       ],
       "albums": [],
       "monthlyListeners": 1172651
+    },
+    {
+      "name": "Compay Segundo",
+      "artists": [
+        "Kidd Keo"
+      ],
+      "year": 1907,
+      "genres": [
+        "Popular"
+      ],
+      "albums": [],
+      "monthlyListeners": 530772
+    },
+    {
+      "name": "El Canto del Loco",
+      "artists": [
+        "Dani Martín",
+        "Kidd Keo"
+      ],
+      "year": 1994,
+      "genres": [
+        "Pop"
+      ],
+      "albums": [
+        "Zapatillas",
+        "Personas"
+      ],
+      "monthlyListeners": 2622773
     }
   ]
 }

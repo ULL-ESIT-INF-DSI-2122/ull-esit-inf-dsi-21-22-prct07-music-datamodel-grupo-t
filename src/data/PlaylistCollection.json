@@ -57,6 +57,24 @@
         "Popular",
         "Blues"
       ]
+    },
+    {
+      "name": "Jose",
+      "songs": [
+        "Carretera",
+        "Nosotros",
+        "Dracukeo",
+        "Serpiente Veneno",
+        "One Million"
+      ],
+      "duration": {
+        "minutes": 18,
+        "seconds": 7
+      },
+      "genres": [
+        "Rap",
+        "Trap"
+      ]
     }
   ]
 }
