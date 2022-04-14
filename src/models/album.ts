@@ -162,4 +162,18 @@ export class Album implements Iterable<Song> {
       `Songs: ${songsString}Genres: ${genresString}`;
     return formatedAlbum;
   }
+
+  /**
+   * Returns true if a song with the given name is in the album
+   * @param songName name of the song to search in the album
+   */
+  public isSong(songName: string): boolean {
+    let inAlbum = false;
+    [...this].forEach(song => {
+      if (song.getName() === songName) {
+        inAlbum = true;
+      }
+    });
+    return inAlbum;
+  }
 }

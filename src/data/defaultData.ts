@@ -4,9 +4,8 @@ import {Artist} from '../models/artist'
 import {Group} from '../models/group'
 import {Song} from '../models/song'
 import {PlayList} from '../models/playlist'
-
 let genres_aux: Genre[] = [
-  new Genre("Rap"),
+  new Genre("Rap", [], [], []),
   new Genre("Pop"),
   new Genre("Trap"),
   new Genre("Electro"),
@@ -46,6 +45,7 @@ export let groups: Group[] = [
   new Group("Compay Segundo",[],1907,[genres_aux[8]],[],530772),
   new Group("The Blues Brothers",[],1978,[genres_aux[9]],[],1172651)
 ]
+
 
 export let songs: Song[] = [
   new Song("Dracukeo","Kidd Keo",{minutes: 2, seconds: 36},[genres_aux[2]],true,81901392),

@@ -1,15 +1,14 @@
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
-import {PlayList, PlaylistInterface} from '../models/playlist'
-import {Genre, GenreName} from '../models/genre'
-import {Group} from '../models/group'
-import {Artist} from '../models/artist'
-import {DataArtistManager} from './dataArtistManager'
-import {DataGroupManager} from './dataGroupManager'
+import {PlayList, PlaylistInterface} from '../models/playlist';
+import {Genre, GenreName} from '../models/genre';
+import {Group} from '../models/group';
+import {Artist} from '../models/artist';
 import {Song} from "../models/song";
-// import {DataSongManager} from '../managers/dataSongManager';
-// import {songs/* , groups, artists, albums, genres, playlists */} from '../data/defaultData';
-import {dataSongManager} from "../app";
+import {DataArtistManager} from './dataArtistManager';
+import {DataGroupManager} from './dataGroupManager';
+import {DataSongManager} from '../managers/dataSongManager';
+import {DataAlbumManager} from "./dataAlbumManager";
 
 
 /**
@@ -266,16 +265,12 @@ export class Gestor {
    */
   public orderedSongsFromPlaylist(playlist: PlayList, mode: string): Song[] {
     const songs: Song[] = [];
-    // const storedSongs = dataSongManager.getSongs();
+    const dataSongManager = new DataSongManager();
 
-    for (let i = 0; i < dataSongManager.getSongs().length; i++) {
-      for (let j = 0; j < playlist.getSongs().length; j++) {
-        if (dataSongManager.getSongs()[i].getName() === playlist.getSongs()[j].getName()) {
-          songs.push(dataSongManager.getSongs()[i]);
-          break;
-        } 
-      }
-    }    
+    playlist.getSongs().forEach(songPlayList => {
+      let song = dataSongManager.getDefinedSong(songPlayList.getName()) as Song;
+      songs.push(song);
+    });
     
     switch(mode) {
       case 'UpAlphabet':
@@ -312,7 +307,16 @@ export class Gestor {
           break;
         case 'UpYear':
           songs.sort(function(a, b) {
-            let yearA = a.getMyAlbumYear(), yearB = b.getMyAlbumYear();
+            const dataAlbumManager = new DataAlbumManager();
+            let yearA = 0, yearB = 0;
+            dataAlbumManager.getAlbums().forEach(album => {
+              if (album.isSong(a.getName())) {
+                yearA = album.getYear();
+              }
+              if (album.isSong(b.getName())) {
+                yearB = album.getYear();
+              }
+            });
             if (yearA < yearB) { return -1; }
             if (yearA > yearB) { return 1; }
             return 0;
@@ -320,7 +324,16 @@ export class Gestor {
           break;
         case 'DownYear':
           songs.sort(function(a, b) {
-            let yearA = a.getMyAlbumYear(), yearB = b.getMyAlbumYear();
+            const dataAlbumManager = new DataAlbumManager();
+            let yearA = 0, yearB = 0;
+            dataAlbumManager.getAlbums().forEach(album => {
+              if (album.isSong(a.getName())) {
+                yearA = album.getYear();
+              }
+              if (album.isSong(b.getName())) {
+                yearB = album.getYear();
+              }
+            });
             if (yearA > yearB) { return -1; }
             if (yearA < yearB) { return 1; }
             return 0;

@@ -16,9 +16,9 @@ import {PlayList} from './models/playlist';
 
 const dataGenreManager = new DataGenreManager(genres);
 const dataArtistManager = new DataArtistManager(artists);
-export const dataAlbumManager = new DataAlbumManager(albums);
+const dataAlbumManager = new DataAlbumManager(albums);
 const dataGroupManager = new DataGroupManager(groups);
-export const dataSongManager = new DataSongManager(songs);
+const dataSongManager = new DataSongManager(songs);
 const dataPlaylistManager = new Gestor(playlists);
 
 export function promptUser() {
@@ -51,18 +51,6 @@ export function promptUser() {
     });
   return 0;
 }
-
-// function showAllPlaylistPrompt() {
-//   const currentPlaylist = dataPlaylistManager.getPlaylists();
-//   const questions = [
-//     {
-//         type: 'list',
-//         name: 'songsOrder',
-//         message: '¿Cómo desea ver las canciones del artista?',
-//         choices: currentPlaylist,
-//     },
-//   ];
-// }
 
 /**
  * Navigates throw the songs of the playlist
@@ -274,7 +262,6 @@ function navigateArtistPrompt() {
   });
 }
 
-
 function checkSongsOfArtist(checkArtist: string) {
   const questions = [
     {
@@ -359,7 +346,6 @@ function checkAlbumsOfArtist(checkArtist: string) {
   });
 }
 
-
 function modifyCollectionPrompt() {
   console.clear();
   console.log('Configuración de la biblioteca musical');
@@ -373,37 +359,37 @@ function modifyCollectionPrompt() {
     },
   ];
 
-  inquirer.prompt(questions).then((answers) => {    
-    switch(answers['election']) {
-      case 'Géneros':
-        console.log("Gestionar géneros")
-        modifyGenrePrompt();
-        break;
-      case 'Canciones':
-        console.log("Gestionar temas")
-        modifySongPrompt();
-        break;
-      case 'Álbums':
-        console.log("Gestionar albums")
-        modifyAlbumPrompt();
-        break;
-      case 'Grupos':
-        console.log("Gestionar grupos")
-        modifyGroupsPrompt()
-        break;
-      case 'Artistas':
-        console.log("Gestionar artistas")
-        modifyArtistsPrompt();
-        break;   
-      case 'PlayLists':
-        console.log("Gestionar playlists")
-        modifyPlayListsPrompt();
-        break;
-      case 'Atrás':
-        promptUser();
-        break;
-      }
-    });
+inquirer.prompt(questions).then((answers) => {    
+  switch(answers['election']) {
+    case 'Géneros':
+      console.log("Gestionar géneros")
+      modifyGenrePrompt();
+      break;
+    case 'Canciones':
+      console.log("Gestionar temas")
+      modifySongPrompt();
+      break;
+    case 'Álbums':
+      console.log("Gestionar albums")
+      modifyAlbumPrompt();
+      break;
+    case 'Grupos':
+      console.log("Gestionar grupos")
+      modifyGroupsPrompt()
+      break;
+    case 'Artistas':
+      console.log("Gestionar artistas")
+      modifyArtistsPrompt();
+      break;   
+    case 'PlayLists':
+      console.log("Gestionar playlists")
+      modifyPlayListsPrompt();
+      break;
+    case 'Atrás':
+      promptUser();
+      break;
+    }
+  });
 }
 
 
@@ -420,11 +406,11 @@ function modifyGenrePrompt(): void {
     }
   ];
 
-  inquirer.prompt(question).then((answers) => {
-    switch(answers['election']) {
-      case 'Añadir':
-        console.log('Añadir un nuevo género');
-        const question = [
+inquirer.prompt(question).then((answers) => {
+  switch(answers['election']) {
+    case 'Añadir':
+      console.log('Añadir un nuevo género');
+      const question = [
         {
           type: 'list',
           name: 'electionGenre',
@@ -434,16 +420,16 @@ function modifyGenrePrompt(): void {
             'Salsa','Flamenco','Folk','Country','Blues','Reggaeton','Punk','Reggae',
             'Soul','Gospel','Funk','Disco','Hip Hop'],
         }
-        ];
-        inquirer.prompt(question).then((answers) => {
-          const added = dataGenreManager.addNewGenre(new Genre(answers.electionGenre));
-          if (added === 0) {
-            console.log(`Género ${answers.electionGenre} añadido`);
-          } else {
-            console.log('Error, ese género ya está definido.');
-          }
-          inquirer.prompt([{
-            name: 'continue',
+      ];
+      inquirer.prompt(question).then((answers) => {
+        const added = dataGenreManager.addNewGenre(new Genre(answers.electionGenre));
+        if (added === 0) {
+          console.log(`Género ${answers.electionGenre} añadido`);
+        } else {
+          console.log('Error, ese género ya está definido.');
+        }
+        inquirer.prompt([{
+          name: 'continue',
             message: 'Pulse enter para continuar',
             type: 'input'
           }]).then(function() {
@@ -559,22 +545,22 @@ function modifySongPrompt(): void {
           });
         });
         break;
-      
-      // case 'Modificar':
-      //   console.log('Modificar un género');
-      //   const genreElection = [
-      //     {
-      //       type: 'list',
-      //       name: 'election',
-      //       message: '¿Qué desea género desea administrar?',
-      //       choices: currentGenres,
-      //     }
-      //   ];
-      //   inquirer.prompt(genreElection).then((answers: any) => {
-      //     const election = answers.election;
-      //     // dataGenreManager.modifyGenre(election);
-      //   });
-      //   break;
+        
+      case 'Modificar':
+        console.log('Modificar un género');
+        const genreElection = [
+          {
+            type: 'list',
+            name: 'election',
+            message: '¿Qué desea género desea administrar?',
+            choices: currentGenres,
+          }
+        ];
+        inquirer.prompt(genreElection).then((answers: any) => {
+          const election = answers.election;
+          // dataGenreManager.modifyGenre(election);
+        });
+        break;
 
       case 'Borrar':
         console.log('Eliminar una canción');
@@ -598,7 +584,7 @@ function modifySongPrompt(): void {
           });
         });
         break;
-      
+
       case 'Atrás':
         promptUser();
         break;
@@ -622,7 +608,6 @@ function modifyAlbumPrompt(): void {
       choices: ['Añadir'/* , 'Modificar' */, 'Borrar', 'Atrás']
     }
   ];
-
   inquirer.prompt(question).then((answers) => {
     switch(answers['election']) {
       case 'Añadir':
@@ -684,22 +669,22 @@ function modifyAlbumPrompt(): void {
           });
         });
         break;
-      
-      // case 'Modificar':
-      //   console.log('Modificar un género');
-      //   const genreElection = [
-      //     {
-      //       type: 'list',
-      //       name: 'election',
-      //       message: '¿Qué desea género desea administrar?',
-      //       choices: currentGenres,
-      //     }
-      //   ];
-      //   inquirer.prompt(genreElection).then((answers: any) => {
-      //     const election = answers.election;
-      //     // dataGenreManager.modifyGenre(election);
-      //   });
-      //   break;
+
+      case 'Modificar':
+        console.log('Modificar un género');
+        const genreElection = [
+          {
+            type: 'list',
+            name: 'election',
+            message: '¿Qué desea género desea administrar?',
+            choices: currentGenres,
+          }
+        ];
+        inquirer.prompt(genreElection).then((answers: any) => {
+          const election = answers.election;
+          // dataGenreManager.modifyGenre(election);
+        });
+        break;
 
       case 'Borrar':
         console.log('Eliminar un album');
@@ -806,7 +791,7 @@ function modifyGroupsPrompt(): void {
           const added = dataGroupManager.addNewGroup(
             new Group(answers.name, artists, answers.year as number,
               genres, albums, answers.listeners as number));
-          
+       
           if (added === 0) {
             console.log(`Grupo ${answers.name} añadido`);
           } else {
@@ -1033,9 +1018,7 @@ function modifyPlayListsPrompt(): void {
             promptUser();
           });
         });
-        break;
-      
-      
+        break;    
 
       case 'Borrar':
         console.log('Eliminar una canción');
