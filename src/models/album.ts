@@ -1,4 +1,3 @@
-import { Artist, ArtistInterface } from './artist';
 import {Genre, GenreName} from './genre';
 import {Song} from './song';
 

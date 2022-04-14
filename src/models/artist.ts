@@ -128,7 +128,11 @@ export class Artist {
     this.genres.push(genre);
   }
 
-  public removeGenre(genreName: string): void {
+  /**
+   * Removes a genre from an artist
+   * @param genreName genre to remove
+   */
+  public removeGenre(genreName: GenreName): void {
     this.genres.forEach((genre, i) => {
       if (genre.getName() === genreName) {
         this.genres.splice(i, 1);
@@ -136,6 +140,10 @@ export class Artist {
     });
   }
   
+  /**
+   * Removes a song from an artist
+   * @param songName song to remove
+   */
   public removeSong(songName: string): void {
     for(let i=0; i < this.publishedSongs.length;i++){
       if (this.publishedSongs[i].getName() === songName) {

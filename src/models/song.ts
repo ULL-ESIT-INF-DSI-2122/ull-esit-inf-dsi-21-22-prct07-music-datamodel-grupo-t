@@ -41,7 +41,7 @@ export class Song {
   /**
    * @returns the name of the song
    */
-  public getName() {
+  public getName(): string {
     return this.name;
   }
 

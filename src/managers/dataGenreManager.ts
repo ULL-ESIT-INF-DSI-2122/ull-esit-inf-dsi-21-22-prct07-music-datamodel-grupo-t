@@ -1,6 +1,6 @@
-import {Genre, GenreInterface, GenreName} from '../models/genre'
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
+import {Genre, GenreInterface, GenreName} from '../models/genre'
 import {Song} from '../models/song';
 import {Artist} from '../models/artist';
 import {Album} from '../models/album';

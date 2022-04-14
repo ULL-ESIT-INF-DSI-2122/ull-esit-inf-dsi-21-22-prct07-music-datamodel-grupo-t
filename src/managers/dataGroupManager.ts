@@ -164,4 +164,16 @@ export class DataGroupManager {
     }
     this.writeData(this.groups);
   }
+
+  /**
+   * Checks if a group is in the database
+   * @param groupName string with the name of the group to check
+   * @returns true if the group was found
+   */
+   public isInGroups(groupName: string): boolean {
+    if (this.getGroupNames().includes(groupName)) {
+      return true;
+    }
+    return false;
+  }
 }

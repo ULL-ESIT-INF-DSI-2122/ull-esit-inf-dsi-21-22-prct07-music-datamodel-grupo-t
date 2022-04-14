@@ -179,4 +179,16 @@ export class DataArtistManager {
     }
     this.writeData(this.artists);
   }
+
+  /**
+   * Checks if an artist is in the database
+   * @param artistName string with the name of the artist to check
+   * @returns true if artist was found
+   */
+  public isInArtists(artistName: string): boolean {
+    if (this.getArtistNames().includes(artistName)) {
+      return true;
+    }
+    return false;
+  }
 }

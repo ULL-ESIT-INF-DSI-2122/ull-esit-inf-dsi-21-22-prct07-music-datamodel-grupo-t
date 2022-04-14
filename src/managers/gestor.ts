@@ -2,11 +2,8 @@ import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 import {PlayList, PlaylistInterface} from '../models/playlist';
 import {Genre, GenreName} from '../models/genre';
-import {Group} from '../models/group';
-import {Artist} from '../models/artist';
 import {Song} from "../models/song";
 import {DataSongManager} from '../managers/dataSongManager';
-import {DataArtistManager} from '../managers/dataArtistManager';
 import {DataAlbumManager} from "./dataAlbumManager";
 
 
