@@ -643,15 +643,15 @@ function modifySongPrompt(): void {
             }   
             if (answers.dgenre != 'No, siguiente') {
               const genreToDelete = dataGenreManager.getDefinedGenre(answers.dgenre) as Genre;
-              // if (song.getGenres().indexOf(genreToDelete) !== -1) {
-                if (song.getGenres().length > 2) {
+              if (song.getGenres().indexOf(genreToDelete) !== -1) {
+                if (song.getGenres().length > 1) {
                   song.removeGenre(genreToDelete.getName());
                 } else {
                   console.log('No puedes dejar a una canción sin géneros');
                 }
-              // } else { 
-              //   console.log('Ese género que deseas quitar no le pertenece a la canción');
-              // }
+              } else { 
+                console.log('Ese género que deseas quitar no le pertenece a la canción');
+              }
             }   
             dataSongManager.deleteSong(song.getName());
             dataSongManager.addNewSong(new Song(song.getName(), song.getAuthor(), song.getDuration(), 
@@ -831,7 +831,7 @@ function modifyAlbumPrompt(): void {
               if (answers.dgenre != 'No, siguiente') {
                 const genreToDelete = dataGenreManager.getDefinedGenre(answers.genre) as Genre;
                 if (album.getGenres().indexOf(genreToDelete) !== -1) {
-                  if (album.getGenres().length > 2) {
+                  if (album.getGenres().length > 1) {
                     album.removeGenre(genreToDelete.getName());
                   } else {
                     console.log('No puedes dejar a un album sin géneros');
@@ -1038,7 +1038,7 @@ function modifyGroupsPrompt(): void {
               if (answers.dgenre != 'No, siguiente') {
                 const genreToDelete = dataGenreManager.getDefinedGenre(answers.dgenre) as Genre;
                 if (group.getRelatedGenres().indexOf(genreToDelete) !== -1) {
-                  if (group.getRelatedGenres().length > 2) {
+                  if (group.getRelatedGenres().length > 1) {
                     group.removeGenre(genreToDelete.getName());
                   } else {
                     console.log('No puedes dejar a un grupo sin géneros');
