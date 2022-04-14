@@ -127,4 +127,21 @@ export class Artist {
    public addGenre(genre: Genre) {
     this.genres.push(genre);
   }
+
+  public removeGenre(genreName: string): void {
+    this.genres.forEach((genre, i) => {
+      if (genre.getName() === genreName) {
+        this.genres.splice(i, 1);
+      }
+    });
+  }
+  
+  public removeSong(songName: string): void {
+    for(let i=0; i < this.publishedSongs.length;i++){
+      if (this.publishedSongs[i].getName() === songName) {
+        console.log(this.publishedSongs[i])
+        delete(this.publishedSongs[i])
+      }
+    }
+  }
 }

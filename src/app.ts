@@ -1095,9 +1095,21 @@ function modifyArtistsPrompt(): void {
               message: '¿Quieres asignarle un nuevo género al artista?',
               choices: ['No, siguiente'].concat(currentGenres),
             },
+            {
+              type: 'list',
+              name: 'dgenre',
+              message: '¿Quieres borrar un género al artista?',
+              choices: ['No, siguiente'].concat(currentGenres),
+            },
+            {
+              type: 'list',
+              name: 'dsong',
+              message: '¿Quieres borrar una canción del artista?',
+              choices: ['No, siguiente'].concat(currentSongs),
+            },
           ];
           inquirer.prompt(question).then((answers) => {
-            const artist: Artist = dataArtistManager.getDefinedArtist(answers.name) as Artist;
+            const artist: Artist = dataArtistManager.getDefinedArtist(answers.name) as Artist; 
             if (answers.song != 'No, siguiente') {
               artist.addPublishedSong(dataSongManager.getDefinedSong(answers.song) as Song);
             }
@@ -1106,11 +1118,32 @@ function modifyArtistsPrompt(): void {
             }
             if (answers.genre != 'No, siguiente') {
               artist.addGenre(dataGenreManager.getDefinedGenre(answers.genre) as Genre);
+            }     
+            if (answers.dgenre != 'No, siguiente') {
+              const genreToDelete = dataGenreManager.getDefinedGenre(answers.genre) as Genre;
+              if (artist.getGenres().indexOf(genreToDelete) !== -1) {
+                if (artist.getGenres().length > 1) {
+                  artist.removeGenre(genreToDelete.getName());
+                } else {
+                  console.log('No puedes dejar a un album sin géneros');
+                }
+              } else { 
+                console.log('Ese género que deseas quitar no le pertenece al album');
+              }
+            } 
+            if (answers.dsong != 'No, siguiente') {
+              const songToDelete = dataSongManager.getDefinedSong(answers.dsong) as Song;
+              if (Array.from(artist.getSongs()).indexOf(songToDelete) !== -1) {
+                artist.removeSong(songToDelete.getName());
+              } else { 
+                console.log('Esta canción que deseas quitar no le pertenece al genero');
+              }
             }
-
-            dataArtistManager.deleteArtist(artist.getName());  
+            console.log(artist.getGenres())
+            dataArtistManager.deleteArtist(artist.getName()); 
             dataArtistManager.addNewArtist(new Artist(artist.getName(), artist.getGroups(), artist.getGenres(),
             artist.getAlbums(), artist.getSongs()));
+            
             
             inquirer.prompt([{
               name: 'continue',

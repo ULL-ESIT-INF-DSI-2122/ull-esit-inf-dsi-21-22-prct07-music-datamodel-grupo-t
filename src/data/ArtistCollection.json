@@ -1,6 +1,22 @@
 {
   "artists": [
     {
+      "name": "Kidd Keo",
+      "groups": [],
+      "genres": [
+        "Trap"
+      ],
+      "albums": [],
+      "songs": [
+        "Dracukeo",
+        "Mama",
+        "Lollypop",
+        "Serpiente Veneno",
+        "One Million"
+      ],
+      "monthlyListeners": 142811720
+    },
+    {
       "name": "Martin Garrix",
       "groups": [],
       "genres": [
@@ -117,22 +133,6 @@
         "La Madre de Jose"
       ],
       "monthlyListeners": 231686464
-    },
-    {
-      "name": "Kidd Keo",
-      "groups": [],
-      "genres": [
-        "Trap"
-      ],
-      "albums": [],
-      "songs": [
-        "Dracukeo",
-        "Mama",
-        "Lollypop",
-        "Serpiente Veneno",
-        "One Million"
-      ],
-      "monthlyListeners": 142811720
     }
   ]
 }

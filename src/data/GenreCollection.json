@@ -1,23 +1,6 @@
 {
   "genres": [
     {
-      "name": "Rap",
-      "artists": [
-        "Natos y Waor"
-      ],
-      "albums": [
-        "Cicatrices",
-        "Carretera"
-      ],
-      "songs": [
-        "Cicatrices",
-        "Carretera",
-        "Nosotros",
-        "Piratas",
-        "Bicho Raro"
-      ]
-    },
-    {
       "name": "Pop",
       "artists": [
         "El Canto del Loco"
