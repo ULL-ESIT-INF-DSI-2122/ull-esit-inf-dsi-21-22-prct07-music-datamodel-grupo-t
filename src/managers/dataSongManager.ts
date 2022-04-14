@@ -64,6 +64,23 @@ export class DataSongManager {
   }
 
   /**
+   * @returns the songs of an artist given as a string
+   */
+   public getSongsOfArtist(author: string): Song[] | undefined {
+    let songsOfArtist: Song[] = [];
+    this.songs.forEach(song =>  {
+      if (song.getAuthor() === author) {
+        songsOfArtist.push(song);
+      }
+    });
+    if (songsOfArtist.length !== 0) {
+      return songsOfArtist;
+    } else {
+      return undefined;
+    }
+  }
+
+  /**
    * This method updates the information stored in the database.
    * @param songData data from the songs that will be writen
    */

@@ -5,9 +5,8 @@ import {Genre, GenreName} from '../models/genre';
 import {Group} from '../models/group';
 import {Artist} from '../models/artist';
 import {Song} from "../models/song";
-import {DataArtistManager} from './dataArtistManager';
-import {DataGroupManager} from './dataGroupManager';
 import {DataSongManager} from '../managers/dataSongManager';
+import {DataArtistManager} from '../managers/dataArtistManager';
 import {DataAlbumManager} from "./dataAlbumManager";
 
 
@@ -193,28 +192,20 @@ export class Gestor {
    * @returns the array of related playlists of the group or artist
    */
   public getPlayListOfArtist(artist: string): PlayList[] | undefined {
+    const dataSongManager = new DataSongManager();
+    const songsOfArtist = dataSongManager.getSongsOfArtist(artist);
     let playlistOfArtist: PlayList[] = [];
-    let relatedArtist: (Group | Artist | undefined);
-    let dataArtistManager = new DataArtistManager();
-    let dataGroupManager = new DataGroupManager();
-    relatedArtist = dataArtistManager.getDefinedArtist(artist);
-    if (relatedArtist === undefined) {
-      relatedArtist = dataGroupManager.getDefinedGroup(artist);
-    }
-    if (relatedArtist === undefined) {
-      return undefined;
-    } else {
+    if (typeof songsOfArtist !== 'undefined') {
       this.playlists.forEach(playlist => {
-        let songsOfPlaylist = playlist.getSongs();
-        for (let i = 0; i < songsOfPlaylist.length; i++) {
-          if (songsOfPlaylist[i].getAuthor() === relatedArtist?.getName()) {
+        for (let i = 0; i < songsOfArtist.length; i++) {
+          if (playlist.isSong(songsOfArtist[i].getName())) {
             playlistOfArtist.push(playlist);
             break;
           }
         }
       });
-      return playlistOfArtist;
     }
+    return playlistOfArtist;
   }
 
 

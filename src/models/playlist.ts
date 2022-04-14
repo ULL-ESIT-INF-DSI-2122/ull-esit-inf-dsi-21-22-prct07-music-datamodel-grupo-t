@@ -134,4 +134,18 @@ export class PlayList {
 
       return formatedPlaylist;
   }
+
+  /**
+   * Returns true if a certain song is in the playlist
+   * @param songName 
+   */
+  public isSong(songName: string): boolean {
+    let isSong = false;
+    this.songs.forEach(song => {
+      if (song.getName() === songName) {
+        isSong = true;
+      }
+    });
+    return isSong;
+  }
 }
