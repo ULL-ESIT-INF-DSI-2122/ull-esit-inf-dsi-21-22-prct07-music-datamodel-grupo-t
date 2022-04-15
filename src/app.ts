@@ -21,6 +21,10 @@ const dataGroupManager = new DataGroupManager(DefaultData.groups);
 const dataSongManager = new DataSongManager(DefaultData.songs);
 const dataPlaylistManager = new Gestor(DefaultData.playlists);
 
+/**
+ * Main user prompt with menu options
+ * @returns exit code
+ */
 export function promptUser() {
   console.clear();
   console.log('Bienvenido a la biblioteca musical');
@@ -79,7 +83,11 @@ function checkPlaylistsPrompt() {
   });
 }
 
-
+/**
+ * Prompt with options for checking a selected playlist
+ * @param playlistCheck playlist to check
+ * @param mode order of the displayed songs
+ */
 function consultPlaylistPrompt(playlistCheck: string, mode = 'default') {
   console.clear();
   console.log(`Canciones de la playlist ${playlistCheck}`);
@@ -190,7 +198,10 @@ function consultPlaylistPrompt(playlistCheck: string, mode = 'default') {
   });
 }
 
-
+/**
+ * Prompt with options for a selected artist
+ * @param checkArtist artist to check
+ */
 function checkPlaylistOfArtist(checkArtist: string) {
   const questions = [
     {
@@ -225,7 +236,9 @@ function checkPlaylistOfArtist(checkArtist: string) {
   });
 }
 
-
+/**
+ * Prompt to navigate the information of groups and artists
+ */
 function navigateArtistPrompt() {
   console.clear();
   console.log('Información de artistas y grupos');
@@ -262,6 +275,10 @@ function navigateArtistPrompt() {
   });
 }
 
+/**
+ * Prompt to check the songs of a certain artist
+ * @param checkArtist artist to check
+ */
 function checkSongsOfArtist(checkArtist: string) {
   const questions = [
     {
@@ -307,7 +324,10 @@ function checkSongsOfArtist(checkArtist: string) {
   });
 }
 
-
+/**
+ * Prompt to check the albums of an artist
+ * @param checkArtist 
+ */
 function checkAlbumsOfArtist(checkArtist: string) {
   const questions = [
     {
@@ -346,6 +366,9 @@ function checkAlbumsOfArtist(checkArtist: string) {
   });
 }
 
+/**
+ * Prompt to modify a certain element of the collection
+ */
 function modifyCollectionPrompt() {
   console.clear();
   console.log('Gestión de la biblioteca musical');
@@ -392,7 +415,9 @@ function modifyCollectionPrompt() {
   });
 }
 
-
+/**
+ * Prompt to modify genres of the collection
+ */
 function modifyGenrePrompt(): void {
   console.clear()    
   console.log('Gestor de géneros');
@@ -528,7 +553,9 @@ inquirer.prompt(question).then((answers) => {
   });
 }
 
-
+/**
+ * Prompt to modify songs of the collection
+ */
 function modifySongPrompt(): void {
   console.clear();
   console.log('Gestor de Canciones');
@@ -702,6 +729,9 @@ function modifySongPrompt(): void {
   });
 }
 
+/**
+ * Prompt to modify albums of the collection
+ */
 function modifyAlbumPrompt(): void {
   console.clear()    
   console.log('Gestor de Albumes');
@@ -902,6 +932,9 @@ function modifyAlbumPrompt(): void {
   }); 
 }
 
+/**
+ * Prompt to modify groups of the collection
+ */
 function modifyGroupsPrompt(): void {
   console.clear()    
   console.log('Gestor de Grupos');
@@ -1114,6 +1147,9 @@ function modifyGroupsPrompt(): void {
   }); 
 }
 
+/**
+ * Prompt to modify artists of the collection
+ */
 function modifyArtistsPrompt(): void {
   console.clear()    
   console.log('Gestor de Artistas');
@@ -1331,7 +1367,9 @@ function modifyArtistsPrompt(): void {
   });
 }
 
-
+/**
+ * Prompt to modify playlists of the collection
+ */
 function modifyPlayListsPrompt(): void {
   console.clear();
   console.log('Gestor de PlayLists');
@@ -1456,7 +1494,11 @@ function modifyPlayListsPrompt(): void {
   });
 }
 
-
+/**
+ * Prompt to add a new playlist to the collection
+ * given a certain playlist name as template
+ * @param playlistTemplateName 
+ */
 function addNewPlaylistPrompt(playlistTemplateName = '') {
   const currentPlaylists = dataPlaylistManager.getPlaylistNames();
   inquirer.prompt([{
@@ -1490,7 +1532,10 @@ function addNewPlaylistPrompt(playlistTemplateName = '') {
   });
 }
 
-
+/**
+ * Prompt to edit a certain user`s playlist
+ * @param userPlaylist playlist to edit
+ */
 function editPlaylistPrompt(userPlaylist: string) {
   let playlistToEdit = dataPlaylistManager.getSpecificPlaylist(userPlaylist) as PlayList;
   const currentSongs = dataSongManager.getSongNames();

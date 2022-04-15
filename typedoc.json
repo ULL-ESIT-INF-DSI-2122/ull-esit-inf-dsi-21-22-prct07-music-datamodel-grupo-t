@@ -10,7 +10,9 @@
         "./src/managers/dataArtistManager.ts",
         "./src/managers/dataGenreManager.ts",
         "./src/managers/dataGroupManager.ts",
-        "./src/managers/dataSongManager.ts"
+        "./src/managers/dataSongManager.ts",
+        "./src/managers/gestor.ts",
+        "./src/app.ts"
     ],
     "out": "./docs"
 }
