@@ -331,7 +331,7 @@ export class Group {
 }
 ```
 #### Explicación
-En este modelo de datos se representa la información relativa a las Grupos. Cada canción cuenta con los siguientes atributos:
+En este modelo de datos se representa la información relativa a las Grupos. Cada Grupo cuenta con los siguientes atributos:
 * **name**: Contiene el nombre del grupo.
 * **artists**: Contiene los nombre de los artistas que forman el grupo.
 * **yearOfCreation**: Año de la creación del grupo.
@@ -1463,4 +1463,4 @@ En este fichero es donde hemos llevado a cabo la gestión de todo el programa. H
 En cuanto a la base de datos anteriormente nombrada, los ficheros `json` se generarán automáticamente con la primera ejecución del programa, y en sesiones posteriores los managers simplemente leerán la información de estos y almacenarán las instancias de los objetos correspondientes, con la información relativa a canciones, artistas, etc. Todos los datos iniciales que el programa carga por defecto son guardados en el fichero `defaultData` del directorio `data`.
 
 ## Conclusión
-En esta práctica, hemos tenido la oportunidad de crear una aplicación interactiva por consola, que nos ha permitido comprender el funcionamiento en profundidad de TypeScript, así como el manejo de datos en diferentes ficheros `json`. De esta manera, gracias al uso de paquetes externos como `lowdb` e `inquirer`, se ha determinado las necesidades que son requeridas en un diseño interactivo, lo que nos ha permitido aprender y mejorar para futuros diseños. Con todo ello, creemos que esta práctica ha sido de gran utilidad en nuestro desarrollo como programadores.
+En esta práctica, hemos tenido la oportunidad de crear una aplicación interactiva por consola, que nos ha permitido comprender el funcionamiento en profundidad de TypeScript, así como el manejo de datos en diferentes ficheros `json`. De esta manera, gracias al uso de paquetes externos como `lowdb` e `inquirer`, se han determinado las necesidades que son requeridas en un diseño interactivo, lo que nos ha permitido aprender y mejorar para futuros desarrollos. Con todo ello, creemos que esta práctica ha sido de gran utilidad en nuestro crecimiento como programadores.
