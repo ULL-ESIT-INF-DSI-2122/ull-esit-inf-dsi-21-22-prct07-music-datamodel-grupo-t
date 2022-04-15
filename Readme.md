@@ -8,7 +8,8 @@
 * Tanausú Falcón Casanova
 * Juan Marrero Domínguez
 * Diego Rodríguez Pérez
-***
+
+
 ## 1. Introducción
 
 En esta práctica, tendremos que llevar a cabo un diseño orientado a objetos del modelo de datos de un sistema de información que permita almacenar una biblioteca de música.
