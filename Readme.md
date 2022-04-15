@@ -1456,6 +1456,7 @@ En este manager de datos se representa el manejo relativa a las PlayLists. Cada 
 ![Prueba8](/Assets/Tests/Screenshot_8.png)
 
 
-### Fichero app.ts
+## Fichero app.ts
 En este fichero es donde hemos llevado a cabo la gestión de todo el programa. Hemos realizado diferentes menús con los que vamos mostrando al usuario las diferentes posibilidades que tiene. Este control lo hemos hecho mediante switchs, pues según la elección del usuario vamos a un menú o a otro, es decir, si el usuario elige gestionar canciones le llevaremos al menú de canciones en el que podrá tanto crear, borrar y moidificar las canciones que desee. La estructura que se ha seguido para todo lo demás es idéntica.
+
 En cuanto a la base de datos hemos creado unos ficheros *json* que se generan automáticamente con la ejecución del programa. En cada uno de estos ficheros se encuentra la información relativa a los diferentes objetos (canciones,artistas,etc). Todos los datos iniciales han sido creados en el *dataDefault*.
