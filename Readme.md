@@ -3,11 +3,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo-t/badge.svg?branch=master)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo-t?branch=master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ULL-ESIT-INF-DSI-2122_ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo-t&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ULL-ESIT-INF-DSI-2122_ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo-t)
 
-### Universidad de La Laguna
-### Desarrollo de Sistemas Informáticos
-### Tanausú Falcón Casanova
-### Juan Marrero Domínguez
-### Diego Rodríguez Pérez
+### Desarrollo de Sistemas Informáticos - Universidad de La Laguna
+#### Miembros:
+* Tanausú Falcón Casanova
+* Juan Marrero Domínguez
+* Diego Rodríguez Pérez
 ***
 ## 1. Introducción
 
@@ -24,7 +24,7 @@ La realización de esta práctica tiene como objetivo aprender:
 
 ## 3. Implementación
 
-Vamos a dividir la implementación en modelos de datos y en managers. En los modelos de datos definiremos los modelos pedidos por el profesor y los managers los utilizaremos para manejar estos modelos de datos.
+Vamos a dividir la implementación en modelos de datos y en managers. En los modelos de datos definiremos las entidades pedidas en la práctica, y los managers los utilizaremos para manejar la información en la base de datos relacionada a estos.
 
 ### Modelo de Datos 1 - Géneros Musicales (*Genre*)
 #### Código
@@ -610,9 +610,9 @@ export class DataGenreManager {
 }
 ```
 #### Explicación
-En este manager de datos se representa el manejo relativa a los Géneros Musicales. Cada género manager cuenta con los siguientes atributos:
-* **genres**: Vector que contiene los nombres de los Géneros Musicales.
-* **database**: Permite acceder a la base de datos dos Géneros Musicales.
+En este manager de datos se representa el manejo de datos relativo a los Géneros Musicales. Este manager cuenta con los siguientes atributos:
+* **genres**: Vector que contiene los Géneros Musicales definidos en la base de datos.
+* **database**: Permite acceder a la base de datos los Géneros Musicales.
 
 #### Pruebas
 ![Prueba1](/Assets/Tests/Screenshot_7.png)
@@ -792,7 +792,7 @@ export class DataSongManager {
 ```
 #### Explicación
 En este manager de datos se representa el manejo relativa a las Canciones. Cada canción manager cuenta con los siguientes atributos:
-* **songs**: Vector que contiene los nombres de los Géneros Musicales.
+* **songs**: Vector que contiene las instancias de las Canciones.
 * **database**: Permite acceder a la base de datos de las Canciones.
 
 #### Pruebas
@@ -922,8 +922,8 @@ export class DataAlbumManager {
 ```
 #### Explicación
 En este manager de datos se representa el manejo relativa a los Albums. Cada álbum manager cuenta con los siguientes atributos:
-* **albums**: Vector que contiene los nombres de los Géneros Musicales.
-* **database**: Permite acceder a la base de datos de las Canciones.
+* **albums**: Vector que contiene las instancias de los álbumes.
+* **database**: Permite acceder a la base de datos de los Álbumes.
 
 #### Pruebas
 ![Prueba9](/Assets/Tests/Screenshot_9.png)
@@ -1062,8 +1062,8 @@ export class DataGroupManager {
 ```
 #### Explicación
 En este manager de datos se representa el manejo relativa a los Grupos. Cada grupo manager cuenta con los siguientes atributos:
-* **songs**: Vector que contiene los nombres de los Géneros Musicales.
-* **database**: Permite acceder a la base de datos de las Canciones.
+* **songs**: Vector que contiene las instancias de los Grupos.
+* **database**: Permite acceder a la base de datos de los Grupos.
 
 #### Pruebas
 ![Prueba10](/Assets/Tests/Screenshot_10.png)
@@ -1220,8 +1220,8 @@ export class DataArtistManager {
 ```
 #### Explicación
 En este manager de datos se representa el manejo relativa a los Artistas. Cada artista manager cuenta con los siguientes atributos:
-* **artists**: Vector que contiene los nombres de los Géneros Musicales.
-* **database**: Permite acceder a la base de datos de las Canciones.
+* **artists**: Vector que contiene las instancias de los Artistas.
+* **database**: Permite acceder a la base de datos de los Artistas.
 
 #### Pruebas
 ![Prueba11](/Assets/Tests/Screenshot_11.png)
@@ -1449,14 +1449,18 @@ export class Gestor {
 ```
 #### Explicación
 En este manager de datos se representa el manejo relativa a las PlayLists. Cada playlist manager cuenta con los siguientes atributos:
-* **songs**: Vector que contiene los nombres de los Géneros Musicales.
-* **database**: Permite acceder a la base de datos de las Canciones.
+* **songs**: Vector que contiene las instancias de las Playlists.
+* **database**: Permite acceder a la base de datos de las Playlists.
 
 #### Pruebas
 ![Prueba8](/Assets/Tests/Screenshot_8.png)
 
+Los métodos `readData` y `writeData` de cada uno de los managers permitirán leer y almacenar la información guardada en la base de datos, representada en este caso en en ficheros `json` correspondientes al tipo de dato. En estos ficheros, que estarán almacenado bajo el directorio `./src/data`, se cargarán en un principio los datos por defecto del sistema, y a medida que el usuario añada o borre información, estos se irán modificando gracias a los métodos proporcionados por los managers.
 
 ## Fichero app.ts
-En este fichero es donde hemos llevado a cabo la gestión de todo el programa. Hemos realizado diferentes menús con los que vamos mostrando al usuario las diferentes posibilidades que tiene. Este control lo hemos hecho mediante switchs, pues según la elección del usuario vamos a un menú o a otro, es decir, si el usuario elige gestionar canciones le llevaremos al menú de canciones en el que podrá tanto crear, borrar y moidificar las canciones que desee. La estructura que se ha seguido para todo lo demás es idéntica.
+En este fichero es donde hemos llevado a cabo la gestión de todo el programa. Hemos realizado diferentes menús con los que se muestra al usuario las diferentes posibilidades que tiene. Este control se ha hecho mediante el uso de funciones que determinan las opciones del menú que el usuario tiene disponible. Es decir, si el usuario elige gestionar canciones, se direccionará al menú de canciones mediante una función, la cual le permitirá tanto crear, borrar y modificar las canciones que desee. La estructura que se ha seguido para el resto de funcionalidades es idéntica.
 
-En cuanto a la base de datos hemos creado unos ficheros *json* que se generan automáticamente con la ejecución del programa. En cada uno de estos ficheros se encuentra la información relativa a los diferentes objetos (canciones,artistas,etc). Todos los datos iniciales han sido creados en el *dataDefault*.
+En cuanto a la base de datos anteriormente nombrada, los ficheros `json` se generarán automáticamente con la primera ejecución del programa, y en sesiones posteriores los managers simplemente leerán la información de estos y almacenarán las instancias de los objetos correspondientes, con la información relativa a canciones, artistas, etc. Todos los datos iniciales que el programa carga por defecto son guardados en el fichero `defaultData` del directorio `data`.
+
+## Conclusión
+En esta práctica, hemos tenido la oportunidad de crear una aplicación interactiva por consola, que nos ha permitido comprender el funcionamiento en profundidad de TypeScript, así como el manejo de datos en diferentes ficheros `json`. De esta manera, gracias al uso de paquetes externos como `lowdb` e `ìnquirer`, se ha determinado las necesidades que son requeridas en un diseño interactivo, lo que nos ha permitido aprender y mejorar para futuros diseños. Con todo ello, creemos que esta práctica ha sido de gran utilidad en nuestro desarrollo como programadores.
