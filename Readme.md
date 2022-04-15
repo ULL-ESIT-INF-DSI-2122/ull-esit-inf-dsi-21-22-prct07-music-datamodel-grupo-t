@@ -398,7 +398,7 @@ En este modelo de datos se representa la información relativa a los Artistas. C
 #### Pruebas
 ![Prueba5](/Assets/Tests/Screenshot_5.png)
 
-### Modelo de Datos 6 - Artistas (*PlayLists*)
+### Modelo de Datos 6 - (*PlayLists*)
 #### Código
 ```ts
 import {Song, Duration} from './song';
