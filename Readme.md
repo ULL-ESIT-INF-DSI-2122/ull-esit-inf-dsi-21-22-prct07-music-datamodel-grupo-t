@@ -1455,7 +1455,7 @@ En este manager de datos se representa el manejo relativa a las PlayLists. Cada 
 #### Pruebas
 ![Prueba8](/Assets/Tests/Screenshot_8.png)
 
-Los métodos `readData` y `writeData` de cada uno de los managers permitirán leer y almacenar la información guardada en la base de datos, representada en este caso en en ficheros `json` correspondientes al tipo de dato. En estos ficheros, que estarán almacenado bajo el directorio `./src/data`, se cargarán en un principio los datos por defecto del sistema, y a medida que el usuario añada o borre información, estos se irán modificando gracias a los métodos proporcionados por los managers.
+Los métodos `readData` y `writeData` de cada uno de los managers permitirán leer y almacenar la información guardada en la base de datos, representada en este caso en ficheros `json` correspondientes al tipo de dato. En estas estructuras, almacenadas bajo el directorio `./src/data`, se cargarán en un principio los datos por defecto del sistema, y a medida que el usuario añada o borre información, estos se irán modificando gracias a los métodos proporcionados por los managers.
 
 ## Fichero app.ts
 En este fichero es donde hemos llevado a cabo la gestión de todo el programa. Hemos realizado diferentes menús con los que se muestra al usuario las diferentes posibilidades que tiene. Este control se ha hecho mediante el uso de funciones que determinan las opciones del menú que el usuario tiene disponible. Es decir, si el usuario elige gestionar canciones, se direccionará al menú de canciones mediante una función, la cual le permitirá tanto crear, borrar y modificar las canciones que desee. La estructura que se ha seguido para el resto de funcionalidades es idéntica.
